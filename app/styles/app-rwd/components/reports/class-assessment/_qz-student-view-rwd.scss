@@ -1,0 +1,16 @@
+.reports.class-assessment.qz-student-view {
+  @media only screen and (max-width: $screen-xs) {
+    .sort-section {
+      margin-top: 0;
+
+      .btn-group {
+        .sort-alphabetical,
+        .sort-average {
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

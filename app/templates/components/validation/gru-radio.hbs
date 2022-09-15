@@ -1,0 +1,17 @@
+<div class="form-group">
+  {{#radio-button
+    name=name
+    value=valuePath
+    groupValue=groupValue
+    changed=onChange
+  }}
+    {{t translationPath}}
+  {{/radio-button}}
+    <div class="error-messages">
+      {{#if showMessage}}
+          <span class="error">
+            {{v-get model valuePath 'message'}}
+          </span>
+      {{/if}}
+    </div>
+</div>

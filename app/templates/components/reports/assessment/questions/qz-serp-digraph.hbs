@@ -1,0 +1,40 @@
+<ul>
+  {{#each answers as |answer index|}}
+    <li class="question-answer-container {{if showCorrect 'show-correct'}}">
+      <div class="exercise-seq {{if showCorrect 'in-visible'}}">
+        Excercise {{plus-one index}}
+      </div>
+      <div class="answer-text">
+        {{safe-html answer.text}}
+      </div>
+      {{#if showCorrect}}
+        {{#each answer.exemplarAnswer as |exemplar exemplarIndex|}}
+          <div class="identify-correct-answer correct-audio-{{index}}-{{exemplarIndex}} {{if exemplar.audio_file_url 'recording'}}">
+            <span>{{exemplar.text}}</span>
+            <span class="audio-progress">
+              <span class="progress-filling">
+                <span class="progress-pointer"></span>
+                <span class="audio-wave">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </span>
+            </span>
+            {{#if (and (eq answerIndex index) (eq playerIndex exemplarIndex)  isPause)}}
+              <span class="audio-play" {{action 'onPauseAudio'}}>
+                {{gru-icon name="pause_arrow"}}
+              </span>
+            {{else}}
+              <span class="audio-play" data-audio-url="{{exemplar.audio_file_url}}" {{action "onPlayAudio" (concat "correct-audio-" index "-" exemplarIndex) exemplar.audio_file_url index exemplarIndex }}>
+                {{gru-icon name="play_arrow"}}
+              </span>
+            {{/if}}
+          </div>
+        {{/each}}
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>

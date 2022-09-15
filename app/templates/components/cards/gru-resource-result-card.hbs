@@ -1,0 +1,40 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    {{#link-to (if item.resource.isQuestion 'content.questions.play' 'content.resources.play') item.resource.id class="pointer"}}
+    <div class="card-icon">
+      {{#if item.resource.isQuestion }}
+        <i class="question-icon"></i>
+      {{else}}
+        <i class="{{item.resource.resourceFormat}}-icon"></i>
+      {{/if}}
+    </div>
+    {{/link-to}}
+    <div class="resource-description">
+      {{#if item.resource.isQuestion }}
+        {{#link-to "content.questions.play" item.resource.id class="pointer"}}<div class="title">{{item.resource.text}}</div>{{/link-to}}
+        <div class="format">{{t (concat 'common.question-type.' item.resource.type) }}</div>
+      {{else}}
+        {{#link-to "content.resources.play" item.resource.id class="pointer"}}<div class="title">{{item.resource.title}}</div>{{/link-to}}
+        <div class="format">{{t (concat 'common.resource-format.' item.resource.resourceFormat) }}</div>
+      {{/if}}
+    </div>
+  </div>
+  {{!-- TODO This code will be enabled once we integrate backend calls after first Production deployment
+  <div class="panel-footer {{if item.timeSpent "bdg-blue"}}">
+    <div class="result-details {{if item.timeSpent "hasStarted"}}">
+      {{#if item.timeSpent}}
+        <div>
+          {{gru-icon name='av_timer'}}{{format-time item.timeSpent}}
+          {{#if item.reaction}}
+            <span class="resource-reaction">
+              {{qz-reaction-icon item.reaction}}
+            </span>
+          {{/if}}
+        </div>
+      {{else}}
+        <p class="status">{{t "cards.gru-resource-result-card.skipped"}}</p>
+      {{/if}}
+    </div>
+  </div>
+  --}}
+</div>

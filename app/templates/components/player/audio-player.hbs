@@ -1,0 +1,18 @@
+<div class="audio-player player-{{identifier}}">
+    <span class="audio-progress">
+        <span class="progress-filling">
+            <span class="progress-pointer"></span>
+        </span>
+    </span>
+
+    {{#if (and (eq answerIndex identifier) isPause)}}
+  <span class="audio-play" {{action 'onPauseAudio'}}>
+      {{gru-icon name="pause_arrow"}}
+  </span>
+  {{else}}
+  <span class="audio-play" data-audio-url="{{url}}"
+      {{action "onPlayAudio" url identifier}}>
+      {{gru-icon name="play_arrow"}}
+  </span>
+  {{/if}}
+</div>

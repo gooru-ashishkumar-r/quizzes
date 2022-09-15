@@ -1,0 +1,42 @@
+<div class="chart {{if anonymous 'anonymous'}}">
+  {{charts/gru-x-bar-chart data=questionBarChartData.data}}
+</div>
+<div class="overall-completion {{if anonymous 'anonymous'}}">
+  <span>{{questionBarChartData.completed}}</span>/<span>{{questionBarChartData.total}}</span>
+</div>
+{{#each answersData as |answerData|}}
+  <div class="panel-answer panel {{if anonymous 'anonymous'}}
+    {{if answerData.correct 'panel-success' 'panel-danger'}}">
+    <div class="panel-heading {{if anonymousAndNotShowResult 'panel-heading-anonymous'}} {{if answerData.isOpenEndedQuestion 'panel-blue'}}">
+      {{#unless (or anonymous answerData.isOpenEndedQuestion)}}
+        <span class="percentage">{{answerData.percentage}}%</span>
+      {{else}}
+        &nbsp;
+      {{/unless}}
+    </div>
+    <div class="panel-body">
+      <div class="answers-wrapper">
+        <div class="answer">
+          {{{component (qz-question-config question.type 'component.answer')
+                  question=answerData.result
+                  anonymous=anonymousAndNotShowResult}}}
+        </div>
+        {{#unless anonymous}}
+          <div class="students">
+            {{#each answerData.students as |student|}}
+              <div class="label-box">
+                <span class="label"> {{truncate text=student.fullName type='name'}} </span>
+              </div>
+            {{/each}}
+          </div>
+        {{/unless}}
+        {{#if anonymousAndShowResult}}
+          <div class="answer-chart">
+            {{charts/gru-x-bar-chart data=answerData.charData}}
+          </div>
+          <span class="answer-percentage {{if answerData.correct 'success' 'danger'}}">{{answerData.percentage}}%</span>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+{{/each}}

@@ -1,0 +1,44 @@
+.serp-silent-reading {
+  .serp-silent-reading-container {
+    padding: 10px;
+    .sr-question-panel {
+      .font-size-changer {
+        .size-changer-tool {
+          display: grid;
+          grid-template-columns: 120px 120px;
+          align-items: center;
+          font-size: 15px;
+          color: $light-500;
+          input {
+            cursor: pointer;
+          }
+        }
+      }
+      .sr-question-panel-body {
+        .decoding-text {
+          font-size: 14px;
+          height: calc(100vh - 300px);
+          overflow-y: auto;
+          font-weight: 100;
+          letter-spacing: 2px;
+          transition: 0.4s;
+          padding: 10px 0;
+        }
+        .passage-btn {
+          padding: 10px 0;
+          display: flex;
+          color: $light-500;
+        }
+      }
+      .confirm-btn {
+        span {
+          font-size: 14px;
+          text-transform: uppercase;
+          color: $blue-400;
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

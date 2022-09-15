@@ -1,0 +1,533 @@
+.player .qz-question-viewer {
+  @include flexbox;
+  @include justify-content(space-between);
+  @include flex-direction(column);
+  width: 100%;
+  height: 100%;
+  @media (min-width: $screen-sm) {
+    @include flex-direction(row);
+  }
+
+  .h5p-content {
+    width: 100%;
+    height: 100%;
+  }
+
+  .answers-panel > h2,
+  .question-panel > h2 {
+    color: $gray-dark;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .answers-panel,
+  .question-panel {
+    width: 100%;
+    @media (min-width: $screen-sm) {
+      width: 48%;
+      height: auto;
+      &.likert_scale_question {
+        width: 100%;
+        .panel-body {
+          height: 100%;
+          overflow: auto;
+        }
+      }
+    }
+
+    .panel-body {
+      padding: 20px;
+      position: relative;
+
+      .font-size-loader {
+        display: none;
+
+        input {
+          width: 150px;
+          margin-left: 10px;
+        }
+      }
+
+      #wpm-timer-clk {
+        display: none;
+        font-size: 20px;
+        margin-left: auto;
+      }
+
+      &.serp_lang_activities_for_comprehension,
+      &.serp_phrase_cued_reading,
+      &.serp_silent_reading,
+      &.serp_words_per_minute {
+        padding-bottom: 5px;
+
+        > h2 {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+
+          .font-size-loader {
+            display: block;
+            font-size: 12px;
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            @media screen and (max-width: 360px) {
+              display: flex;
+              flex-wrap: wrap;
+
+              #wpm-timer-clk {
+                margin: 0;
+              }
+            }
+          }
+        }
+
+        &.serp_lang_activities_for_comprehension {
+          > h2 {
+            margin: 0;
+            padding-bottom: 10px;
+          }
+        }
+      }
+
+      .qz-serp-choose-one-container {
+        .qz-choose-one-question-text {
+          font-size: 22px;
+        }
+      }
+
+      &.serp_words_per_minute {
+        .font-size-loader {
+          #wpm-timer-clk {
+            display: block;
+          }
+        }
+      }
+
+      &.serp_identify_vowel_sound_activity_question,
+      &.serp_lang_activities_for_comprehension,
+      &.serp_lang_counting_syllables,
+      &.serp_lang_identify_base_word,
+      &.serp_lang_syllable_division,
+      &.serp_lang_vowel_teams {
+        position: static;
+      }
+      @media screen and (max-width: $screen-sm) {
+        h2 {
+          margin-top: 0;
+          font-size: 24px;
+        }
+      }
+
+      .oa-teacher-student-rubric {
+        .student-rubric-section,
+        .teacher-rubric-section {
+          background-color: $white;
+        }
+
+        .categories-container {
+          display: none;
+          background-color: $white;
+          box-shadow: 0 2px 10px -4px $content-popup-box-shadow;
+
+          textarea {
+            pointer-events: none;
+            padding: 10px;
+          }
+
+          .rubric-category-container {
+            .grade-rubric-categories {
+              .grade-rubric-category {
+                padding: 15px 0;
+
+                .grade-rubric-level-container {
+                  .grade-rubric-category-info,
+                  p {
+                    color: $dark-400;
+                  }
+
+                  .grade-comment {
+                    display: none;
+                  }
+
+                  .grade-rubric-levels {
+                    margin: auto;
+                    width: 90%;
+                  }
+                }
+
+                .grade-rubric-category-info,
+                p {
+                  width: 90%;
+                  color: $dark-400;
+                  padding-left: 10px;
+                }
+
+                .no-progress {
+                  background-color: $frq-gray;
+                  border-radius: 20px;
+                }
+              }
+            }
+          }
+        }
+
+        .student-grading-header,
+        .teacher-grading-header {
+          display: grid;
+          grid-template-columns: 50px 1fr 50px;
+          align-items: center;
+          box-shadow: 0 2px 10px -4px $content-popup-box-shadow;
+          height: 50px;
+
+          .rubric-icon-container {
+            width: 20px;
+            height: 20px;
+            background-size: 20px 20px;
+            background-image: url("./gooru/images/text-resource-dark.svg");
+            display: block;
+            justify-self: center;
+          }
+
+          .rubric-container {
+            .grader-label {
+              font-size: 12px;
+              color: $dark-400;
+              display: flex;
+              align-items: flex-end;
+
+              .rubric-attachment {
+                color: $blue-text;
+                cursor: pointer;
+                margin-left: 10px;
+                display: flex;
+                align-items: flex-end;
+              }
+            }
+
+            .grade-tag {
+              font-size: 11px;
+              opacity: 0.7;
+              color: $dark-400;
+            }
+          }
+
+          .score-section {
+            width: 50px;
+            height: 50px;
+
+            .oa-grade-score {
+              width: 100%;
+              height: 100%;
+              text-align: center;
+              padding-top: 2px;
+
+              &.grade-range-not-started {
+                span {
+                  color: $oa-score-bg-color;
+                }
+
+                hr {
+                  border-color: $oa-score-bg-color;
+                }
+              }
+
+              span {
+                font-family: "Open Sans";
+                font-size: 18px;
+                font-weight: bold;
+                color: $white;
+                line-height: 1.2;
+              }
+
+              hr {
+                margin: 0 15px;
+                border-width: 2px;
+                border-color: $white;
+              }
+            }
+          }
+
+          .toggle-icon {
+            cursor: pointer;
+          }
+        }
+
+        .grade-rubric-category {
+          .grade-rubric-category-info {
+            p {
+              color: $graye-67;
+            }
+          }
+
+          .grade-rubric-level-container {
+            .grade-rubric-levels.no-progress {
+              background-color: $light-100;
+              border-radius: 15px;
+
+              i {
+                background-color: $breadcrumb-color;
+              }
+            }
+          }
+        }
+      }
+
+      .student-rubrics-container,
+      .teacher-rubrics-container {
+        background-color: $default-red;
+        background-color: $white;
+        padding: 15px;
+
+        .label-container {
+          display: grid;
+          grid-template-columns: 1fr 30px;
+          align-items: center;
+          cursor: pointer;
+
+          .label-type {
+            color: $dark-400;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+
+            .rubric-attachment {
+              color: $blue-text;
+              cursor: pointer;
+              margin-left: 10px;
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+
+    .panel {
+      min-height: 266px;
+      margin-bottom: 0;
+
+      .font-size-loader {
+        padding: 10px;
+      }
+    }
+  }
+
+  .question-panel {
+    .panel {
+      height: 100%;
+    }
+
+    &.likert_scale_question {
+      .question {
+        overflow: hidden;
+        overflow-y: auto;
+        height: 88%;
+      }
+    }
+
+    .question {
+      overflow: auto;
+      max-height: calc(100vh - 215px);
+
+      span.text {
+        display: block;
+        margin-bottom: 10px;
+        word-wrap: break-word;
+        color: $gray-dark;
+
+        .gru-math-text {
+          iframe {
+            width: 100%;
+            height: 420px !important;
+          }
+        }
+      }
+
+      .question-tools-section {
+        position: relative;
+
+        img {
+          object-fit: contain;
+          width: auto;
+          height: auto;
+          max-width: 100%;
+          max-height: 100%;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .explanation,
+    .hints {
+      display: block;
+    }
+  }
+
+  .answers-panel {
+    color: $gray-dark;
+
+    .answer-choices {
+      span.letter {
+        vertical-align: top;
+      }
+    }
+
+    .actions {
+      margin-top: 30px;
+      text-align: center;
+
+      .save {
+        @media (min-width: $screen-sm) {
+          float: $menu-float-dir;
+        }
+      }
+    }
+  }
+
+  .feedback {
+    font-size: 1.5em;
+    font-weight: 100;
+    margin: 30px auto 0;
+    text-align: center;
+  }
+
+  .feedback-content {
+    display: inline-block;
+    @media (min-width: $screen-sm) {
+      float: $tab-float-dir;
+    }
+
+    svg {
+      height: inherit;
+      width: inherit;
+    }
+
+    .feedback-emotion {
+      height: 50px;
+      width: 50px;
+      float: $tab-float-dir;
+    }
+
+    .correct {
+      margin-top: -14px;
+    }
+
+    .incorrect {
+      margin-top: 4px;
+    }
+  }
+
+  .question-information {
+    margin-top: 24px;
+
+    .actions {
+      text-align: center;
+      margin-bottom: 20px;
+
+      button {
+        min-width: 8em;
+
+        &:first-child {
+          margin-right: 3%;
+        }
+
+        &:last-child {
+          margin-left: 3%;
+        }
+      }
+    }
+
+    .btn-group {
+      button {
+        span i {
+          vertical-align: middle;
+        }
+      }
+
+      & .explanation {
+        margin-left: 1px;
+      }
+    }
+
+    > .hints {
+      margin: 0;
+      padding-left: 30px;
+
+      li {
+        margin-bottom: 10px;
+        padding-right: 40px;
+      }
+    }
+
+    > .explanation {
+      border-top: 1px solid $gray-lighter;
+      color: $brand-primary;
+      padding: 15px 30px;
+      margin-top: 15px;
+    }
+  }
+
+  .loading-spinner {
+    position: absolute;
+    margin: auto;
+    width: 95%;
+    bottom: 0;
+    display: none;
+  }
+
+  .audio-uploaded {
+    i {
+      padding-left: 0;
+    }
+  }
+
+  .sub-questions-list {
+    background: none;
+    box-shadow: none;
+
+    .serp_lang_activities_for_comprehension {
+      padding: 0;
+    }
+  }
+
+  .tool-img-hover {
+    position: absolute;
+    top: 0px;
+    display: flex;
+    width: 45px;
+    height: 44px;
+    padding: 7px;
+    border: 1px solid;
+    background-color: #fff;
+    transition: background-color 0.5s;
+    justify-content: space-between;
+    z-index: 100;
+    transition: 0.5s ease;
+    opacity: 0;
+    margin: 10px;
+  }
+
+  .tool-img-hover .pin {
+    background-image: url("gooru/zoom_in.svg");
+  }
+
+  .tool-img-hover > i {
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    background-size: 30px 30px;
+    display: block;
+    justify-self: center;
+  }
+
+  .question-tools-section:hover .tool-img-hover {
+    opacity: 1;
+  }
+
+  span.tool-img-hover.btn.btn-default.img-hover-none:hover {
+    display: flex;
+  }
+}

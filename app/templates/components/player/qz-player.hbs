@@ -1,0 +1,257 @@
+{{#if showConfirmation}}
+
+  {{player/qz-player-confirmation
+    attempts=attempts
+    collection=collection
+    context=context
+    notCheckAttempts=notCheckAttempts
+    onStartPlayer='openPlayer'
+    onClosePlayer="closePlayer"
+    onRemixCollection="remixCollection"
+    collectionSource=collectionSource
+    collectionSubType=collectionSubType
+    source=source
+    pathType=pathType
+    isIframeMode=isIframeMode
+    onPlayNext="onPlayNext"
+    onEmptyNextPlay="onEmptyNextPlay"
+    isShowSuggestion=isShowSuggestion
+    isStatusDone=isStatusDone
+    lesson=lesson
+    lessonList=lessonList
+    unitList=unitList
+    studentTimespentData=studentTimespentData
+    isStudyPlayer=isStudyPlayer
+    isStudent=isStudent
+    isPublicClass=isPublicClass
+    attemptData = attemptData
+    isShowStudyTimer=isShowStudyTimer
+    showTimer = "showTimer"
+    isOpenLeftPanal = isOpenLeftPanal
+    showConfirmation = showConfirmation
+    isSuggestedContent = isSuggestedContent
+
+  }}
+  {{#if isShowSuggestion}}
+    {{content/modals/gru-content-suggestion mapLocation=mapLocation onAcceptSuggestion="onAcceptSuggestion" onIgnoreSuggestion="onIgnoreSuggestion"}}
+  {{/if}}
+{{else}}
+  {{#if showPlayerHeader}}
+    {{player/qz-player-header
+        source=source
+        collection=collection
+        onRemixCollection="remixCollection"
+        onClosePlayer="closePlayer"
+        isTeacher=isTeacher
+        isAnonymous=isAnonymous
+        isIframeMode=isIframeMode
+        isLTIResourceLinkLaunch=isLTIResourceLinkLaunch
+      }}
+  {{/if}}
+  {{#if isEnableFullScreen}}
+    <div class="toggle-screen" {{action 'onToggleScreen'}}>
+      {{#if isFullScreen}}
+        {{gru-icon name="fullscreen_exit"}}
+      {{else}}
+        {{gru-icon name="fullscreen"}}
+      {{/if}}
+    </div>
+  {{/if}}
+  <div class="component player">
+    <div class="qz-main {{if isDiagnosticEnd 'diagnostic-end-panel'}} {{if isOpenLeftPanal 'open-left-panal'}} {{if showFinishConfirmation 'submission-confirm'}} {{if suggestedResources 'suggest-content'}}" role="main">
+      {{#if collection.hasResources }}
+          <div class="left-panel {{if isOpenLeftPanal 'show' 'hide'}} {{if (not isLTIResourceLinkLaunch) 'not-resource-link'}}">
+          {{#unless diagnosticActive}}
+                {{player/gru-collection-summary
+                  collection = collection
+                  isCollection = isCollection
+                  resource=resource
+                  contextResult = contextResult
+                  selectedResourceId=resourceId
+                  showFeedback = showFeedback
+                  isNavigationDisabled=isNavigationDisabled
+                  onItemSelected="selectNavigatorItem"
+                  actionContent = "actionContent"
+                  unit=unit
+                  lesson=lesson
+                  classId=classId
+                  course=course
+                  isOpenLeftPanal=isOpenLeftPanal
+                  resourceResults=resourcesPlayer
+                  showConfirmation = showConfirmation
+                  isSuggestedContent = isSuggestedContent
+                  class=class
+                }}
+            {{else}}
+              {{player/gru-diagnostic-player
+                mapLocation = mapLocation
+                class=class
+                course=course
+                isDiagnosticEnd=isDiagnosticEnd
+              }}
+            {{/unless}}
+          </div>
+          <div class="right-penal {{if resource 'show' 'hide'}} {{if (not isLTIResourceLinkLaunch) 'not-resource-link'}}" style="{{if isOpenLeftPanal 'right-penal-div'}}">
+            {{#if resource}}
+              <div class="resources-info">
+                {{player/qz-viewer
+                    isNotIframeUrl=isNotIframeUrl
+                    collection=collection
+                    resource=resource
+                    content=content
+                    classId=classId
+                    class=class
+                    resourceResult=resourceResult
+                    role=role
+                    submitted=contextResult.submitted
+                    onSubmitQuestion="submitQuestion"
+                    isNextEnabled="isNextEnabled"
+                    courseId=course.id
+                    unit=unit
+                    lesson=lesson
+                    dcaId = caContentId
+                    isStudyPlayer = isStudyPlayer
+                    source=source
+                    onTriggerSubEvent="onTriggerSubEvent"
+                    sessionId = sessionId
+                  }}
+              </div>
+            {{/if}}
+
+          <div class="resource-content {{if (or isShowRelatedContentContainer isShowFeedbackContainer isShowNarrationContainer isShowStudyTimer) 'resource-back-drop'}}">
+              <div class="first-coulm">
+                {{#if resource}}
+                  {{#if (and isShowRelatedContentContainer suggestedResources)}}
+                    {{player/related-content
+                      suggestedResources=suggestedResources
+                      classId=classId courseId=course.id
+                      isIframeMode=isIframeMode
+                      showRelatedContentContainer="showRelatedContentContainer"
+                    }}
+                  {{/if}}
+                {{/if}}
+                <div class="study-timer-widget  {{if isShowStudyTimer 'show' 'hide'}}">
+                  {{#if (and isStudent (not isPublicClass) isShowStudyTimerWidget)}}
+                    {{gru-study-timer
+                      studentTimespentData = studentTimespentData
+                      isPlayer = true
+                      collection=collection
+                      intervalObject = intervalObject
+                      isShowPullup = true
+                      showTimer = "showTimer"
+                     }}
+                  {{/if}}
+                </div>
+              </div>
+              <div class="second-coulm">
+                {{#if resource}}
+                  <div class= "{{if (and isShowFeedbackContainer isShowActivityFeedback feedbackCategory) 'isShowFeedback' 'isHideFeedback'}}">
+                    {{player/qz-activity-feedback
+                       feedbackContent=resource
+                       feedbackCategoryLists=feedbackCategory
+                       categoryLists = userCategoryFeedback
+                       onChangeEmotion="changeEmotion"
+                       submitted=contextResult.submitted
+                       isShowFeedback = isShowFeedback
+                       format = format
+                       ratingScore=resourceResult.reaction
+                       isAnonymous=isAnonymous
+                       showFeedbackContainer="showFeedbackContainer"
+                       attemptData = attemptData
+                    }}
+                    </div>
+                  {{#if (and isShowNarrationContainer resource.isResource)}}
+                    <div class="player-narration resource-child">
+                        <div aria-haspopup="false" class="narration-pullup">
+                          <div class="pullup">
+                            <div class="heading">
+                              <div class="title">
+                                {{t 'common.instructions'}}
+                              </div>
+                              <div class="close-icon" {{action "showNarrationContainer"}}>
+                                {{gru-icon name="close"}}
+                              </div>
+                            </div>
+                            <div class="narration-body">
+                              {{#if narrationValue.narration}}
+                                <div class="description">{{safe-html narrationValue.narration}}</div>
+                              {{else}}
+                                <div class="description">{{t "common.no-informaton"}}</div>
+                              {{/if}}
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  {{/if}}
+                {{/if}}
+              </div>
+          </div>
+        </div>
+        {{#if showFinishConfirmation}}
+          <div class="player-backdrop-close"></div>
+          {{player/qz-submit-confirmation onConfirmFinish='finishCollection' onCancelFinish='resumeCollection'}}
+        {{/if}}
+      {{else}}
+        {{! TODO add the not found component here}}
+      {{/if}}
+    </div>
+  </div>
+
+{{/if}}
+
+{{player/qz-player-footer
+      resource=resource
+      isNavigationDisabled=isNavigationDisabled
+      isTeacher=isTeacher
+      collection=collection
+      unit=unit
+      lesson=lesson
+      classId=classId
+      course=course
+      resourceResults=resourcesPlayer
+      selectedResourceId=resourceId
+      showFeedback=showFeedback
+      ratingScore=resourceResult.reaction
+      readOnly=contextResult.submitted
+      onFinishCollection="submitAll"
+      showFinishConfirmation=showFinishConfirmation
+      onItemSelected="selectNavigatorItem"
+      showPrevious=showPrevious
+      showNext=showNext
+      onPreviousResource="previousResource"
+      onNextResource="nextResource"
+      isNextEnabled=isNextEnabled
+      isFullScreen=isFullScreen
+      isStudyPlayer=isStudyPlayer
+      isIframeMode=isIframeMode
+      isShowFeedback = isShowFeedback
+
+      showConfirmation= showConfirmation
+      isStatusDone=isStatusDone
+      attempts=attempts
+      lessonList=lessonList
+      unitList=unitList
+      onStartPlayer='openPlayer'
+      onPlayNext="onPlayNext"
+      onEmptyNextPlay="onEmptyNextPlay"
+      isCollection = isCollection
+      isStudent=isStudent
+      isPublicClass=isPublicClass
+      isShowStudyTimerWidget=isShowStudyTimerWidget
+      showTimer = "showTimer"
+      showRelatedContentContainer="showRelatedContentContainer"
+      showNarrationContainer="showNarrationContainer"
+      showFeedbackContainer="showFeedbackContainer"
+      suggestedResources = suggestedResources
+      isShowActivityFeedback = isShowActivityFeedback
+      isOpenLeftPanal = isOpenLeftPanal
+      feedbackCategory = feedbackCategory
+      showFinishConfirmation = showFinishConfirmation
+      isShowStudyTimer = isShowStudyTimer
+      isShowNarrationContainer = isShowNarrationContainer
+      isShowFeedbackContainer = isShowFeedbackContainer
+      isShowRelatedContentContainer = isShowRelatedContentContainer
+      onDiagnosticNext="onDiagnosticNext"
+      diagnosticActive=diagnosticActive
+      isDiagnosticEnd=isDiagnosticEnd
+    }}

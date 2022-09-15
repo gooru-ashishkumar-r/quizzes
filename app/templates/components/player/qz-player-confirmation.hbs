@@ -1,0 +1,30 @@
+<div class="player-confirmation-panel {{if isOpenLeftPanal 'open-left-panal'}}">
+  <div class="left-panel-container {{if isOpenLeftPanal 'show' 'hide'}}">
+    {{#if attemptData}}
+      {{player/gru-collection-summary
+        collection = collection
+        isCollection = isCollectionConfirmation
+        attemptData = attemptData
+        lesson = lesson
+        context = context
+        noMoreAttempts = noMoreAttempts
+        notCheckAttempts = notCheckAttempts
+        unlimited = unlimited
+        attemptsLeft = attemptsLeft
+        showConfirmation = showConfirmation
+        isSuggestedContent = isSuggestedContent
+      }}
+    {{/if}}
+  </div>
+  <div class="right-penal-container">
+    <div class="resource-content {{if isShowStudyTimer 'resource-back-drop'}}">
+      {{#if (and isShowStudyTimer isStudent (not isPublicClass) isShowStudyTimerWidget )}}
+        {{gru-study-timer
+          studentTimespentData = studentTimespentData
+          showTimer = "showTimer"
+          isShowPullup = true
+         }}
+      {{/if}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Quizzes</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <link href='https://www.gooru.org/css?family=Lato:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link href="https://www.gooru.org/icon?family=Material+Icons" rel="stylesheet">
+
+
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="assets/vendor.css">
+  <link rel="stylesheet" href="assets/dummy.css">
+</head>
+<body>
+<script src="assets/vendor.js"></script>
+<script src="assets/dummy.js"></script>
+
+<script type="text/javascript">
+  (function () {
+    jQuery(document).ready(function () {
+      var emberApp = window['QuizzesWebApp'];
+      emberApp.start({
+        transition: [ 'assignments','profile-id',{queryParams:{isTeacher:true}}],
+        properties: {
+          token: localStorage.getItem('token'),
+          cdnURL: localStorage.getItem('cdnURL'),
+          playerURL:'player-embedded.html?context-id={context-id}&type=assessment',
+          realTimeURL:'real-time-embedded.html?context-id={context-id}&type=assessment',
+          students: [{
+              id:'student-1',
+              firstName:'Anaí',
+              lastName:'Arroyo',
+              username:'anaiarroyo',
+              email:'emailstudent-1@gmail.com'
+            },{
+              id:'student-2',
+              firstName:'Melany',
+              lastName:'Delgado',
+              username:'melanydelgado',
+              email:'emailstudent-2@gmail.com'
+            },{
+              id:'student-3',
+              firstName:'Martin',
+              lastName:'Mendez',
+              username:'martinmendez',
+              email:'emailstudent-3@gmail.com'
+            },{
+              id:'student-4',
+              firstName:'Jeffrey',
+              lastName:'Bermudez',
+              username:'jeffreybermudez',
+              email:'emailstudent-4@gmail.com'
+            },{
+              id:'student-5',
+              firstName:'Carlos',
+              lastName:'Villalta',
+              username:'carlosvillalta',
+              email:'emailstudent-5@gmail.com'
+            },{
+              id:'student-6',
+              firstName:'Miguel',
+              lastName:'Zumbado',
+              username:'miguelzumbado',
+              email:'emailstudent-6@gmail.com'
+            },{
+              id:'student-7',
+              firstName:'Fabian',
+              lastName:'Perez',
+              username:'fabianperez',
+              email:'emailstudent-7@gmail.com'
+            },{
+              id:'student-8',
+              firstName:'Javier',
+              lastName:'Perez',
+              username:'javierperez',
+              email:'emailstudent-8@gmail.com'
+            },{
+              id:'student-9',
+              firstName:'Jennifer',
+              lastName:'Ajoy',
+              username:'jenniferajoy',
+              email:'emailstudent-9@gmail.com'
+            },{
+              id:'student-10',
+              firstName:'Alejandro',
+              lastName:'Bonilla',
+              username:'alejandrobonilla',
+              email:'emailstudent-10@gmail.com'
+            },{
+              id:'student-11',
+              firstName:'David',
+              lastName:'Artavia',
+              username:'davidartavia',
+              email:'emailstudent-11@gmail.com'}
+          ],
+          context: {
+            classId:'class-id'
+          }
+        }
+      });
+    });
+  })(); // call anonymous function
+</script>
+<div id="quizzes-application-container" style="height:100vh"></div>
+</body>
+</html>

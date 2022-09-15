@@ -1,0 +1,106 @@
+.reports.class-assessment.qz-question-performance {
+  .chart {
+    height: 28px;
+    vertical-align: middle;
+    float: $tab-float-dir;
+    width: 84%;
+    margin: 0 1% 5% 0;
+    &.anonymous {
+      /** this is a quick fix for a demo, implemenation may change once the final mock is provided **/
+      width: 78%;
+    }
+  }
+  .overall-completion {
+    color: $white;
+    font-weight: bold;
+    float: $menu-float-dir;
+    &.anonymous {
+      /** this is a quick fix for a demo, implemenation may change once the final mock is provided **/
+      font-size: $font-size-anonymous;
+      margin-top: -18px;
+    }
+  }
+
+  .panel-answer {
+    clear: both;
+    .panel-heading-anonymous {
+      background-color: $blue-400;
+    }
+
+    &.anonymous {
+      /** this is a quick fix for a demo, implemenation may change once the final mock is provided **/
+      font-size: $font-size-anonymous;
+
+      .answer-chart {
+        width: 75%;
+      }
+
+      .qz-single-choice,
+      .qz-true-false {
+        i {
+          margin-top: 30px;
+        }
+      }
+      .qz-multiple-answer {
+        ul li span.column {
+          width: 60px;
+        }
+      }
+      .qz-hot-text-highlight p {
+        line-height: 65px;
+      }
+      .qz-hs-image ul li span {
+        width: 93px;
+        height: 93px;
+        &.selected {
+          width: 100px;
+          height: 100px;
+        }
+      }
+    }
+    .panel-blue {
+      background-color: $blue-400 !important;
+    }
+  }
+
+  .answers-wrapper {
+    padding: 10px;
+    > .answer {
+      width: 100%;
+      margin: 1% 2% 2% 0;
+    }
+    .students {
+      width: 100%;
+      margin: 1% 2% 8% 0;
+      .label-box {
+        margin: 0 5px 5px 0;
+        width: 31%;
+        display: inline-block;
+        .label {
+          background-color: $dark-300;
+          padding: 5px;
+          font-size: $font-size-small;
+          border-radius: 2px;
+          font-weight: normal;
+        }
+      }
+    }
+    .answer-chart {
+      height: 25px;
+      width: 85%;
+      display: inline-block;
+      .gru-x-bar-chart {
+        background-color: $dark-500;
+      }
+    }
+    .answer-percentage {
+      float: $menu-float-dir;
+      &.success {
+        color: $green-400;
+      }
+      &.danger {
+        color: $red-400;
+      }
+    }
+  }
+}

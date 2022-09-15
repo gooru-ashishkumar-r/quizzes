@@ -1,0 +1,23 @@
+.qz-emotion-picker {
+  /* mobile view */
+  @media only screen and (max-width: $screen-sm - 1) {
+    .emotion-picker {
+      .emotions-list {
+        display: none;
+        position: absolute;
+        bottom: 50px;
+        background-color: $white;
+        width: 50px;
+
+        li {
+          display: block;
+          padding: 5%;
+        }
+      }
+
+      .reaction-sm {
+        display: block;
+      }
+    }
+  }
+}

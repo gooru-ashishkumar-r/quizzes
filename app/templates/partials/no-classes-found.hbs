@@ -1,0 +1,44 @@
+<div class="no-classes-found">
+    <div class="teacher-toolkit">
+        <div class="panel panel-default ">
+            <div class="panel-body">
+                <p>{{t "home.no-classes-found.teacher-toolkit.title"}}</p>
+                <div><span>{{t "home.no-classes-found.teacher-toolkit.description"}}</span></div>
+                <a href="{{toolkitSiteUrl}}" class="btn btn-info" target="_blank">{{t "home.no-classes-found.teacher-toolkit.button-text"}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="featured-courses">
+        <div class="panel panel-default ">
+            <div class="panel-body">
+                <p>{{t "home.no-classes-found.featured-courses.title"}}</p>
+                <div><span>{{t "home.no-classes-found.featured-courses.description"}}</span></div>
+              {{#link-to 'featured' class="btn btn-info" tagName='button'}}
+                {{t "home.no-classes-found.featured-courses.button-text"}}
+              {{/link-to}}
+            </div>
+        </div>
+    </div>
+    <div class="join-class">
+        <div class="panel panel-default ">
+            <div class="panel-body">
+                <p>{{t "home.no-classes-found.join-class.title"}}</p>
+                <div><span>{{t "home.no-classes-found.join-class.description"}}</span></div>
+              {{#link-to 'content.classes.join' class="btn btn-info" tagName='button'}}
+                {{t "home.no-classes-found.join-class.button-text"}}
+              {{/link-to}}
+            </div>
+        </div>
+    </div>
+    <div class="create-class">
+        <div class="panel panel-default ">
+            <div class="panel-body">
+                <p>{{t "home.no-classes-found.create-class.title"}}</p>
+                <div><span>{{t "home.no-classes-found.create-class.description"}}</span></div>
+              {{#link-to 'content.classes.create' class="btn btn-info" tagName='button'}}
+                {{t "home.no-classes-found.create-class.button-text"}}
+              {{/link-to}}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+.class-assessment {
+  //temporal
+  .navigation {
+    width: 100%;
+    height: 55px;
+    background-color: $blue-a9;
+    float: $tab-float-dir;
+    display: block;
+    @media (min-width: $screen-xs) {
+      height: 700px;
+      width: 20%;
+    }
+  }
+
+  .results {
+    width: 80%;
+    float: $tab-float-dir;
+    padding: 0 5px;
+    background-color: $light-100;
+    @media (min-width: $screen-lg-min) {
+      width: 100%;
+      padding: 0 50px;
+    }
+  }
+}

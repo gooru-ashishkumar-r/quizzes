@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 113 111" style="enable-background:new 0 0 113 111;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#535E67;}
+	.st1{fill:#E3E5EA;}
+	.st2{fill:none;stroke:#535E67;stroke-width:2;stroke-linejoin:round;}
+	.st3{fill:none;stroke:#535E67;stroke-width:2;stroke-linejoin:round;stroke-dasharray:1.9552,0.9776;}
+	.st4{fill:none;stroke:#535E67;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st5{fill:#E86F6D;}
+	.st6{fill:none;stroke:#E05552;stroke-width:2;stroke-linejoin:round;}
+	.st7{fill:none;stroke:#E05552;stroke-width:2;stroke-linejoin:round;stroke-dasharray:1.9518,0.9759;}
+	.st8{fill:none;stroke:#535E67;stroke-width:2;stroke-linejoin:round;stroke-dasharray:2.1159,1.058;}
+	.st9{fill:none;stroke:#E05552;stroke-width:2;stroke-linejoin:round;stroke-dasharray:1.876,0.938;}
+	.st10{fill:none;stroke:#E05552;stroke-width:2;stroke-linejoin:round;stroke-dasharray:1.5266,0.7633;}
+	.st11{fill:none;stroke:#535E67;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st12{fill:none;}
+</style>
+<g>
+	<g>
+		<rect x="42.1" y="43.5" class="st1" width="29.4" height="29.4"/>
+		<g>
+			<polyline class="st2" points="42.1,71.8 42.1,72.8 43.1,72.8 			"/>
+			<line class="st3" x1="44.1" y1="72.8" x2="70" y2="72.8"/>
+			<polyline class="st2" points="70.5,72.8 71.5,72.8 71.5,71.8 			"/>
+			<line class="st3" x1="71.5" y1="70.9" x2="71.5" y2="44.9"/>
+			<polyline class="st2" points="71.5,44.5 71.5,43.5 70.5,43.5 			"/>
+			<line class="st3" x1="69.5" y1="43.5" x2="43.6" y2="43.5"/>
+			<polyline class="st2" points="43.1,43.5 42.1,43.5 42.1,44.5 			"/>
+			<line class="st3" x1="42.1" y1="45.4" x2="42.1" y2="71.3"/>
+		</g>
+	</g>
+	<path class="st4" d="M42.1,32.8h29.4H42.1z"/>
+</g>
+</svg>

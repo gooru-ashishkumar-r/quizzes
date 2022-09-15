@@ -1,0 +1,25 @@
+<div class="form-group {{if showClearButton 'has-feedback' ''}}">
+  {{input type=type
+    value=rawInputValue
+    disabled=disabled
+    placeholder=placeholder
+    class="form-control" name=valuePath
+    key-press="inputTyping"
+    enter="enterPressed"
+    focus-out="inputValueChange"
+    autofocus=autofocus
+    maxlength=maxLength
+  }}
+  {{#if showClearButton}}
+  <span class="clear form-control-feedback" {{action 'clearContent'}}>
+    {{gru-icon name="cancel"}}
+  </span>
+  {{/if}}
+  <div class="error-messages">
+    {{#if showMessage}}
+      <span class="error">
+        {{{v-get model valuePath 'message'}}}
+      </span>
+    {{/if}}
+  </div>
+</div>

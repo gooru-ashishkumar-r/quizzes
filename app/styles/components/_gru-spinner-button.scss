@@ -1,0 +1,36 @@
+.gru-spinner-button {
+  display: inline-block;
+  .has-spinner {
+    cursor: progress;
+    width: 100%;
+    padding: 6px 16px !important;
+    .spinner {
+      $duration: 1.4s;
+      display: inline-flex !important;
+      vertical-align: middle;
+      width: auto;
+      animation: rotator $duration linear infinite;
+      -webkit-animation: rotator $duration linear infinite;
+      i {
+        position: relative;
+        margin: 0;
+      }
+    }
+  }
+  @keyframes rotator {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes rotator {
+    from {
+      -webkit-transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+}

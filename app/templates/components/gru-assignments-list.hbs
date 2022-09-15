@@ -1,0 +1,31 @@
+<div class="row header">
+    <div class="col-md-6 col-sm-6 col-xs-12 search">
+        <div class="search-navigation pull-left">
+            <div class="search-keyword">
+                    <span class="search-icon">
+                      {{gru-icon name='search'}}
+                    </span>
+                <input type="text" class="search-box" placeholder={{t 'assignments-view.search'}}/>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-12 views out-of-scope">
+        <div class="options">
+            <button class="btn btn-info standards-btn">
+              {{t 'assignments-view.standards'}}
+            </button>
+            <div class="btn-group">
+                <button class="btn btn-default btn-info"><span>{{gru-icon name='view_module'}}</span></button>
+                <button class="btn btn-default btn-info"><span>{{gru-icon name='view_list'}}</span></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="assignments-list-container">
+    <div class="assignments-list">
+      {{gru-assignments-table assignments=sortedAssignments onSelectAssignment='selectAssignment' sortBy=sortBy reverseSort=reverseSort isTeacher=isTeacher studentList=studentList collection=collection  onUpdateAssignment='updateAssignment' realTimeURL=realTimeURL playerURL=playerURL}}
+    </div>
+    <div class="assignments-info {{if selectedAssignment 'show' 'hide'}} hidden-xs">
+      {{gru-assignments-detail assignment=selectedAssignment isTeacher=isTeacher studentList=studentList collection=collection realTimeURL=realTimeURL playerURL=playerURL}}
+    </div>
+</div>

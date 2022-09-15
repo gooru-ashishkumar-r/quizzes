@@ -1,0 +1,102 @@
+.reports.class-assessment.qz-questions-detail {
+  padding: 12px;
+  height: 100%;
+
+  .navigation {
+    height: auto;
+    width: 100%;
+    margin: 0 auto 20px;
+    background-color: inherit;
+    padding: 0 5%;
+
+    .gru-bubbles {
+      display: inline-block;
+
+      .bubble {
+        border-width: 1px;
+        line-height: 20px;
+
+        &.selected {
+          background-color: $blue-400;
+          color: $white;
+        }
+      }
+    }
+
+    .selected-question {
+      margin-top: 5px;
+    }
+
+    .btn-results {
+      float: $menu-float-dir;
+      margin-top: 5px;
+    }
+
+    &.anonymous {
+      .gru-bubbles {
+        .bubble {
+          font-size: $font-size-h5;
+        }
+      }
+    }
+  }
+
+  .body {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    padding: 0 5%;
+
+    .panel {
+      border-radius: 4px;
+      height: 100%;
+
+      .panel-heading {
+        padding: 5px 30px;
+        font-size: $font-size-h6;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+      }
+
+      .panel-body {
+        padding: 15px 35px;
+        height: 100%;
+        overflow-y: auto;
+
+        h3 {
+          margin: 5px 0 20px;
+        }
+      }
+    }
+
+    .question-info {
+      width: 50%;
+      height: 100%;
+
+      .narration {
+        .panel-body {
+          padding: 15px 35px;
+        }
+      }
+
+      &.anonymous {
+        font-size: $font-size-anonymous;
+        line-height: 42px;
+      }
+
+      .qz-question-information {
+        height: 100%;
+      }
+    }
+
+    .question-metrics {
+      width: 50%;
+      padding: 0 0 0 20px;
+
+      .panel-body {
+        padding: 0;
+      }
+    }
+  }
+}

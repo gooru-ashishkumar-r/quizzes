@@ -1,0 +1,36 @@
+<div class="learning-target">
+  <div class="header-content" style="border-color:{{grade-color (if (gte learningTarget.mastery 0) learningTarget.mastery 'NA')}}">
+    <div class="learning-target-description">
+
+      <div class="standard-score">
+        {{#if (gte learningTarget.mastery 0)}}
+          <span class="percentage" style= {{safe-html (concat "color:" (grade-color learningTarget.mastery))}}>{{learningTarget.mastery}}%</span>
+        {{else}}
+          <div class="performance">
+            <span class="no-percentage">_</span>
+          </div>
+        {{/if}}
+      </div>
+
+      {{#if (gte learningTarget.mastery 0)}}
+        <div class="standard-tags" style= {{safe-html (concat "background-color:" (grade-color learningTarget.mastery))}}>
+          <span class="title">{{learningTarget.displayCode}}</span>
+        </div>
+      {{else}}
+        <div class="standard-tags" style="background-color:{{grade-color 'NA'}}">
+          <span class="title">{{learningTarget.displayCode}}</span>
+        </div>
+      {{/if}}
+
+      <div class="description">
+        <div class="desc-align">{{learningTarget.description}} </div>
+      </div>
+
+      <div class="questions">
+        <span> {{t 'common.questions'}} </span>
+        {{gru-bubbles bubbleOptions=bubbleQuestions onBubbleSelect='bubbleSelect'}}
+      </div>
+    </div>
+
+  </div>
+</div>

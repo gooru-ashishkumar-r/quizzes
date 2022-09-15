@@ -1,0 +1,40 @@
+.reports.assessment.questions.qz-hs-image {
+  $image-side: 73px;
+  ul {
+    padding-left: 0px;
+    li {
+      list-style: none;
+      margin: 0 5px 5px 0;
+      display: inline-block;
+      text-align: center;
+      span {
+        width: $image-side;
+        height: $image-side;
+        display: block;
+        img {
+          border: 0;
+          vertical-align: top;
+          padding: 4px;
+          width: auto;
+          max-height: 100%;
+          background-color: $white;
+        }
+      }
+      span.selected {
+        border: 2px solid;
+        width: $image-side + 4px;
+        height: $image-side + 4px;
+        border-radius: 4px;
+      }
+      span.selected.correct {
+        border-color: $brand-success;
+      }
+      span.selected.incorrect {
+        border-color: $brand-incorrect;
+      }
+      span.selected.anonymous {
+        border-color: $brand-anonymous;
+      }
+    }
+  }
+}

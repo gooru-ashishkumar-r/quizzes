@@ -1,0 +1,51 @@
+<div class="controller reports collection">
+  <div class="header {{if anonymous 'anonymous'}}">
+    {{#if anonymous}}
+      <div {{action "closeWindow"}} class="back">
+        <div class='close-icon-1'>{{gru-icon name='close'}}</div>
+      </div>
+    {{else}}
+      <span class='back' {{action "goBack"}}>{{gru-icon name='arrow_back'}}</span>
+    {{/if}}
+    <div class="title">
+      <i class="on-air">{{t 'common.launch-on-air'}}</i>
+      <span>{{reportData.collection.title}}</span>
+    </div>
+    <div class='filler'> </div>
+    <div class='right'>
+      {{#if anonymous}}
+      {{else}}
+        <div {{action "goBack"}} class="back hidden">
+          <div class='close-txt'>{{t "common.back"}}</div>
+          <div class='close-icon-1'>{{gru-icon name='close'}}</div>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+  <div class='head-menu'>
+    <div> {{#if anonymous}}
+        <div class="mode">
+          <div class='anon-icon'>{{gru-icon name='visibility_off'}}</div>
+          <div class="anon-title ellipsis">{{t "common.anonymous_mode"}}</div>
+        </div>
+      {{else}}
+        <div class="anon-actions" {{action "launchAnonymous"}}>
+          <div class='anon-icon'> {{gru-icon name='visibility_off'}}</div>
+          <div class="anon-title ellipsis">{{t "common.launch-anonymous"}}</div>
+        </div>
+      {{/if}}
+    </div>
+    <div> </div>
+    {{gru-view-layout-picker onViewLayoutChange='changeView'}}
+  </div>
+  <div class="controller class-assessment">
+    {{reports/qz-class-assessment-report
+      reportData=reportData
+      anonymous=anonymous
+      isRealTime=isRealTime
+      showAttempts=showAttempts
+      isTableView = layoutView
+      class = class
+    }}
+  </div>
+</div>

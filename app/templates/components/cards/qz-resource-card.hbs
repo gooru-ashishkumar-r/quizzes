@@ -1,0 +1,91 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="header">
+      <div class="image">
+        {{#if isLinkOut}}
+          <i class="{{resource.format}}-icon"></i>
+        {{else}}
+          {{#if editEnabled}}
+            {{#link-to (if isQuestion 'content.questions.edit' 'content.resources.edit') resource.id}}
+              <i class="{{resource.format}}-icon"></i>
+            {{/link-to}}
+          {{else}}
+            {{#link-to (if isQuestion 'content.questions.play' 'content.resources.play') resource.id}}
+              <i class="{{resource.format}}-icon"></i>
+            {{/link-to}}
+          {{/if}}
+        {{/if}}
+      </div>
+      <div class="resource-info">
+        <div class="title-section">
+          {{#if isLinkOut}}
+            <h6 class="title truncate">{{{resource.title}}}</h6>
+          {{else}}
+            {{#if editEnabled}}
+              {{#link-to (if isQuestion 'content.questions.edit' 'content.resources.edit') resource.id tagName="h6" class="title truncate" alt=resource.title}}{{{resource.title}}}{{/link-to}}
+            {{else}}
+              {{#link-to (if isQuestion 'content.questions.play' 'content.resources.play') resource.id tagName="h6" class="title truncate" alt=resource.title}}{{{resource.title}}}{{/link-to}}
+            {{/if}}
+          {{/if}}
+          {{#unless publishVisible}}
+            {{#if resource.isPublished}}
+              <div class="publish-icon" title="{{t 'common.published-tooltip'}}" data-toggle="tooltip" data-placement="top"></div>
+            {{/if}}
+          {{/unless}}
+        </div>
+        {{#if isQuestion}}
+          <div class="question-type">
+            <span>{{t (concat "common.question-type." resource.type)}}</span>
+          </div>
+        {{else}}
+          <div class="resource-type">
+            <span>{{t (concat "qz-player.resource-format." resource.format)}}</span>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    {{#if tags.length}}
+      {{taxonomy/gru-taxonomy-tag-list tags=tags tagsVisible=1 isInCard=true}}
+    {{/if}}
+    <div class="publisher">
+      {{#if showPublisher}}
+        <b class="publisher-name">{{resource.publisher}}</b>
+      {{else}}
+        <img class="img-responsive" src="{{ resource.owner.avatarUrl }}" alt="avatarUrl">
+        <span class="owner">{{#link-to "library-search" (query-params type="my-content" profileId=resource.owner.id isBack=true)  class="pointer"}}
+            {{resource.owner.username}}{{/link-to}}</span>
+      {{/if}}
+    </div>
+    <div class="description">
+      <p class="truncate">{{gru-math-text text=(if resource.isFIB resource.fibText resource.description)}}</p>
+    </div>
+  </div>
+  <div class="panel-footer">
+    {{#if isLinkOut}}
+    {{else}}
+      <div class="buttons hidden">
+        <a class="play-btn btn btn-success btn-sm" href="{{{url}}}" target="_blank">{{t "common.play"}}</a>
+      </div>
+      <div class="buttons">
+        {{#if editEnabled }}
+          <button class="edit-btn btn btn-success btn-sm" {{action "editResource"}}>{{t "common.edit"}}</button>
+          <button class="play-btn btn btn-success btn-sm" {{action "playResource"}}>{{t "common.play"}}</button>
+        {{/if}}
+        {{#if isQuestion}}
+          {{#if remixEnabled}}
+            <button class="copy-btn btn btn-success btn-sm" {{action "remixQuestion"}}>{{t "common.remix"}}</button>
+          {{/if}}
+        {{/if}}
+      </div>
+      {{#unless publishVisible}}
+        <div class="visibility" title="{{t 'common.visibility-tooltip'}}" data-toggle="tooltip">
+          {{#unless resource.isVisibleOnProfile }}
+            {{gru-icon name="visibility_off" class='pull-right'}}
+          {{/unless}}
+        </div>
+      {{/unless}}
+    {{/if}}
+  </div>
+</div>

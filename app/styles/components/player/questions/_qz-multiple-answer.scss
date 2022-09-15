@@ -1,0 +1,17 @@
+.qz-multiple-answer {
+  .answer-choices {
+    .answer-text {
+      @include flexbox;
+      > * {
+        @include inline-flex;
+        margin-right: 0.5em;
+      }
+    }
+    .table > thead > tr > th {
+      border-bottom: 1px solid $table-border-color;
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+<div class="standard-dropdown">
+  {{#app-dropdown
+    split=false
+    showSelection=false
+    onChangeAction='onStandardSelected'
+    placeholder=(t "standard-dropdown.placeholder")
+    btn-group-size=btn-group-size
+    items=dropdownItems as |onItemSelected|}}
+    <ul class="dropdown-menu">
+      {{#each dropdownItems as |item|}}
+        {{#if item.disabled}}
+          <li class="disabled">
+            <a class="item">
+              <strong>{{ item.label }}</strong>
+              <p>{{ item.data.title }}</p>
+            </a>
+          </li>
+        {{else}}
+          {{#if item.selected}}
+            <li class="selected">
+              <a class="item" href="#" {{action onItemSelected item }}>
+                <strong>{{ item.label }}</strong>
+                <p>{{ item.data.title }}</p>
+              </a>
+            </li>
+          {{else}}
+            <li>
+              <a class="item" href="#" {{action onItemSelected item }}>
+                <strong>{{ item.label }}</strong>
+                <p>{{ item.data.title }}</p>
+              </a>
+            </li>
+          {{/if}}
+        {{/if}}
+      {{/each}}
+    </ul>
+  {{/app-dropdown}}
+</div>

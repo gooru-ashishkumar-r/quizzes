@@ -1,0 +1,11 @@
+<ul class="hs-images">
+  {{#each answers as |answer index|}}
+    <li>
+      {{#if answer.selected}}
+        <span class="selected {{{answer.class}}}"><img class="img-thumbnail" src="{{{answer.image}}}" alt="thumbnail"></span>
+      {{else}}
+        <span class="no-selected"><img class="img-thumbnail" src="{{{answer.image}}}" alt="thumbnail"></span>
+      {{/if}}
+   </li>
+  {{/each}}
+</ul>

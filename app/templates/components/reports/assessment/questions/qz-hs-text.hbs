@@ -1,0 +1,13 @@
+<ul class="hs-texts">
+  {{#each answers as |answer index|}}
+    {{#if answer.selected}}
+    <li class="selected {{{answer.class}}}">
+        <span class="text">{{{gru-math-text text=answer.text}}}</span>
+    </li>
+    {{else}}
+      <li>
+        <span class="text">{{{gru-math-text text=answer.text}}}</span>
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>

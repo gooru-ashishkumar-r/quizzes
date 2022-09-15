@@ -1,0 +1,48 @@
+.gru-bubbles {
+  .bubble {
+    width: 23px;
+    height: 23px;
+    border-radius: 3px;
+    border: 2px solid $gray-light;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 18px;
+  }
+
+  .incorrect {
+    border-color: $brand-incorrect;
+    background-color: $brand-incorrect;
+  }
+
+  .correct {
+    border-color: $brand-success;
+    background-color: $brand-success;
+  }
+
+  .skipped {
+    border-color: $light-200;
+    background-color: $light-200;
+  }
+
+  .started {
+    border-color: $blue-400;
+    background-color: $blue-400;
+  }
+
+  .bubbles-list {
+    list-style: none;
+    padding: 10px 0 0;
+    margin: 0;
+    display: inline-block;
+    li {
+      display: inline-block;
+      padding: 0;
+      margin: 0 0 5px;
+    }
+
+    a {
+      color: $white;
+    }
+  }
+}

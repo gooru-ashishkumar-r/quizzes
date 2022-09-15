@@ -1,0 +1,8 @@
+<div class="question-information out-of-scope">
+    <div class="btn-group">
+        <button role="button" class="hint btn {{if isHintButtonDisabled 'btn-info' 'btn-primary'}}" disabled={{isHintButtonDisabled}} {{action 'showHint'}}><span>{{gru-icon name='highlight'}}{{t "common.hints"}}</span>
+            ({{t "common.remaining" number=availableHints}})
+        </button>
+        <button role="button" class="explanation btn {{if isExplanationButtonDisabled 'btn-info' 'btn-primary'}}" disabled={{isExplanationButtonDisabled}} {{action 'showExplanation'}}><span>{{gru-icon name='directions'}} {{t "common.explanation"}}</span></button>
+    </div>
+</div>

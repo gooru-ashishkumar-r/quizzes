@@ -1,0 +1,158 @@
+.edit_assessment {
+  overflow: hidden;
+  height: 100%;
+  > .ember-view,
+  .quizzes,
+  .app-container {
+    height: 100%;
+  }
+  .app-container {
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+}
+.qz-assessment {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  @include flexbox();
+  @include flex-direction(column);
+  > section {
+    padding-left: 5%;
+    padding-right: 5%;
+    overflow: auto;
+
+    .panel {
+      border-radius: 6px;
+      margin-bottom: 30px;
+      .panel-heading {
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
+        h3 {
+          color: $gray;
+          display: inline-block;
+        }
+        div.border-bottom {
+          padding-bottom: 15px;
+          border-bottom: 1px solid $gray-lighter;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    h2 {
+      display: inline-block;
+      font-size: $font-size-h4;
+      padding: 0;
+      margin: 0;
+      line-height: 34px; // height of the buttons
+    }
+
+    h3 {
+      font-size: $font-size-large;
+    }
+
+    .header {
+      border-bottom: 1px solid $gray-light;
+      margin-bottom: 25px;
+      padding: 40px 0 20px;
+    }
+
+    .panel {
+      .panel-heading,
+      .panel-body {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
+      .panel-heading {
+        background-color: $white;
+        padding-top: 10px;
+        padding-bottom: 0;
+      }
+    }
+  }
+  #prompt {
+    .panel-borderless {
+      border: 0;
+      box-shadow: none;
+      .panel-heading {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+    .math-editor {
+      margin-top: 25px;
+    }
+  }
+  #information {
+    height: 100%;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    .content {
+      @include flexbox;
+      .gru-image {
+        float: $tab-float-dir;
+        margin-right: 20px;
+      }
+      .panel.information {
+        @include flex(1);
+        border-radius: 6px;
+        .title {
+          .form-group {
+            width: 300px;
+          }
+        }
+        .learning-objective {
+          .form-group {
+            width: 700px;
+          }
+        }
+      }
+    }
+  }
+  #rubric {
+    .overall-score {
+      .feedback {
+        label {
+          @include flexbox;
+          @include align-items(center);
+          .feedbackGuidance {
+            width: 88%;
+          }
+          textarea {
+            margin-left: 15px;
+            font-size: $font-size-base;
+          }
+        }
+      }
+      .total-points {
+        display: inline-block;
+        .label-pts {
+          margin-left: 10px;
+        }
+      }
+      .required-feedback {
+        float: $menu-float-dir;
+        @include flexbox;
+        .check_box {
+          color: $blue-500;
+        }
+      }
+    }
+    .add-category {
+      margin-bottom: 15px;
+      display: block;
+      border: 2px dashed $gray-light;
+      padding: 20px;
+      border-radius: 6px;
+      font-size: 17px;
+      color: $gray;
+      text-align: center;
+    }
+    .add-prefix:before {
+      content: "+ ";
+    }
+  }
+}

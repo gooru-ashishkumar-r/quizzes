@@ -1,0 +1,33 @@
+<div class="qz-resource-viewer-panel linkout  {{if resource.hasNarration 'has-narration'}}">
+  <div class="panel panel-default not-iframe linkout">
+    <div class="panel-header hidden">
+      <p class="title">
+        {{t 'qz-viewer.not-iframe-url.header_1'}}<br> {{t 'qz-viewer.not-iframe-url.header_2'}}
+      </p>
+    </div>
+    <div class="panel-body">
+      {{cards/qz-resource-card resource=resource editEnabled=false isLinkOut=true startTimer=startTimer}}
+      <div class="external-browser">
+        <img class="external-browser-img" src='/assets/quizzes-addon/quizzes/link-out@2x.png' alt="link out">
+        <div class="msg-container">
+          <div class='external-res-msg1'>{{t 'qz-viewer.not-iframe-url.header_3'}}</div>
+          <div class='external-res-msg2'>{{t 'qz-viewer.not-iframe-url.header_4'}}</div>
+          <div class='external-res-msg3'>{{t 'qz-viewer.not-iframe-url.header_5'}}</div>
+          <a class="play-btn btn btn-dark btn-lg" href="{{{url}}}" target="_blank">{{t 'qz-viewer.not-iframe-url.launch'}}</a>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer hidden">
+      <p class="title">
+        {{t 'qz-viewer.not-iframe-url.footer_1'}}
+      </p>
+      <p class="description">
+        {{t 'qz-viewer.not-iframe-url.footer_2'}}<br> {{t 'qz-viewer.not-iframe-url.footer_3'}}
+        <br> {{t 'qz-viewer.not-iframe-url.footer_4'}}
+      </p>
+    </div>
+  </div>
+</div>
+{{#if sendEvents}}
+  <button class="btn btn-primary btn-next" disabled={{isNextDisabled}} {{action 'next'}}><span>{{t "common.next"}}</span></button>
+{{/if}}

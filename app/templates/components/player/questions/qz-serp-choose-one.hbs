@@ -1,0 +1,18 @@
+<div class="qz-serp-choose-one-container">
+    <div class="qz-choose-one-question-text">
+        {{{gru-math-text text=baseResource.questionText}}}
+    </div>
+    {{player/questions/qz-single-choice
+      instructionsActionTextKey=instructionsActionTextKey
+      question=question
+      readOnly=readOnly
+      userAnswer=userAnswer
+      onAnswerChanged="onAnswerChanged"
+      onAnswerCleared="onAnswerCleared"
+      onAnswerCompleted="onAnswerCompleted"
+      onAnswerLoaded="onAnswerLoaded"
+      baseResource= baseResource
+      answerDetails = answerDetails
+      isChooseOne = true
+    }}
+</div>

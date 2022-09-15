@@ -1,0 +1,155 @@
+.reports.assessment.qz-mastery .qz-learning-target {
+  .learning-target {
+    border-radius: 5px;
+    background-color: $white;
+    margin: 15px 0;
+    display: flex;
+
+    .header-content {
+      display: inline-block;
+      font-size: $font-size-h6;
+      line-height: $font-size-h6;
+      width: 100%;
+      margin: 0 0 5px;
+      border-left: 2px solid;
+
+      .score {
+        width: 61px;
+        width: 380px;
+        margin: 0 15px;
+        height: 57px;
+        border-radius: 5px;
+        color: $white;
+        display: table;
+
+        div {
+          text-align: center;
+          vertical-align: middle;
+          display: table-cell;
+        }
+      }
+
+      .learning-target-description {
+        width: 100%;
+        display: inline;
+
+        .description {
+          height: 60px;
+          float: $tab-float-dir;
+          width: 370px;
+
+          .desc-align {
+            @include ellipsis(
+              $font-size: 13px,
+              $line-height: 1.5,
+              $lines-to-show: 3
+            );
+            margin-left: 10px;
+            width: 370px;
+            position: absolute;
+          }
+        }
+        @media (max-width: $screen-xs) {
+          padding: 0 5px 0 10px;
+          width: 90%;
+        }
+
+        .standard-score {
+          float: $tab-float-dir;
+          width: 80px;
+          margin-right: 10px;
+          height: 35px;
+          text-align: center;
+          line-height: 3.8;
+
+          .performance {
+            height: 29px;
+
+            .no-percentage {
+              font-size: 35px;
+              font-weight: 600;
+              line-height: 3px;
+              color: $light-300;
+            }
+          }
+
+          .percentage {
+            font-size: 25px;
+            font-weight: 600;
+            line-height: 31px;
+          }
+        }
+      }
+
+      .questions {
+        max-width: 330px;
+        display: block;
+        float: $tab-float-dir;
+        max-width: 330px;
+        margin-left: 10px;
+        min-height: 50px;
+        border-left: 1px solid $light-400;
+        @media (min-width: $screen-xs) {
+          display: block;
+        }
+        span {
+          font-size: 13px;
+        }
+      }
+
+      .standard-tags {
+        width: 90px;
+        margin: 4px 0 0 0px;
+        height: 35px;
+        padding: 2px;
+        overflow: hidden;
+        object-fit: contain;
+        text-align: center;
+        text-overflow: ellipsis;
+        border-radius: 3px;
+        float: $tab-float-dir;
+      }
+
+      .title {
+        color: $white;
+        font-size: 12px;
+      }
+    }
+
+    .learning-target-description,
+    .questions {
+      padding: 0 10px 0 20px;
+
+      .gru-bubbles {
+        .bubbles-list {
+          flex-direction: row;
+          height: 20px;
+          padding: 0;
+          width: 270px;
+          li {
+            display: inline-block;
+            padding: 0;
+            margin: 0 4px 3px 0;
+          }
+        }
+      }
+    }
+
+    .resource-cards-section {
+      .gru-resource-result-card {
+        float: $tab-float-dir;
+        margin-top: 10px;
+        display: none;
+        @media (min-width: $screen-sm) {
+          margin-right: 10px;
+          display: block;
+        }
+
+        &:nth-child(1),
+        &:nth-child(2) {
+          display: block;
+        }
+      }
+    }
+  }
+}

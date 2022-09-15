@@ -1,0 +1,21 @@
+{
+  "users": [{
+    "first_name": "first-name",
+    "id": "profile-id-1",
+    "last_name": "last-name",
+    "username": "username",
+    "email": "e@mail.com"
+  }, {
+    "first_name": "first-name",
+    "id": "profile-id-2",
+    "last_name": "last-name",
+    "username": "username",
+    "email": "e@mail.com"
+  }, {
+    "first_name": "first-name",
+    "id": "another-profile-id",
+    "last_name": "last-name",
+    "username": "username",
+    "email": "e@mail.com"
+  }]
+}

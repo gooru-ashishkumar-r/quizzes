@@ -1,0 +1,17 @@
+.qz-fixed-footer {
+  @include flex-shrink(0);
+  width: 100%;
+  height: 60px;
+  background-color: $dark-400;
+
+  @include flexbox;
+  @include justify-content(flex-end);
+  @include align-items(center);
+  .actions {
+    display: inline-block;
+    button {
+      font-size: $font-size-h6;
+      margin-right: 6px;
+    }
+  }
+}

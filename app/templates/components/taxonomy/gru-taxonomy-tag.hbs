@@ -1,0 +1,25 @@
+{{#if model.isReadonly}}
+  <div class="content">
+    <b class="tag-label" aria-label="standardTag">{{model.data.label}}</b>
+    <span class="tag-caption">{{model.data.caption}}</span>
+  </div>
+
+  {{#if hasTooltip}}
+    <div class="tag-tooltip">
+      <span>{{model.data.title}}</span>
+    </div>
+  {{/if}}
+
+{{else}}
+  <button class="toggle" {{action 'selectTag'}}>
+    <div>
+      <b class="tag-label">{{model.data.label}}</b>
+      <span class="tag-caption">{{model.data.caption}}</span>
+    </div>
+  </button>
+{{/if}}
+
+{{#if model.isRemovable}}
+  <button class="remove" {{action 'removeTag'}}>{{gru-icon name="clear"}}</button>
+{{/if}}
+

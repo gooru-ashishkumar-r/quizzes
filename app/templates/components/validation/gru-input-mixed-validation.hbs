@@ -1,0 +1,21 @@
+<div class="form-group">
+  {{input type=type value=rawInputValue disabled=disabled placeholder=placeholder class="form-control" name=valuePath focus-out="inputValueChange" key-down="inputTyping" maxlength=maxLength}}
+  <div class="error-messages">
+    {{#if showMessage}}
+      <span class="error">
+        {{v-get model valuePath 'message'}}
+      </span>
+    {{/if}}
+  </div>
+</div>
+
+<div class="form-group">
+  {{input type="hidden" value=rawInputValueHidden disabled=disabled placeholder=placeholder class="form-control" name=valuePathHidden maxlength=maxLength}}
+    <div class="error-messages">
+      {{#if showMessageHidden}}
+          <span class="error">
+            {{v-get model valuePathHidden 'message'}}
+          </span>
+      {{/if}}
+    </div>
+</div>

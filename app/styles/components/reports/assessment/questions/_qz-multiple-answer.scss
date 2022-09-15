@@ -1,0 +1,52 @@
+.reports.assessment.questions.qz-multiple-answer {
+  ul {
+    max-width: 100%;
+    padding-left: 0px;
+    li {
+      @include flexbox;
+      @include flex-wrap(nowrap);
+      min-height: 25px;
+      max-width: 100%;
+      list-style: none;
+      position: relative;
+      padding: 5px 0;
+      border-bottom: 1px solid $lite-gray;
+      &:last-child {
+        border: none;
+      }
+      span.column {
+        @include flex-shrink(0);
+        width: 35px;
+        min-width: 35px;
+        display: inline-block;
+        text-align: center;
+      }
+      span.correct {
+        color: $brand-success;
+      }
+      span.incorrect {
+        color: $brand-incorrect;
+      }
+      span.anonymous {
+        color: $brand-anonymous;
+      }
+      span.answer-text {
+        margin-left: 0.5em;
+        display: inherit;
+        > span {
+          margin: 0 0 0 5px;
+        }
+        p {
+          display: inline-block;
+          margin: 0;
+          padding: 0;
+        }
+      }
+      &.header {
+        .column {
+          color: $gray-base;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.anonymous .reports.assessment.questions.qz-fib {
+  line-height: 42px;
+}
+.reports.assessment.questions.qz-fib {
+  span {
+    line-height: 30px;
+  }
+
+  .answer,
+  .sentence {
+    p {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .answer {
+    border-bottom: 2px solid;
+    padding: 5px;
+  }
+  .answer.correct {
+    border-bottom-color: $brand-success;
+  }
+  .answer.incorrect {
+    border-bottom-color: $brand-incorrect;
+  }
+
+  .answer.anonymous {
+    border-bottom-color: $brand-anonymous;
+  }
+}

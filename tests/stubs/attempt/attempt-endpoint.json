@@ -1,0 +1,47 @@
+[
+  {
+    "description": "Gets a student attempt ids",
+    "request": {
+      "url": "^/quizzes/api/v1/attempts/contexts/(.)+/profiles/(.)+$",
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "File not found!",
+      "file": "student-attempts-200-response.json"
+    }
+  },
+  {
+    "description": "Gets events associated to the context",
+    "request": {
+      "url": "^/quizzes/api/v1/attempts/contexts/(.)+$",
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "File not found!",
+      "file": "attempts-200-response.json"
+    }
+  },
+  {
+    "description": "Gets an attempt by id",
+    "request": {
+      "url": "^/quizzes/api/v1/attempts/(.)+$",
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "File not found!",
+      "file": "attempt-200-response.json"
+    }
+  }
+]

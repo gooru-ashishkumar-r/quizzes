@@ -1,0 +1,19 @@
+<div class="resource-card">
+    <div class="resource-container">
+        <div class="resource xs-number-{{resource.resource.sequence}}">
+            <span class="resource-number">{{resource.resource.sequence}}</span>
+            <span class="resource-text">
+                <div class="title-content">
+                  <div class="image">
+                    <i class="{{resource.resource.format}}-icon"></i>
+                  </div>
+                  <span>{{resource.resource.title}}</span>
+                 </div>
+            </span>
+        </div>
+        <div class="time-spent">
+            <span>{{t "common.timeSpent"}}</span>
+            <span>{{format-time resource.timeSpent}}</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="gru-match-question-container">
+  <div class="matching-container">
+    <div class="panel-container">
+      <div class="text-or-image">
+        {{#each leftArray as |answer index|}}
+          {{#if (eq answer.leftValueFormat 'image')}}
+            <div class="preview-image">
+              <img class="img-responsive" src="{{answer.leftValue}}">
+            </div>
+          {{else}}
+            <span class="answer-text">{{answer.leftValue}}</span>
+          {{/if}}
+        {{/each}}
+      </div>
+      <ul class="sortable {{if readOnly 'disabled'}}">
+        {{#each rightArray as |answer|}}
+          {{#if (eq answer.rightValueFormat 'image')}}
+            <li data-id="{{answer.sequence}}" class="preview-image">
+              <img class="img-responsive" src="{{answer.rightValue}}">
+            </li>
+          {{else}}
+            <li data-id="{{answer.sequence}}">
+              <div>{{{gru-math-text text=answer.rightValue}}}</div>
+            </li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>

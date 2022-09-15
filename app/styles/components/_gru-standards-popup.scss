@@ -1,0 +1,29 @@
+.gru-standards-popup {
+  .modal-header {
+    background-color: $gray;
+  }
+
+  .modal-body {
+    overflow: auto;
+    position: relative;
+    height: 300px;
+    padding-right: 120px;
+
+    ul {
+      list-style: none;
+    }
+
+    .standard-title {
+      background-color: $gray;
+      border-radius: 4px;
+      display: inline-block;
+      font-size: $font-size-xsmall;
+      span {
+        color: $white;
+      }
+    }
+    .standard-description p {
+      font-size: $font-size-small;
+    }
+  }
+}

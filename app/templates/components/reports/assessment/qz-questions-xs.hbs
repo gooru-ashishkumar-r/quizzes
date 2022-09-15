@@ -1,0 +1,26 @@
+<div class="question-card {{if showPerformance 'show-performance' 'show-correct-answer'}}">
+  <div class="question-container">
+    <div class="question xs-number-{{result.question.sequence}}">
+      <span class="question-number">{{result.question.sequence}}</span>
+      <span class="question-text">
+        {{gru-math-text text=result.question.body}}
+      </span>
+    </div>
+    <div class="answer">
+      <div class="your-answer">
+          <span>{{t "common.answer"}}</span>
+        <span>
+          {{#if result.started}}
+            {{{component (qz-question-config result.question.type 'component.answer') question=result userAnswer=result.answer}}}
+          {{/if}}
+        </span>
+      </div>
+        <div class="correct-answer">
+          <span>{{t "common.correct-answer"}}</span>
+          <span>
+            {{{component (qz-question-config result.question.type 'component.answer') question=result showCorrect=true}}}
+          </span>
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+{{#if isLoading}}
+  <button class="{{classes}} has-spinner" disabled='true'>
+    <span class="spinner">{{gru-icon name='cached'}}</span>
+    <span class="text">{{text}}</span>
+  </button>
+{{else}}
+  {{yield}}
+{{/if}}

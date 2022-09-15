@@ -1,0 +1,154 @@
+.reports.class-assessment.qz-summary {
+  $chart-diameter: 82px;
+  $small-chart-diameter: 4rem;
+
+  padding: 20px 0 0px 0;
+  margin-right: 15px;
+
+  .content {
+    margin-bottom: 5px;
+    @include flexbox;
+    @include flex-wrap(wrap);
+    @include justify-content(space-between);
+
+    .overview {
+      @include flexbox;
+      @include justify-content(space-between);
+      width: 100%;
+      padding: 0;
+      @media (min-width: $screen-sm-min) {
+        width: 50%;
+        padding: 0 15px 0 0;
+      }
+      @media (min-width: $screen-md-min) {
+        width: 40%;
+      }
+      @media (min-width: $screen-lg-min) {
+        width: 28%;
+      }
+      list-style: none;
+      margin: 0 0 15px;
+      overflow: hidden;
+      float: $tab-float-dir;
+      border-right: 1px solid $gray-lighter;
+
+      > li {
+        width: 50%;
+        height: 147px;
+        text-align: center;
+        display: inline-block;
+        margin: 0 12px 0 0;
+        background: $white;
+        box-shadow: 0px 2px 5px 0px $table-box-shadow-07;
+        border-radius: 5px;
+        border: solid 1px $nobel-gray;
+        &.completion {
+          margin: 0;
+        }
+
+        > div {
+          height: $chart-diameter;
+          width: $chart-diameter;
+          margin: 20px auto 10px;
+        }
+
+        > span {
+          display: block;
+          margin-top: 8px;
+        }
+      }
+
+      > li.average-time {
+        .gru-bubble-chart {
+          .bubble-circle {
+            span {
+              color: $gray-base;
+            }
+          }
+        }
+      }
+
+      &.small {
+        display: none;
+      }
+    }
+
+    .qz-questions-summary {
+      width: 60%;
+      flex: 1;
+      background: $white;
+      box-shadow: 0px 2px 5px 0px $table-box-shadow-07;
+      border-radius: 5px;
+      padding: 15px 20px 10px;
+      border: solid 1px $nobel-gray;
+    }
+
+    &.all-questions {
+      .overview {
+        display: none;
+        padding: 0;
+        margin: 0 15px 0 0;
+        width: 268px;
+
+        &.small.visible {
+          display: block;
+          background: $white;
+          box-shadow: 0px 2px 5px 0px $table-box-shadow-07;
+          border-radius: 5px;
+          border: solid 1px $nobel-gray;
+          font-size: inherit;
+
+          > li {
+            float: $tab-float-dir;
+            display: block;
+            box-shadow: none;
+            border-radius: inherit;
+            height: auto;
+            width: auto;
+            margin: 0 12px 0 10px;
+
+            > div {
+              margin: 8px auto 0;
+            }
+            > span {
+              margin: 0;
+            }
+
+            &:last-child {
+              float: none;
+              margin: 40px auto 0;
+            }
+          }
+          .completion {
+            float: $menu-float-dir;
+          }
+        }
+      }
+      .qz-questions-summary {
+        font-size: inherit;
+        padding: 15px 28px;
+        > li {
+          margin: 0 23px 0 0;
+        }
+        .charts.gru-x-bar-chart {
+          width: 6.12em;
+        }
+      }
+    }
+  }
+  .grading-scale {
+    display: table;
+    height: 24px;
+    span,
+    ul {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    span.average {
+      padding: 0 18px 0 8px;
+      white-space: nowrap;
+      color: $gray-base;
+      font-size: $font-size-h6;
+    }
+  }
+}

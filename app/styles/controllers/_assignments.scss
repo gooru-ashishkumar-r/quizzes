@@ -1,0 +1,20 @@
+.assignments {
+  overflow: hidden;
+  height: 100%;
+  .gru-header,
+  .gru-footer {
+    display: none;
+  }
+
+  > .ember-view,
+  .quizzes,
+  .app-container {
+    height: 100%;
+  }
+
+  .app-container {
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+}

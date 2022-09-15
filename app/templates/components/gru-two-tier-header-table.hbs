@@ -1,0 +1,63 @@
+<table>
+  <col>
+
+  {{#each firstTierHeaders as |header|}}
+    <colgroup span="{{secondTierHeadersVisible}}"></colgroup>
+  {{/each}}
+
+  <tr class="first-tier">
+    {{#if rowHeadersHeader}}
+      <td class="fixed"></td>
+    {{else}}
+      <td rowspan="2" class="fixed"></td>
+    {{/if}}
+
+    {{#each firstTierHeaders as |header|}}
+      <th colspan="{{secondTierHeadersVisible}}"
+          scope="colgroup"
+        {{action "selectFirstTierColHeader" header.value}}>{{header.label}}</th>
+    {{/each}}
+  </tr>
+
+  <tr class="second-tier">
+    {{#if rowHeadersHeader}}
+      <th scope="col"
+          class="row-header fixed"
+        {{action "updateSortCriteria" 0 -1}}>
+        <span>
+          {{rowHeadersHeader.label}}
+          {{gru-icon name='swap_vert'}}
+          {{gru-icon name='arrow_upward'}}
+          {{gru-icon name='arrow_downward'}}
+        </span>
+      </th>
+    {{/if}}
+
+    {{#each firstTierHeaders as |firstTierHeader firstTierIndex|}}
+      {{#each secondTierHeaders as |secondTierHeader secondTierIndex|}}
+        <th scope="col"
+            class="{{secondTierHeader.value}} hidden"
+          {{action "updateSortCriteria" firstTierIndex secondTierIndex}}>
+          <span>
+            {{secondTierHeader.label}}
+            {{gru-icon name='swap_vert'}}
+            {{gru-icon name='arrow_upward'}}
+            {{gru-icon name='arrow_downward'}}
+          </span>
+        </th>
+      {{/each}}
+    {{/each}}
+  </tr>
+
+  {{#each sortedData as |row|}}
+    <tr class="data">
+      <th scope="row" class="fixed"
+        {{action "selectRowHeader" row.id}}>
+        <span>{{row.header}}</span>
+      </th>
+      {{#each row.content as |content|}}
+        <td class="hidden">{{{content.output}}}</td>
+      {{/each}}
+    </tr>
+  {{/each}}
+</table>

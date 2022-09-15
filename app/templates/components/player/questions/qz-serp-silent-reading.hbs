@@ -1,0 +1,12 @@
+<div class="serp-silent-reading-container">
+    <div class="sr-question-panel decoding-answers">
+        {{#each  questions as | question |}}
+              <div class="sr-question-panel-body decoding-answer">
+                  <div class="decoding-text">
+                    {{safe-html question.answer_text}}
+                  </div>
+                  <span class="passage-btn"> <input type="checkbox" onclick={{action "onConfirm"}}> {{t 'qz-silent-reading.confirm-btn'}}</span>
+              </div>
+        {{/each}}
+    </div>
+</div>

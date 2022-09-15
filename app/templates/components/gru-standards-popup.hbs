@@ -1,0 +1,22 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="{{t 'common.close'}}">
+    <span aria-hidden="true">×</span>
+  </button>
+  <h4 class="modal-title">{{t "common.standards"}}</h4>
+</div>
+<div class="modal-body">
+  <div class="row">
+      <ul class="standards-list pa-md-left-5 pa-sm-left-5">
+        {{#each model as |standard|}}
+            <li class="pa-md-2 pa-sm-2">
+                <div class="standard-title pa-sm-2">
+                    <span>{{standard.name}}</span>
+                </div>
+                <div class="standard-description">
+                    <p>{{standard.description}}</p>
+                </div>
+            </li>
+        {{/each}}
+      </ul>
+  </div>
+</div>

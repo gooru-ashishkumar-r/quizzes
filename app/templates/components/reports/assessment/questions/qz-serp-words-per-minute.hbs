@@ -1,0 +1,52 @@
+<ul>
+    {{#if showCorrect}}
+   {{#each answers as |answer index|}}
+    <li>
+        <div class="answer-container base-answer">
+            <div class="">
+                {{answer.answer_text}}
+            </div>
+        </div>
+    </li>
+    {{else}}
+    --
+    {{/each}}
+    {{else}}
+    <li>
+        <div class="exercise-seq {{if showCorrect 'in-visible'}}">
+            {{t 'qz-question-viewer.exercise'}}
+        </div>
+        <div class="answer-container">
+            <div class="audio-player wpm-audio-player">
+              <span class="wpm-timer-section">
+                  {{gru-icon name="query_builder"}}
+              <span class="timer-count"><small class="current-count">00:00:00</small>/<small class="duration">{{audioDuration}}</small></span>
+              </span>
+                <span class="audio-progress">
+                    <span class="progress-filling">
+                        <span class="progress-pointer"></span>
+                    </span>
+                </span>
+                {{#if isPlaying}}
+                <span class="audio-play" {{action "onPauseAudio"}}>
+                    {{gru-icon name="pause"}}
+                </span>
+                {{else}}
+                <span class="audio-play" {{action "onPlayAudio"}}>
+                    {{gru-icon name="play_arrow"}}
+                </span>
+                {{/if}}
+            </div>
+        </div>
+        <div class="words-per-min-sec">
+        </div>
+    </li>
+    {{/if}}
+</ul>
+{{#if question.resource.wpmResource}}
+  {{reports/gru-wpm-reading-table 
+  question=question.resource
+  currentClass=currentClass
+  }}
+  {{/if}}
+

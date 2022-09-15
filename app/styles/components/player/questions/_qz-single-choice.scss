@@ -1,0 +1,22 @@
+.qz-single-choice {
+  .answer-choices {
+    max-width: 100%;
+    overflow-x: auto;
+
+    .radio label {
+      @include flexbox;
+
+      > * {
+        margin-right: 0.5em;
+      }
+
+      input {
+        margin-right: 1em;
+        @media (max-width: $screen-xs-max) {
+          /* only for phone */
+          margin-top: 3px;
+        }
+      }
+    }
+  }
+}

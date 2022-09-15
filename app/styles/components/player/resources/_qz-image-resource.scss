@@ -1,0 +1,15 @@
+.qz-image-resource {
+  height: 100%;
+  iframe {
+    width: 100%;
+    border: 0 none;
+  }
+}
+
+// Fix scroll on iframe. Hack for iOS 9+:
+// https://jeffclayton.wordpress.com/2015/09/03/safari-9-css-hack-beta-in-the-works/
+_::-webkit-:not(:root:root),
+.qz-image-resource {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+}

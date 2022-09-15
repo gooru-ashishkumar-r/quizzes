@@ -1,0 +1,55 @@
+<ul>
+    {{#if showCorrect}}
+    {{#each exemplars as |exemplar index|}}
+    <li>
+        <div class="answer-container base-answer">
+            <div class="answer-text-size answer-text-{{index}}">{{exemplar.audio_text}}</div>
+            <div class="audio-player crct-ans-player-{{index}}">
+                <span class="audio-progress">
+                    <span class="progress-filling">
+                        <span class="progress-pointer"></span>
+                    </span>
+                </span>
+                {{#if (and (eq playerIndex index) isPause)}}
+              <span class="audio-play" {{action 'onPauseAudio'}}>
+                  {{gru-icon name="pause_arrow"}}
+              </span>
+              {{else}}
+              <span class="audio-play" data-audio-url="{{exemplar.audio_url}}" {{action "onPlayAudio" (concat 'crct-ans-player-' index) exemplar.audio_url index true}}>
+                  {{gru-icon name="play_arrow"}}
+              </span>
+              {{/if}}
+            </div>
+        </div>
+    </li>
+    {{else}}
+    --
+    {{/each}}
+    {{else}}
+    {{#each answers as |answer index|}}
+    <li>
+     <div class="exercise-seq {{if showCorrect 'in-visible'}}">
+            Excercise {{plus-one index}}
+        </div>
+        <div class="answer-container">
+            <div class="audio-player player-{{index}}">
+                <span class="audio-progress">
+                    <span class="progress-filling">
+                        <span class="progress-pointer"></span>
+                    </span>
+                </span>
+                {{#if (and (eq playerIndex index) isPause)}}
+              <span class="audio-play" {{action 'onPauseAudio'}}>
+                  {{gru-icon name="pause_arrow"}}
+              </span>
+              {{else}}
+              <span class="audio-play" data-audio-url="{{answer.value}}" {{action "onPlayAudio" (concat 'player-' index) answer.value index false}}>
+                  {{gru-icon name="play_arrow"}}
+              </span>
+              {{/if}}
+            </div>
+        </div>
+    </li>
+    {{/each}}
+    {{/if}}
+</ul>

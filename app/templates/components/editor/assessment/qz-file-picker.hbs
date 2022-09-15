@@ -1,0 +1,27 @@
+<div>
+  <input type="text" readonly value="{{if isFileLoaded selectedFile.name ''}}">
+
+  {{#file-picker
+  accept=validMimeType
+  preview=false
+  dropzone=false
+  fileLoaded=(action 'prepareForSubmission')
+  readAs="readAsFile"
+  errors=filePickerErrors
+  onRemoveFile=(action 'resetFileSelection') }}
+
+    {{!-- A DIV is used instead of a BUTTON because the button's click default behaviour
+          may cause unwanted side-effects if this component is placed in a modal
+           (i.e. clicking on this button will cause the modal to close) --}}
+    <div class="upload btn btn-primary">
+      {{fa-icon icon="fa-upload"}}{{t "common.upload"}}
+    </div>
+
+  {{/file-picker}}
+</div>
+
+<div class="validation">
+  {{#each filePickerErrors as |error|}}
+    <span class="error">{{error}}</span>
+  {{/each}}
+</div>

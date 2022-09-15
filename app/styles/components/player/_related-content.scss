@@ -1,0 +1,99 @@
+.related-content {
+  position: relative;
+  display: inline-block;
+  width: 360px;
+  background-color: $white;
+  border-radius: 10px;
+  max-height: 320px;
+  overflow: hidden;
+  z-index: 999;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0);
+
+  .related-content-body {
+    display: grid;
+    grid-template-rows: 32px auto;
+    background-color: $white;
+
+    .header-panel {
+      display: grid;
+      grid-template-columns: auto 40px;
+      height: 32px;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+      padding: 0px 0px 0px 16px;
+
+      .title {
+        color: $dark-400;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        opacity: 0.5;
+        font-family: "Montserrat";
+        font-weight: bold;
+        font-size: 12px;
+      }
+
+      .close-icon {
+        padding: 0;
+        font-size: 12px;
+        width: 40px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+          font-size: 24px;
+        }
+      }
+    }
+
+    .resource-cards {
+      height: 100%;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
+
+.study-player.fullscreen {
+  .app-container {
+    .player-container {
+      .qz-player {
+        .player {
+          .qz-main {
+            .related-content {
+              .backdrop-close {
+                top: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.iframe-panel {
+  overflow-y: hidden;
+
+  .app-container {
+    padding-top: 0;
+  }
+}
+
+.student_class_class-activities.iframe-panel {
+  .app-container {
+    padding-top: 50px;
+  }
+}
+
+.reports_student-collection.iframe-panel {
+  .gru-header {
+    display: none;
+  }
+}

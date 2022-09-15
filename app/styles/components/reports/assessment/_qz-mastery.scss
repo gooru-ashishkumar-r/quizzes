@@ -1,0 +1,66 @@
+.reports.assessment.qz-mastery {
+  margin-top: 7px;
+  display: flow-root;
+  box-shadow: 0 6px 7px 0 $box-shadow-bg-color;
+
+  .header {
+    border-bottom: 1px solid $light-200;
+    @media (max-width: $screen-xs) {
+      border-bottom: 1px solid $light-300;
+      padding: 0 0 20px 0;
+    }
+    h4 {
+      display: inline-block;
+      vertical-align: middle;
+      width: 23%;
+      margin: 0;
+      @media (min-width: $screen-lg-min) {
+        width: 40%;
+      }
+      @media (max-width: $screen-md-min) {
+        display: block;
+      }
+    }
+    h6 {
+      display: inline-block;
+      vertical-align: middle;
+      width: 20%;
+      margin: 0;
+      @media (min-width: $screen-lg-min) {
+        width: 12%;
+      }
+    }
+
+    @media (min-width: $screen-sm) {
+      .grading-scale-legend {
+        display: table-cell;
+        vertical-align: middle;
+        float: $menu-float-dir;
+        margin: 5px 0;
+      }
+      @include clearfix();
+    }
+    .hidden-xs {
+      margin-left: 20px;
+      font-size: 14px;
+      font-weight: 100;
+    }
+  }
+
+  .standard-root {
+    display: inline-block;
+    width: 92%;
+  }
+
+  .view-more {
+    float: $menu-float-dir;
+    margin: 20px 20px 0px 0px;
+    cursor: pointer;
+  }
+
+  .show-less {
+    float: $menu-float-dir;
+    margin: 20px 20px 0px 0px;
+    cursor: pointer;
+  }
+}

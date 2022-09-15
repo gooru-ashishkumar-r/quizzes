@@ -1,0 +1,84 @@
+.editor.assessment {
+  .nav-tabs {
+    display: inline-block;
+    box-shadow: inset 0 -1px 0 $gray-light;
+    li {
+      height: 50px;
+      margin-bottom: 0;
+      display: block;
+
+      &:nth-child(1) {
+        margin-right: 15px;
+      }
+      a {
+        padding: 10px 0;
+      }
+      &.active {
+        display: block;
+        a {
+          box-shadow: inset 0 -4px 0 $gray;
+          padding-left: 0;
+          padding-right: 0;
+          &:focus {
+            box-shadow: inset 0 -4px 0 $gray;
+          }
+          &:active {
+            box-shadow: inset 0 -4px 0 $gray;
+          }
+        }
+      }
+      &:not(.active) {
+        a {
+          box-shadow: none;
+        }
+      }
+    }
+    .lead {
+      font-size: $font-size-h6;
+    }
+  }
+  .add-from-web {
+    height: 498px;
+    > * {
+      vertical-align: middle;
+    }
+    .url-label {
+      margin-right: 15px;
+      .gru-input {
+        .form-group {
+          width: 330px;
+        }
+      }
+    }
+    .add-btn {
+      margin-bottom: 15px;
+    }
+  }
+  .add-from-computer {
+    .information {
+      margin-bottom: 16px;
+      .icon {
+        color: $light-300;
+        margin-right: 5px;
+        i {
+          vertical-align: middle;
+        }
+      }
+      .title {
+        font-size: $font-size-large;
+      }
+    }
+    .filename-label {
+      > * {
+        display: block;
+      }
+      .formats {
+        font-style: italic;
+        font-size: $font-size-small;
+      }
+    }
+    .qz-file-picker {
+      width: 36%;
+    }
+  }
+}

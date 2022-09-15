@@ -1,0 +1,16 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{t "common.add-domains-to-unit"}}</h4>
+</div>
+<div class="modal-body">
+  {{taxonomy/gru-taxonomy-picker
+    browseSelectorText=(t "taxonomy.modals.gru-domain-picker.browseSelectorText")
+    maxLevels=2
+    onSave=(action 'updateSelectedTags')
+    onSearchPath=(action 'loadTaxonomyData')
+    panelHeaders=panelHeaders
+    selected=model.selected
+    selectedTextKey="taxonomy.modals.gru-domain-picker.selectedText"
+    shortcuts=model.shortcuts
+    shortcutText=(t "taxonomy.modals.gru-domain-picker.shortcutText")
+    subject=model.subject }}
+</div>

@@ -1,0 +1,105 @@
+{{#unless showFullRubric}}
+  <div class="rubric-response {{if showPanel 'rubric' 'no-rubric'}}">
+    <div class="panel prompt">
+      <div class="panel-body">
+        <div class="icon">
+          <i></i>
+        </div>
+        <div class="question-text">
+          <span class="title">
+            {{#if isComprehension}}
+              {{comprehensionIndex}} . {{t 'qz-question-viewer.question'}}
+            {{else}}
+              {{t 'qz-free-response-viewer.prompt'}}
+            {{/if}}
+          </span>
+          {{gru-math-text text=questionText isShowVideo=true}}
+          {{#if thumbnail}}
+            <div class="question-thumbnail" style="background-image:url({{thumbnail}})" {{action 'showFullImage'}}></div>
+            {{#if isShowFullImage}}
+              <div class="full-image">
+                <div class="back-drop" {{action 'onCloseFullImage'}}></div>
+                <div class="image-preview">
+                  <i class="material-icons close-btn" {{action 'onCloseFullImage'}}>close</i>
+                  <div class="image-container">
+                    <img class="question-thumbnail-image" src="{{thumbnail}}" alt="thumbnailImg" />
+                  </div>
+                </div>
+              </div>
+            {{/if}}
+          {{/if}}
+        </div>
+        {{#if isComprehension}}
+          <i class="material-icons comp-complete {{if question.isCompleted 'completed'}}">check_circle_outline</i>
+        {{/if}}
+      </div>
+    </div>
+
+    {{#if showEvidenceKeyCheck }}
+      {{#if (or (and showEvidence questionEvidenceVisibilityKeyCheck contentSubformatCheck) (and showEvidence (not questionEvidenceVisibilityKeyCheck)) (and showEvidence (not questionEvidenceVisibility)))}}
+        {{#unless question.isResource}}
+          {{player/qz-evidence
+    isComprehension = isComprehension
+    isSerpQuestion = isSerpQuestion
+    questionResult = questionResult}}
+        {{/unless}}
+      {{/if}}
+
+    {{else if (not showEvidenceKeyCheck)}}
+      {{#if (or (and defaultKeyCheck defaultCheck questionEvidenceVisibilityKeyCheck contentSubformatCheck)
+    (and defaultKeyCheck defaultCheck (not questionEvidenceVisibilityKeyCheck) )
+    (and (not defaultKeyCheck) questionEvidenceVisibilityKeyCheck contentSubformatCheck )
+    (and (or (not questionEvidenceVisibility) (not defaultKeyCheck)) (not questionEvidenceVisibilityKeyCheck) tmpIsEvidenceEnabled playerMetadata.isEvidenceEnabled )
+    (and (not questionEvidenceVisibility) (not defaultKeyCheck) (not questionEvidenceVisibilityKeyCheck) (not tmpIsEvidenceEnabled) ))
+    }}
+
+        {{#unless question.isResource}}
+          {{player/qz-evidence
+    isComprehension = isComprehension
+    isSerpQuestion = isSerpQuestion
+    questionResult = questionResult}}
+        {{/unless}}
+
+      {{/if}}
+    {{/if}}
+
+
+    <div class="panel panel-default question-response">
+      <div class="panel-body">
+        {{qz-rich-text-editor onFocusOut="onFocusOut" content=answer disableFocus=isComprehension model=answer valuePath='description' didValidate=didValidate}}
+      </div>
+    </div>
+  </div>
+{{/unless}}
+{{#if showPanel}}
+  <div class="rubric-information {{if showFullRubric 'full-rubric'}}">
+    <div class="header" {{action 'showFullRubric'}}>
+      {{gru-icon name=(if showFullRubric "keyboard_arrow_right" "keyboard_arrow_left")}}
+      <span>{{t (if showFullRubric 'common.rubric' 'qz-free-response-viewer.full-rubric')}}</span>
+    </div>
+    <div class="categories">
+      <ul>
+        {{#if totalPoints}}
+          <li class="total">
+            <span>
+              {{t 'qz-free-response-viewer.total-score'}}
+              ({{totalPoints}}{{t 'qz-free-response-viewer.points'}})
+            </span>
+          </li>
+        {{/if}}
+        {{#each categories as |category|}}
+          <li class="category">
+            <span>{{truncate-text text=category.title maxLength=25}}
+              {{#if category.totalPoints}}
+                ({{category.totalPoints}} {{t 'qz-free-response-viewer.points'}})
+              {{/if}}
+            </span>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="rubric-preview">
+      {{player/resources/qz-url-resource resource=question.rubric}}
+    </div>
+  </div>
+{{/if}}

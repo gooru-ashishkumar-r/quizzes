@@ -1,0 +1,50 @@
+.player .qz-viewer {
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(space-between);
+  height: 100%;
+  overflow-y: scroll;
+  margin-left: 15px;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+  .qz-content {
+    width: 100%;
+    padding: 0;
+    .avatar {
+      text-align: center;
+      padding-right: 15px;
+      img {
+        width: $narration-avatar-width;
+        height: $narration-avatar-height;
+        border-radius: $narration-avatar-height;
+        margin: 0 auto;
+        display: block;
+      }
+      .user {
+        font-size: $font-size-small;
+        display: block;
+      }
+    }
+    .message {
+      * {
+        font-size: $font-size-base !important;
+      }
+    }
+  }
+  .qz-content.question {
+    height: 100%;
+    position: relative;
+  }
+  .qz-content.resource {
+    height: 100%;
+    position: relative;
+  }
+  .qz-resource-viewer-panel {
+    .narration {
+      margin-top: 20px;
+    }
+  }
+}

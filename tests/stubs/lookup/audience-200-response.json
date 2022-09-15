@@ -1,0 +1,14 @@
+{
+  "audience": [
+    {
+      "id": "1",
+      "label": "AA",
+      "sequence_id": 1
+    },
+    {
+      "id": "2",
+      "label": "BB",
+      "sequence_id": 2
+    }
+  ]
+}

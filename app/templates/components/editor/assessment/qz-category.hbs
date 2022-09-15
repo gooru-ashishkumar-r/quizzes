@@ -1,0 +1,40 @@
+<div class="panel panel-default category">
+  <div class="panel-body">
+    <div class="number">{{plus-one number}}</div>
+    <div class="category-info">
+      <label class="title">
+        <span class="required">{{t "qz-rubric-creation.qz-category.title"}}</span>
+        {{validation/gru-input model=category valuePath='title' maxLength=50 placeholder=(t 'qz-rubric-creation.qz-category.title-placeholder')}}
+      </label>
+      <div class="feedback">
+        <label class="feedback-guidance">
+          <span class="required">{{t "qz-rubric-creation.qz-category.feedback-guidance"}}</span>
+          {{validation/gru-textarea rawTextareaValue=category.feedbackGuidance model=category valuePath='feedbackGuidance' maxLength=500 rows=1 placeholder=(t 'qz-rubric-creation.qz-category.feedback-guidance-placeholder')}}
+        </label>
+        <label class="required-feedback">
+          <span {{action 'setFeedBack'}}>
+            {{#if category.requiredFeedback}}
+              {{gru-icon name='check_box'}}
+            {{else}}
+              {{gru-icon name='check_box_outline_blank'}}
+            {{/if}}
+          </span>
+          {{t 'qz-rubric-creation.qz-category.required-feedback'}}
+        </label>
+      </div>
+      <div class="scoring">
+        <span>{{t 'qz-rubric-creation.qz-category.scoring'}}</span>
+        {{qz-switch switchOptions=switchOptions onOptionSwitch='onScoringChange' isChecked=showScore}}
+        {{#if showScore}}
+          {{editor/assessment/qz-scoring-levels scoringLevels=category.scoringLevels}}
+        {{/if}}
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <div class="actions">
+      <button title="{{t 'common.delete'}}" class="btn no-bgd delete" {{action 'deleteCategory' category}} data-toggle="tooltip" data-placement="auto">{{gru-icon name="delete"}}</button>
+      <button title="{{t 'common.copy'}}" class="btn no-bgd copy" {{action 'copyCategory' category number}} data-toggle="tooltip" data-placement="auto">{{gru-icon name="content_copy"}}</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,106 @@
+[
+  {
+    "description": "Sends event to start the Collection attempt associated to the context",
+    "request": {
+      "url": "^/quizzes/api/v1/contexts/(.)+/start$",
+      "method": "POST"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "File not found!",
+      "file": "context-simple-start-200-response.json"
+    }
+  },
+  {
+    "description": "Sends event to indicate current resource position and provides the data generated in the previous resource",
+    "request": {
+      "url": "^/quizzes/api/v1/contexts/(.)+/onResource/(.)+$",
+      "method": "POST"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "{}"
+    }
+  },
+  {
+    "description": "Gets contexts created",
+    "request": {
+      "url": "^/quizzes/api/v1/contexts/created$",
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "File not found!",
+      "file": "context-created-200-response.json"
+    }
+  },
+  {
+    "description": "Gets contexts assigned",
+    "request": {
+      "url": "^/quizzes/api/v1/contexts/assigned$",
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "File not found!",
+      "file": "context-assigned-200-response.json"
+    }
+  },
+  {
+    "description": "Get context assigned by id",
+    "request": {
+      "url": "^/quizzes/api/v1/contexts/(.)+/assigned$",
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "File not found!",
+      "file": "context-assigned-byId-200-response.json"
+    }
+  },
+  {
+    "description": "Create context",
+    "request": {
+      "url": "^/quizzes/api/v1/contexts",
+      "method": "POST"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "{}",
+      "file": "create-context-200-response.json"
+    }
+  },
+  {
+    "description": "Update context",
+    "request": {
+      "url": "^/quizzes/api/v1/contexts/(.)+",
+      "method": "PUT"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "{}",
+      "file": "update-context-200-response.json"
+    }
+  }
+]

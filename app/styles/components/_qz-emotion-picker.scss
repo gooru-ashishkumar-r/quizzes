@@ -1,0 +1,60 @@
+.qz-emotion-picker {
+  text-align: center;
+  width: 100%;
+
+  .reaction-sm {
+    display: none;
+
+    .default-emotion {
+      width: 27px;
+      height: 27px;
+      margin: auto;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .close-nav {
+      i {
+        margin-left: -66px;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .emotions-list {
+    display: block;
+    line-height: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    white-space: nowrap;
+
+    li {
+      display: inline-block;
+      padding: 0 4%;
+
+      .emotion {
+        cursor: pointer;
+        position: relative;
+
+        &:after {
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+      }
+      @media (min-width: $screen-sm) {
+        padding: 0 1%;
+      }
+    }
+  }
+  @media (min-width: $screen-sm) {
+    text-align: left;
+  }
+}

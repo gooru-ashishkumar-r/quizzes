@@ -1,0 +1,6 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{t 'assign-students.assign-assessment-modal-title'}}</h4>
+</div>
+<div class="modal-body">
+  {{assignment/qz-assign-students students=model.students assignment=model.assignment onCloseModal='closeModal' onUpdateAssignment='updateAssignment' isUpdate=true}}
+</div>

@@ -1,0 +1,17 @@
+<div class="qz-comprehension-container">
+  <div class="qz-comprehension-question-list">
+    {{#each questionList as | question index|}}
+      <div class="comprehension-question-panel">
+        {{player/qz-question-viewer
+          buttonTextKey=buttonTextKey
+          instructionsActionTextKey=instructionsActionTextKey
+          question=question
+          questionResult=(array-index subQuestionResults index)
+          isComprehension=true
+          completeAnswer="completeAnswer"
+          comprehensionIndex=(plus-one index)
+        }}
+      </div>
+  {{/each}}
+  </div>
+</div>

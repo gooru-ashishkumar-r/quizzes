@@ -1,0 +1,122 @@
+.reports.class-assessment.qz-table-view {
+  > .filters {
+    list-style: none;
+    margin: 0 0 15px 0;
+    padding: 0;
+
+    li.checkbox {
+      display: inline-block;
+      margin: 0 15px 0 0;
+      label {
+        padding: 0;
+        height: 24px;
+        display: table;
+        input {
+          color: $white;
+          width: 21px;
+          height: 24px;
+          margin: 0;
+          display: table-cell;
+          vertical-align: middle;
+        }
+        input[type="checkbox"]:checked:before {
+          top: 3px;
+        }
+        span {
+          display: table-cell;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+  .gru-two-tier-header-table {
+    .answer-correct,
+    .answer-incorrect {
+      i {
+        display: block;
+        line-height: 25px;
+      }
+    }
+    .answer-correct {
+      background-color: $brand-success;
+      i {
+        margin-left: -72px;
+        pointer-events: none;
+      }
+    }
+    .answer-incorrect {
+      background-color: $brand-incorrect;
+    }
+    .answer-not-started {
+      background-color: $light-200;
+    }
+    .answer-skipped {
+      background-color: $light-200;
+    }
+    .answer-extended_text {
+      background-color: $blue-400;
+    }
+
+    table {
+      .first-tier {
+        th {
+          border-left: 1px solid $dark-400;
+        }
+        td + th {
+          border-left: 0 none;
+        }
+      }
+      .second-tier {
+        .correct {
+          border-left: 1px solid $dark-400;
+
+          > span {
+            min-width: 60px;
+          }
+        }
+        .row-header + .correct {
+          border-left: 0 none;
+        }
+      }
+
+      tr.data {
+        th {
+          max-width: 12rem;
+
+          span {
+            display: block;
+            @include text-overflow();
+          }
+        }
+        td {
+          white-space: nowrap;
+          &:nth-child(3n-1) {
+            border-left: 1px solid $gray-lighter;
+          }
+
+          .score {
+            border-radius: 4px;
+            text-align: center;
+            width: 42px;
+            height: 25px;
+            display: block;
+            color: $white;
+          }
+          .emotion {
+            padding-top: 2px;
+            cursor: default;
+            height: 24px;
+            width: 24px;
+            &:hover {
+              transform: scale(1);
+            }
+          }
+        }
+        th + td {
+          border-left: 0 none !important;
+        }
+      }
+    }
+  }
+}

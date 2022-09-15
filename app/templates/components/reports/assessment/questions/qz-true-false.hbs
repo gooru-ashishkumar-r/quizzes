@@ -1,0 +1,14 @@
+<ul>
+  {{#each answers as |answer index|}}
+    <li class="{{if answer.selected (if answer.correct 'correct_answer' 'incorrect_answer')}}">
+      {{#if answer.selected}}
+        <span class="{{if answer.correct 'correct' 'incorrect'}} {{if anonymous 'anonymous'}}">
+          {{gru-icon name='radio_button_checked'}}
+        </span>
+      {{else}}
+        <span class="column">{{gru-icon name='radio_button_unchecked'}}</span>
+      {{/if}}
+      <span class="answer-text">({{answer-letter index}}) {{{answer.text}}}</span>
+    </li>
+  {{/each}}
+</ul>

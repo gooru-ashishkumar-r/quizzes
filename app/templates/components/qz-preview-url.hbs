@@ -1,0 +1,10 @@
+{{#if isRubric}}
+    <span>{{t 'common.preview'}}</span>
+{{/if}}
+<div class="preview {{if url 'show-url' 'show-legend'}}">
+    {{#if url}}
+        <iframe src="{{url}}"></iframe>
+      {{else}}
+        <span>{{t 'qz-rubric-creation.qz-preview-url.add'}}</span>
+    {{/if}}
+</div>

@@ -1,0 +1,26 @@
+<div class="emotion-picker">
+  <ul class="emotions-list">
+    {{#each emotionValues as |emotion|}}
+      <li>
+        <div title="{{t (concat 'common.emotions.emotion-' emotion.value) }}" data-toggle="tooltip" data-placement="top" class="emotion emotion-{{emotion.value}}" id="emotion-{{emotion.value}}" {{action 'setEmotion' emotion}}>
+          <svg>
+               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/quizzes-addon/emoji-one/emoji.svg#{{emotion.unicode}}-inactive"></use>
+             </svg>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+  <div class="reaction-sm">
+    {{#if isNavigatorOpen}}
+      <div class="close-nav" {{action 'onCloseNavigator'}}>
+        {{gru-icon name="ic_keyboard_arrow_down"}}
+      </div>
+    {{else}}
+      <div class="default-emotion" {{action 'onOpenNavigator'}}>
+        <svg>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/quizzes-addon/emoji-one/emoji.svg#{{defaultEmoji}}"></use>
+        </svg>
+      </div>
+    {{/if}}
+  </div>
+</div>

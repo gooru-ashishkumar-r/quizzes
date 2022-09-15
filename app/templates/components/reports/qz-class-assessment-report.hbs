@@ -1,0 +1,21 @@
+{{reports/class-assessment/qz-summary
+  reportData=reportData
+  isCollection=isCollectionType
+  onSelectQuestion=(action 'viewQuestionDetail')
+}}
+<div class="view-container {{if isTableView 'student-view' 'table-view'}}">
+  {{reports/class-assessment/qz-table-view
+    reportData=reportData
+    onSelectQuestion=(action 'viewQuestionDetail')
+    onSelectStudent=(action 'viewAssessmentReport')
+    anonymous=anonymous
+    isCollectionType=isCollectionType
+  }}
+  {{reports/class-assessment/qz-student-view
+    anonymous=anonymous
+    reportData=reportData
+    onSelectQuestion=(action 'viewQuestionDetail')
+    onSelectStudent=(action 'viewAssessmentReport')
+    isCollectionType=isCollectionType
+  }}
+</div>

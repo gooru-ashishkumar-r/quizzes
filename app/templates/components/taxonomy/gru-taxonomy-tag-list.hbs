@@ -1,0 +1,17 @@
+{{#each visibleTags as |taxonomyTag|}}
+  {{taxonomy/gru-taxonomy-tag model=taxonomyTag hasTooltip=hasTooltips onRemove=(action 'removeTag' taxonomyTag)}}
+{{/each}}
+{{#if nonVisibleTags}}
+  <button class="non-visible-tags">
+    <span>{{nonVisibleTags}}+</span>
+  </button>
+  <div class="all-tags">
+    {{#each tags as |taxonomyTag|}}
+      {{taxonomy/gru-taxonomy-tag
+      model=taxonomyTag
+      hasTooltip=false
+      onRemove=(action 'removeTag' taxonomyTag)
+      }}
+    {{/each}}
+  </div>
+{{/if}}

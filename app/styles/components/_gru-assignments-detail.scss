@@ -1,0 +1,67 @@
+.gru-assignments-detail {
+  height: 100%;
+  .assignment-detail {
+    @include flexbox;
+    @include flex-direction(column);
+    height: 100%;
+    .panel-heading {
+      text-align: right;
+      height: 56px;
+      background-color: $dark-400;
+      border-radius: 0;
+      .btn-default[disabled] {
+        &:hover {
+          color: $gray;
+          opacity: 0.65;
+        }
+      }
+      span.real-time-icon {
+        background-image: url("quizzes-addon/quizzes/images/on-air-gray.svg");
+        background-size: 24px 24px;
+        display: inline-block;
+        vertical-align: middle;
+        height: 24px;
+        margin-right: 5px;
+        width: 24px;
+      }
+      i {
+        font-size: 21px;
+      }
+      button.launch {
+        float: $tab-float-dir;
+      }
+      button.delete,
+      button.add-student {
+        padding: 6px 5px;
+      }
+    }
+    .panel-body {
+      overflow: auto;
+      span.score {
+        width: 46px;
+        height: 36px;
+        text-align: center;
+        line-height: 36px;
+        border-radius: 5px;
+        color: $white;
+        display: inline-block;
+      }
+      > * {
+        margin: 10px 0;
+      }
+      .text-container {
+        @include flexbox;
+        > * {
+          align-self: center;
+        }
+        .last-attempt,
+        .date-assigned {
+          margin-left: 10px;
+        }
+        .teacher-question {
+          margin-left: 68px;
+        }
+      }
+    }
+  }
+}

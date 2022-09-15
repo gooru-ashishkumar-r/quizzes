@@ -1,0 +1,65 @@
+{
+  "id": "collection-id",
+  "isCollection": false,
+  "metadata": {
+    "setting": {
+      "attempts_allowed":-1,
+      "bidirectional_play":true
+    }
+  },
+  "resources": [
+    {
+      "id": "question1-id",
+      "isResource": false,
+      "metadata": {
+        "body": "question1-body",
+        "correctAnswer": [
+          {
+            "value": "answer1-value"
+          }
+        ],
+        "interaction": {
+          "choices": [
+            {
+              "isFixed": true,
+              "text": "answer1",
+              "value": "answer1-value"
+            }
+          ],
+          "maxChoices": 1,
+          "prompt": "question1-prompt",
+          "isShuffle": true
+        },
+        "title": "question1-title",
+        "type": "true_false"
+      }
+    },
+    {
+      "id": "question2-id",
+      "isResource": false,
+      "metadata": {
+        "body": "question2-body",
+        "correctAnswer": [
+          {
+            "value": "answer2-value"
+          }
+        ],
+        "interaction": {
+          "choices": [
+            {
+              "isFixed": true,
+              "text": "answer2",
+              "value": "answer2-value"
+            }
+          ],
+          "maxChoices": 1,
+          "prompt": "question2-prompt",
+          "isShuffle": true
+        },
+        "title": "question2-title",
+        "type": "single_choice"
+      }
+    }
+  ]
+
+}

@@ -1,0 +1,18 @@
+.rating-stars {
+  ul {
+    list-style: none;
+    li {
+      float: $tab-float-dir;
+      cursor: pointer;
+    }
+  }
+  .star {
+    font-size: 1.6rem;
+    i {
+      color: $brand-primary;
+    }
+  }
+  .rating-stars-xs {
+    cursor: auto;
+  }
+}

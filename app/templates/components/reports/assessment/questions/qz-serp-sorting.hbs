@@ -1,0 +1,24 @@
+<div class="qz-serp-sorting-container">
+    <div class="qz-serp-sorting-panel">
+      <div class="group-section">
+        <h5>{{question.resource.softText}}</h5>
+          <ul class="serp-sorting-list-blk">
+              {{#each answerDetails as | answer answerIndex |}}
+                  {{#if (eq answer.answer_type 'soft')}}
+                    <li>{{answer.answer_text}}</li>
+                  {{/if}}
+              {{/each}}
+          </ul>
+      </div>
+      <div class="group-section">
+        <h5>{{question.resource.hardText}}</h5>
+          <ul class="serp-sorting-list-blk">
+              {{#each answerDetails as | answer answerIndex |}}
+                {{#if (eq answer.answer_type 'hard')}}
+                  <li>{{answer.answer_text}}</li>
+                {{/if}}
+              {{/each}}
+          </ul>
+      </div>
+    </div>
+</div>

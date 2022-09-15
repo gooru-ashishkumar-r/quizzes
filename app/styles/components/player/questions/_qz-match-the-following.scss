@@ -1,0 +1,102 @@
+.player .gru-match-the-following {
+  .gru-match-question-container {
+    .matching-container {
+      .panel-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .text-or-image {
+          display: grid;
+          align-items: center;
+          .preview-image {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            padding: 6px 12px;
+            .content.gru-image {
+              width: 75px;
+              height: 75px;
+              object-fit: cover;
+              margin: 0 auto;
+            }
+            .img-responsive {
+              height: 75px;
+              width: 75px;
+              object-fit: contain;
+              margin: 0 auto;
+            }
+          }
+        }
+
+        .sortable {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: grid !important;
+          align-items: center;
+
+          li {
+            cursor: move;
+            .content.gru-image {
+              width: 75px;
+              height: 75px;
+              object-fit: cover;
+              margin: 0 auto;
+            }
+            .img-responsive {
+              height: 75px;
+              width: 75px;
+              object-fit: contain;
+              margin: 0 auto;
+            }
+          }
+          &.disabled {
+            li {
+              cursor: $cursor-disabled;
+            }
+          }
+        }
+        .ui-sortable-handle {
+          position: relative;
+          border: 1px dashed $light-300;
+          // margin-top: 10px;
+          border-radius: 3%;
+          margin-top: 12px;
+
+          &:first-child {
+            margin-top: 3px;
+          }
+          &:last-child {
+            margin-bottom: 3px;
+          }
+
+          i {
+            position: absolute;
+            top: 41%;
+            left: 7px;
+            margin-top: -8px;
+            color: $light-500;
+            font-size: 26px;
+          }
+
+          div {
+            display: flex;
+            margin-left: 40px;
+            word-wrap: break-word;
+            align-items: center;
+            height: 40px;
+
+            p {
+              margin: 0;
+              padding: 0;
+            }
+          }
+        }
+
+        .ui-sortable-helper {
+          background-color: $gray-lighter;
+        }
+      }
+    }
+  }
+}

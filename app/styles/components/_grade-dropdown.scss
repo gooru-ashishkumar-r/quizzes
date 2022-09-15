@@ -1,0 +1,60 @@
+.grade-dropdown {
+  > .btn-group {
+    .caret {
+      color: $white;
+    }
+
+    .selected-text {
+      width: 120px;
+    }
+  }
+
+  .dropdown-menu {
+    padding: 0;
+    width: 350px;
+    background-color: $white;
+    .dropdown-header {
+      padding: 10px 10px 10px 10px;
+    }
+
+    li.dropdown-item:nth-child(2) {
+      padding-top: 20px;
+    }
+
+    li.dropdown-item:last-child {
+      padding-bottom: 20px;
+    }
+
+    li.dropdown-item {
+      padding: 7px 10px 7px 10px;
+      background-color: $gray-lighter;
+
+      span {
+        height: 21px;
+        line-height: 1.5;
+        float: $tab-float-dir;
+        margin-left: 5px;
+        background-color: $brand-primary;
+        color: $white;
+        text-align: center;
+        cursor: pointer;
+
+        &.parent {
+          width: 115px;
+          display: inline-block;
+          text-align: center;
+        }
+
+        &.selected,
+        &:hover {
+          background-color: $brand-primary;
+        }
+
+        &.level {
+          width: 21px;
+          border-radius: 12px;
+        }
+      }
+    }
+  }
+}

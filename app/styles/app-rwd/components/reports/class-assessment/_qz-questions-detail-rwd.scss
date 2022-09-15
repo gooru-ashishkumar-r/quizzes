@@ -1,0 +1,18 @@
+.reports.class-assessment.qz-questions-detail {
+  @media only screen and (max-width: $screen-xs) {
+    .body {
+      display: grid;
+      grid-template-rows: 200px auto;
+      grid-gap: 10px;
+
+      .question-info {
+        width: 100%;
+      }
+
+      .question-metrics {
+        padding: 0;
+        width: 100%;
+      }
+    }
+  }
+}

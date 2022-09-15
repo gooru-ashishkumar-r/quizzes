@@ -1,0 +1,51 @@
+<div class="evidence {{if (or isComprehension isSerpQuestion) 'hide'}}">
+  <div class="title">{{t 'common.add'}} {{t 'common.evidence'}}</div>
+  {{#if isLoading}}
+    {{three-bounce-spinner}}
+  {{/if}}
+  {{#each uploadedFiles as |uploadedFile|}}
+    <div class="evidence-view">
+      <i aria-haspopup="false" class="material-icons" {{action 'onShowPullUp' uploadedFile}}>visibility</i>
+      <div class="file-details" {{action 'onShowPullUp' uploadedFile}}>
+        <div class="title-name">{{t 'common.evidence'}}</div>
+        <div class="name">{{uploadedFile.originalFileName}}</div>
+      </div>
+      <div class="delete-icon" title="{{t 'common.remove'}}" data-toggle="tooltip" {{action 'removeSelectedFile' uploadedFile}}> {{gru-icon name='delete_outline'}}</div>
+    </div>
+  {{/each}}
+
+  {{#file-picker
+     preview=false
+     dropzone=false
+     fileLoaded=(action 'selectFile')
+     readAs="readAsFile"
+     errors=filePickerErrors
+  }}
+    <div class="evidence-view-default">
+      <i class="material-icons">arrow_forward</i>
+      <div class="file-details">
+        <div class="title-name">{{t 'common.evidence'}}</div>
+        <div class="name">{{if uploadedFiles (t 'common.upload-another-file') (t 'common.upload-file')}}</div>
+      </div>
+    </div>
+  {{/file-picker}}
+  <div class="validation">
+    {{#each filePickerErrors as |error|}}
+      <span class="error">{{error}}</span>
+    {{/each}}
+  </div>
+</div>
+{{#if isShowFilePullUp}}
+  <div class="evidence-iframe-container{{if (or isComprehension isSerpQuestion) 'hide'}}">
+    <div class="back-drop" {{action 'onClosePullup'}}></div>
+    <div class="iframe-panel">
+      <div class="close-panel">
+        <div class="fileName">{{activeFile.originalFileName}}</div>
+        <i class="gru-icon material-icons close" {{action 'onClosePullup'}}>close</i>
+      </div>
+
+      <iframe src="{{activeFile.fileName}}" width="100%" height="90%" frameborder="0" allowfullscreen></iframe>
+
+    </div>
+  </div>
+{{/if}}

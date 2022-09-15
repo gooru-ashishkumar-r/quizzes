@@ -1,0 +1,9 @@
+<ul class="bubbles-list">
+  {{#each bubbleOptions as |bubbleOption|}}
+      <li>
+          <a {{action 'selectBubbleOption' bubbleOption}}>
+              <div class="bubble {{bubbleOption.status}} {{if bubbleOption.selected 'selected'}}">{{bubbleOption.label}}</div>
+          </a>
+      </li>
+  {{/each}}
+</ul>

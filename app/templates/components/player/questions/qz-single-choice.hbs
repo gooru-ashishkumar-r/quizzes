@@ -1,0 +1,21 @@
+<p class="instructions">
+  {{t "qz-single-choice.instructions" action=(t instructionsActionTextKey)}}
+</p>
+<div class="answer-choices">
+  {{#each question.answers as |answer index|}}
+    <div class="radio {{if readOnly 'disabled'}}">
+      {{#radio-button
+            value=answer.value
+            disabled=readOnly
+            groupValue=useGroup
+            changed="selectAnswerChoice"
+            name="answer-choice-radio"
+        }}
+        {{#unless isChooseOne}}
+        <span class="letter">({{answer-letter index}})</span>
+        {{/unless}}
+        {{{gru-math-text text=answer.text}}}
+      {{/radio-button}}
+    </div>
+  {{/each}}
+</div>

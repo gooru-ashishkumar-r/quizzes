@@ -1,0 +1,77 @@
+.qz-comprehension {
+  .qz-comprehension-container {
+    .qz-comprehension-question-list {
+      height: calc(100vh - 160px);
+      overflow-y: auto;
+      margin-top: 39px;
+      .comprehension-question-panel {
+        background-color: $white;
+        padding: 10px;
+        margin: 10px 10px 10px 10px;
+        box-shadow: 0 0 10px $light-300;
+        h2 {
+          font-size: 15px;
+          margin: 10px 0;
+        }
+        .instructions {
+          display: none;
+        }
+        > .qz-question-viewer {
+          display: grid;
+          grid-template-columns: 1fr;
+          .question-panel {
+            width: 100%;
+            .panel {
+              box-shadow: none;
+              min-height: auto;
+              .panel-body {
+                padding: 0;
+                h2 {
+                  display: grid;
+                  grid-template-columns: 1fr auto;
+                  align-items: center;
+
+                  i {
+                    font-size: 25px;
+                    color: $light-400;
+
+                    &.completed {
+                      color: $green-600;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .answers-panel {
+            width: 100%;
+            .panel {
+              min-height: auto;
+              box-shadow: none;
+
+              .panel-body {
+                padding: 0;
+              }
+            }
+          }
+        }
+        .qz-free-response-viewer .rubric-response .prompt {
+          min-height: auto;
+          .panel-body {
+            align-items: center;
+
+            .comp-complete {
+              margin-left: auto;
+              font-size: 25px;
+              color: $light-400;
+
+              &.completed {
+                color: $green-600;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

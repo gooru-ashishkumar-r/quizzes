@@ -1,0 +1,40 @@
+[
+  {
+    "collection": {
+      "id": "collection-id"
+    },
+    "contextData": {
+      "contextMap": {},
+      "metadata": {
+        "description": "description assignment",
+        "dueDate": 1,
+        "startDate": 1,
+        "title": "Assignment for student"
+      }
+    },
+    "createdDate": 1,
+    "id": "assignment-id",
+    "owner": {
+      "id": "teacher-id"
+    }
+  },
+  {
+    "collection": {
+      "id": "collection-id2"
+    },
+    "contextData": {
+      "contextMap": {},
+      "metadata": {
+        "description": "description assignment 2",
+        "dueDate": 0,
+        "startDate": 0,
+        "title": "Business 2"
+      }
+    },
+    "createdDate": 0,
+    "id": "assignment-id2",
+    "owner": {
+      "id": "teacher-id"
+    }
+  }
+]

@@ -1,0 +1,130 @@
+.gru-user-icons {
+  $profile-image-width: 34px;
+  $profile-image-height: 34px;
+  $item-background: $brand-primary;
+  $modal-height: 270px;
+  $tooltip-width: 290px;
+  text-align: right;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .item {
+    position: relative;
+    display: inline-block;
+    margin: 0 3px 0 0;
+    vertical-align: middle;
+    color: $gray;
+
+    img {
+      height: $profile-image-height - 4px;
+      width: $profile-image-width - 4px;
+      margin-bottom: 5px;
+    }
+
+    > .user-name {
+      font-size: 11px;
+      line-height: 1.3;
+      text-align: center;
+      display: inline-block;
+      min-height: 30px;
+      vertical-align: middle;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 115px;
+    }
+
+    &.num-left {
+      height: $profile-image-height;
+      width: $profile-image-width;
+      border-radius: 50%;
+      text-align: center;
+      line-height: $profile-image-height - 2px;
+      background-color: $item-background;
+      color: $white;
+    }
+
+    &.active {
+      border-color: $brand-primary;
+    }
+    > * {
+      display: block;
+      margin: 0 auto;
+    }
+
+    &.user:last-child {
+      margin-right: 6px;
+    }
+  }
+
+  .first-view {
+    display: inline-block;
+    cursor: default;
+
+    &.clickable {
+      color: $gray;
+      cursor: pointer;
+    }
+  }
+
+  .modal {
+    text-align: left;
+
+    .item {
+      margin: 6px 4px;
+    }
+
+    .modal-dialog {
+      margin: 30px auto;
+      max-width: 290px;
+
+      .modal-header {
+        padding-top: 10px;
+        padding-bottom: 5px;
+
+        .close > span {
+          font-size: 28px;
+          vertical-align: middle;
+        }
+      }
+
+      .modal-body {
+        max-height: $modal-height;
+        overflow: scroll;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      .modal-dialog {
+        width: 550px;
+        max-width: none;
+      }
+    }
+  }
+
+  // Override default bootstrap styles for placing the tooltip
+  .popover {
+    max-width: $tooltip-width !important;
+    left: auto !important;
+    right: 0 !important;
+
+    .arrow {
+      left: auto !important;
+      right: 5% !important;
+    }
+
+    .popover-content {
+      width: inherit;
+      max-height: $modal-height;
+      overflow: scroll;
+
+      .item {
+        margin: 6px 4px;
+      }
+    }
+  }
+}

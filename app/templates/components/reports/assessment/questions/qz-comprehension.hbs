@@ -1,0 +1,24 @@
+<div class="qz-serp-comprehension-container">
+    <div class="comp-rep-question-list {{unless showPerformance 'show-cc-answer'}}">
+      {{#each subQuestions as | content seq |}}
+      {{#if (or content.resource.isOpenEnded content.isScientific)}}
+        {{reports/assessment/qz-questions
+        showPerformance=true
+        showScore=false
+        contentSeq = (plus-one seq)
+        content=content
+        isShowExemplarText=isShowExemplarText
+        isShowComp=true
+        viewMode='open-ended'}}
+      {{else}}
+        {{reports/assessment/qz-questions
+        showPerformance=true
+        contentSeq = (plus-one seq)
+        content=content
+        isShowComp=true
+        isShowExemplarText=isShowExemplarText
+      }}
+      {{/if}}
+      {{/each}}
+    </div>
+</div>

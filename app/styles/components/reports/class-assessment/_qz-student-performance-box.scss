@@ -1,0 +1,166 @@
+.reports.class-assessment.qz-student-performance-box {
+  width: 225px;
+  margin-right: 10px;
+  margin-bottom: 6px;
+  .panel {
+    margin-bottom: 5px;
+    border-radius: 4px;
+    box-shadow: 0 0 4px 1px $navbar-box-shadow;
+
+    .panel-heading {
+      padding: 5px;
+      border-radius: 4px 4px 0 0;
+
+      cursor: pointer;
+      line-height: $font-size-h6;
+      @include flexbox;
+      @include align-items(center);
+
+      background-color: $white;
+
+      .student-circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: dotted 1px $sky-400;
+        border-style: dotted;
+        margin: 10px;
+        margin-right: 6px;
+        text-align: center;
+      }
+
+      .name {
+        max-width: 100px;
+        display: inline-block;
+        word-break: break-word;
+        text-transform: capitalize;
+      }
+      .material-icons {
+        font-size: $in-progress-icon-size;
+      }
+
+      &.anonymous {
+        .name {
+          max-width: 120px !important;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      &.not-started {
+        .name {
+          max-width: 100px;
+        }
+      }
+      .question-in-progress {
+        padding-top: 2px;
+      }
+    }
+    hr {
+      margin: 0 15px;
+      border-top: 1px solid $nobel-gray;
+      margin-bottom: 10px;
+    }
+    .panel-body {
+      padding: 5px 5px 0 0;
+    }
+
+    .grey-circle {
+      background: url("gooru/images/baseline-block-24px.svg");
+      width: 29px;
+      height: 29px;
+      display: block;
+      background-size: cover;
+      border-color: $light-200 !important;
+      text-align: center;
+      opacity: 0.2;
+      margin-bottom: 10px;
+      margin-left: 10px;
+      line-height: 27px;
+    }
+
+    .questions {
+      @include flexbox;
+      @include flex-wrap(wrap);
+      width: 100%;
+      span {
+        //padding-left: 3%;
+        &:not(.not-started) {
+          cursor: pointer;
+        }
+        margin-left: 15px;
+        margin-bottom: 15px;
+        width: 24px;
+        height: 24px;
+        text-align: center;
+        border-radius: 50%;
+        border: solid 1px black;
+        &.skipped,
+        &.not-started {
+          border-color: $light-200;
+          color: $light-200;
+          color: $close-color;
+          @extend .grey-circle;
+        }
+        &.correct {
+          border-color: $brand-success;
+          background-color: $brand-success;
+          color: $white;
+        }
+        &.incorrect {
+          border-color: $brand-incorrect;
+          background-color: $brand-incorrect;
+          color: $white;
+        }
+        &.started {
+          border-color: $blue-400;
+          background-color: $blue-400;
+          color: $white;
+        }
+      }
+    }
+
+    .time {
+      @include flexbox;
+      @include flex-wrap(wrap);
+      width: 100%;
+      span {
+        //padding-left: 3%;
+        &:not(.not-started) {
+        }
+        margin-left: 15px;
+        margin-bottom: 15px;
+        width: 24px;
+        height: 24px;
+        text-align: center;
+        border-radius: 50%;
+        border: solid 1px black;
+        &.skipped,
+        &.not-started {
+          border-color: $light-200;
+          color: $light-200;
+          color: $close-color;
+          @extend .grey-circle;
+        }
+        &.correct {
+          border-color: $brand-success;
+          background-color: $brand-success;
+          color: $white;
+        }
+        &.incorrect {
+          border-color: $brand-incorrect;
+          background-color: $brand-incorrect;
+          color: $white;
+        }
+        &.started {
+          border-color: $blue-400;
+          color: $blue-400;
+        }
+        &.resource-time {
+          border-radius: unset;
+          border: unset;
+        }
+      }
+    }
+  }
+}

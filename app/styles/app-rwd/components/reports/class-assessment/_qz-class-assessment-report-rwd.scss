@@ -1,0 +1,30 @@
+.reports.qz-class-assessment-report {
+  @media only screen and (max-width: $screen-xs) {
+    .view-container {
+      .gru-view-layout-picker {
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+.qz-modal {
+  &.qz-assessment-report-modal {
+    @media only screen and (max-width: $screen-sm - 1) {
+      .modal-dialog {
+        width: 100% !important;
+        margin: 0;
+      }
+    }
+  }
+
+  &.qz-questions-detail-modal {
+    @media only screen and (max-width: $screen-sm - 1) {
+      .modal-dialog {
+        width: 100% !important;
+        margin: 0;
+      }
+    }
+  }
+}

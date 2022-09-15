@@ -1,0 +1,25 @@
+<div class="header-panel row">
+    {{#if (not isLTIResourceLinkLaunch)}}
+  <div class="back-to-collection pull-left" {{action 'closePlayer'}} data-toggle="tooltip" data-placement="bottom" title="{{t 'common.close'}}">
+    <div class="nav-icon-container">
+      {{gru-icon name='ic_close'}}
+    </div>
+  </div>
+  {{/if}}
+  <div class="pull-left content-title {{unless collection.isCollection 'assessment'}}">
+    <div class="title-info">
+      <i class="icon pull-left"></i>
+      <p class="title pull-left">{{collection.title}}</p>
+    </div>
+  </div>
+  {{#if (or isTeacher isAnonymous)}}
+  {{#if (not isLTIResourceLinkLaunch)}}
+    <div class="pull-left remix" {{action 'remixCollection' collection}}>
+      <div class="nav-icon-container">
+        {{gru-icon name='ic_content_copy' class="pull-left"}}
+        <span class="pull-left">{{t 'common.remix'}}</span>
+      </div>
+    </div>
+  {{/if}}
+  {{/if}}
+</div>

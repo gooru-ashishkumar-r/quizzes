@@ -1,0 +1,38 @@
+.grading-scale-legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: $font-size-small;
+  @include clearfix();
+
+  li {
+    float: $tab-float-dir;
+    line-height: 1;
+    margin-right: 1em;
+    display: table;
+    width: 85px;
+
+    i {
+      display: inline-block;
+      border-radius: 4px;
+      height: 15px;
+      width: 15px;
+      margin: 0 5px 0 0;
+    }
+    span {
+      display: table-cell;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    &.not-started {
+      i {
+        border: 1px solid $gray-light;
+        background-color: $light-200;
+      }
+    }
+    &:last-child {
+      margin: 0;
+    }
+  }
+}

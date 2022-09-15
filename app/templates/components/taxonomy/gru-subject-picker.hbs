@@ -1,0 +1,58 @@
+<div class="btn-group clearfix">
+  <button type="button" class="btn btn-primary btn-sm selected-subject" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{#if selectedSubject}}
+      {{selectedSubject.frameworkId}} {{selectedSubject.subjectTitle}}
+    {{else}}
+      {{t placeholderLabelKey}}
+    {{/if}}
+  </button>
+  <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="caret"></span>
+    <span class="sr-only">{{t "common.toggle-dropdown"}}</span>
+  </button>
+  <ul class="dropdown-menu {{if (eq alignment 'left' ) 'dropdown-menu-right' 'dropdown-menu-left'}}">
+    {{#if onlySubjectsWithStandards}}
+      {{#each subjectsWithStandards as |subject|}}
+        {{#if subject.frameworksWithStandards}}
+          <li class="subject has-children">
+            <a class="trigger">
+              {{#if (eq alignment 'left' )}}
+                {{gru-icon name="keyboard_arrow_left"}}
+              {{/if}}
+              {{subject.title}}
+              {{#unless (eq alignment 'left' )}}
+                {{gru-icon name="keyboard_arrow_right"}}
+              {{/unless}}
+            </a>
+            <ul class="dropdown-menu sub-menu {{if (eq alignment 'left' ) 'dropdown-menu-right' 'dropdown-menu-left'}}">
+              {{#each subject.frameworksWithStandards as |framework|}}
+                <li><a class="subject-action" {{action 'setSubject' framework true}}>{{framework.title}}</a></li>
+              {{/each}}
+            </ul>
+          </li>
+        {{else}}
+          <li class="subject">
+            <a class="subject-action" {{action 'setSubject' subject true}}>{{subject.title}}</a>
+          </li>
+        {{/if}}
+      {{/each}}
+    {{else}}
+      {{#each subjects as |subject|}}
+        {{#if subject.frameworks}}
+          <li class="subject has-children">
+            <a class="trigger">{{subject.title}} {{gru-icon name="keyboard_arrow_right"}}</a>
+            <ul class="dropdown-menu sub-menu {{if (eq alignment 'left' ) 'dropdown-menu-right' 'dropdown-menu-left'}}">
+              {{#each subject.frameworks as |framework|}}
+                <li><a class="subject-action" {{action 'setSubject' framework true}}>{{framework.title}}</a></li>
+              {{/each}}
+            </ul>
+          </li>
+        {{else}}
+          <li class="subject">
+            <a class="subject-action" {{action 'setSubject' subject true}}>{{subject.title}}</a>
+          </li>
+        {{/if}}
+      {{/each}}
+    {{/if}}
+  </ul>
+</div>

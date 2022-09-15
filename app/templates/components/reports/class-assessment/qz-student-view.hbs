@@ -1,0 +1,18 @@
+<div class="sort-section hidden">
+  <div class="btn-group" role="group">
+    <button type="button" {{action 'sortStudentView' false}} class="sort-average btn {{unless sortAlphabetically 'btn-primary' 'btn-info'}}">{{gru-icon name='format_list_numbered'}}<span>{{t "common.sortAverage"}}</span></button>
+    <button type="button" {{action 'sortStudentView' true}}class="sort-alphabetical btn {{if sortAlphabetically 'btn-primary' 'btn-info'}}">{{gru-icon name='sort_by_alpha'}}<span>{{t "common.sortAlphabetical"}}</span></button>
+  </div>
+</div>
+<div class="student-performance-list">
+  {{#each sortedStudentPerformance as |studentPerformance|}}
+    {{reports/class-assessment/qz-student-performance-box
+        anonymous=anonymous
+        isCollectionType=isCollectionType
+        student=studentPerformance.student
+        reportData=studentPerformance.reportData
+        onSelectQuestion=(action 'selectQuestion')
+        onSelectStudent=(action 'selectStudent')
+      }}
+  {{/each}}
+</div>

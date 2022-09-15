@@ -1,0 +1,21 @@
+<div class="navigation {{if anonymous 'anonymous'}}">
+  {{gru-bubbles bubbleOptions=questionsNavOptions onBubbleSelect='bubbleSelect'}}
+  {{#if anonymous}}
+    <button class="btn-results {{if anonymous 'btn-lg' 'btn'}} btn-success" {{action 'showResult'}}>
+      {{t (if showResult 'common.hide-results' 'common.show-results')}}
+    </button>
+  {{/if}}
+</div>
+<div class="body">
+  <div class="question-info {{if anonymous 'anonymous'}}">
+    {{reports/class-assessment/qz-question-information question=selectedQuestion anonymous=anonymous}}
+  </div>
+  <div class="question-metrics">
+    {{reports/class-assessment/qz-question-performance
+          question=selectedQuestion
+          reportData=reportData
+          anonymous=anonymous
+          students=students
+          showResult=showResult}}
+  </div>
+</div>

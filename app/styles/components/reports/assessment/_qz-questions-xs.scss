@@ -1,0 +1,42 @@
+.reports.assessment.qz-questions-xs {
+  display: table;
+  width: 100%;
+
+  .question-card {
+    display: table-row;
+    width: 100%;
+    .question-container,
+    .question {
+      display: block;
+      padding: 8px 0;
+    }
+    .question-container {
+      border-bottom: 1px solid $gray-lighter;
+
+      .question-text {
+        word-wrap: break-word;
+        overflow: auto;
+        max-width: 12em;
+        img {
+          max-height: 100px;
+          margin: 5px 0;
+        }
+      }
+    }
+  }
+  .show-performance {
+    .correct-answer {
+      display: none;
+    }
+  }
+  .show-correct-answer {
+    .your-answer {
+      display: none;
+    }
+  }
+
+  .correct-answer,
+  .your-answer {
+    padding: 8px 0 8px 15%;
+  }
+}

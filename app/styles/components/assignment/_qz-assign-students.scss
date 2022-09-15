@@ -1,0 +1,104 @@
+.qz-assign-students {
+  .nav-tabs {
+    box-shadow: inset 0 -1px 0 $gray-light;
+    li {
+      height: 50px;
+      margin-bottom: 0;
+      display: block;
+      margin-right: 15px;
+      a {
+        padding: 10px 0;
+      }
+      &.active {
+        display: block;
+        a {
+          box-shadow: inset 0 -4px 0 $gray;
+          padding-left: 0;
+          padding-right: 0;
+          &:focus {
+            box-shadow: inset 0 -4px 0 $gray;
+          }
+          &:active {
+            box-shadow: inset 0 -4px 0 $gray;
+          }
+        }
+      }
+      &:not(.active) {
+        a {
+          box-shadow: none;
+        }
+      }
+    }
+    .lead {
+      @media (max-width: $screen-xs-max) {
+        font-size: 92%;
+      }
+    }
+  }
+  .content.tab-content {
+    margin: 20px;
+  }
+  .list-container {
+    margin-bottom: 0;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: $light-100;
+    max-height: 480px;
+    overflow: scroll;
+    .select-all {
+      &:hover {
+        background-color: $sky-100;
+      }
+      &.selected {
+        background-color: $sky-100;
+      }
+    }
+    .error-assignees-empty {
+      padding: 10px;
+      color: $red-500;
+    }
+    .student-list {
+      margin-top: 10px;
+      .list-group-item {
+        margin-bottom: 3px;
+        .gru-icon {
+          position: absolute;
+          right: 22px;
+          color: $blue-600;
+        }
+        &.selected {
+          background-color: $sky-100;
+        }
+      }
+    }
+  }
+  .students-header {
+    margin-bottom: 12px;
+    > * {
+      display: inline-block;
+      @media (max-width: $screen-xs-max) {
+        display: block;
+      }
+    }
+    .search-navigation {
+      @media (min-width: $screen-sm-min) {
+        float: $menu-float-dir;
+      }
+      .search-keyword {
+        @include flexbox;
+        .search-icon {
+          i {
+            vertical-align: text-top;
+          }
+        }
+      }
+    }
+  }
+  .actions {
+    display: inline-block;
+    margin-bottom: 15px;
+    .cancel-btn {
+      border: 1px solid $gray-light;
+    }
+  }
+}

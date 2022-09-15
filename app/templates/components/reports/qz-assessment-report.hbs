@@ -1,0 +1,249 @@
+<div class="qz-assessment-summary {{if isIframeMode 'iframe-report'}}" style="display: none">
+  {{reports/assessment/qz-summary
+  contextResult=contextResult
+  areQuestionLinksHidden=areAnswersHidden
+  onSelectAttempt='selectAttempt'
+  onBubbleSelect='bubbleSelect'
+  isRealTime=isRealTime
+  showAttempts=showAttempts
+  profile=profile
+  questionCount=resultsQuestions.length
+  resourceCount=resultsResources.length
+  oeQuestionCount=resultsOpenEnded.length
+  }}
+  <div class="content-details-container">
+
+    <div class="taxonomy-container">
+      {{#if tags.length}}
+        {{taxonomy/gru-taxonomy-tag-list tags=tags tagsVisible=1 isInCard=true}}
+      {{/if}}
+    </div>
+    <div class="activity-performance-container {{unless collection.isAssessment 'collection-performance'}}">
+      <div role="timer" class="timespent-container">
+        <div class="timespent-icon">
+          {{gru-icon name="query_builder"}}
+        </div>
+        <div class="timespent-data">
+          <div class="timespent-label">{{t "qz-assessment-report.qz-summary.total-time-spent"}}</div>
+          <div class="timespent-value">
+            {{#if contextResult.totalTimeSpent}}
+              {{format-time contextResult.totalTimeSpent}}
+            {{else}}
+              --
+            {{/if}}
+          </div>
+        </div>
+      </div>
+      {{#if collection.isAssessment}}
+        {{#if isSerptype}}
+          <div class="grade {{if hasOnlyOEQuestion 'only-oe' ''}}" style={{safe-html (concat "background-color:" (grade-color contextResult.correctPercentage))}}>
+            {{#unless hasOnlyOEQuestion}}
+              <span class="percentage">{{round-number contextResult.correctPercentage}}%</span>
+            {{else}}
+              <span class="percentage">--</span>
+            {{/unless}}
+          </div>
+        {{/if}}
+      {{/if}}
+    </div>
+  </div>
+  <div class="information">
+    <div role="timer" class="attempt-info">
+      {{#if collection.isAssessment}}
+        <span class="attempt">
+          {{#if showAttempts}}
+            <span class="title">{{t "common.attempt"}}</span>
+            <span class="attempt-selector">
+              <span class="dropdown current-attempt">
+                <button class="btn btn-default dro`pdown-toggle" type="button" data-toggle="dropdown">{{selectedAttempt}}<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  {{#each attempts as |attempt|}}
+                    <li><a {{action 'selectAttempt' attempt.value}}>{{attempt.label}}</a></li>
+                  {{/each}}
+                </ul>
+              </span>
+              <span>{{t "common.of"}}</span>
+              <span class="total-attempts">{{contextResult.totalAttempts}}</span>
+            </span>
+          {{else}}
+            {{#if isRealTime}}
+              <span class="title current">{{t "common.current-attempt"}}</span>
+            {{else}}
+              <span class="title latest">{{t "common.latest-attempt"}}</span>
+            {{/if}}
+          {{/if}}
+        </span>
+      {{/if}}
+      {{#if contextResult.submittedAt}}
+        <span class="date">
+          {{gru-icon name='event'}}<span>{{format-date contextResult.submittedAt 'h:mm a MMM. Do, YYYY'}}</span>
+        </span>
+      {{/if}}
+    </div>
+    {{#if (gt resultsQuestions.length 0)}}
+      <div class="answer-key">
+        {{#if isAnswerKeyHidden}}
+          <em>{{t "common.answer-key-was-hidden"}}</em>
+        {{else}}
+          <div class="btn-group summary-report-btn" role="group">
+            <button role="button" type="button" {{action 'selectPerformanceOption' true}} class="performance btn {{if showPerformance 'btn-primary' ' '}}" aria-label="{{t "common.performance"}}">{{t "common.performance"}}</button>
+            <button role="button" type="button" {{action 'selectPerformanceOption' false}} class="correct-answer btn {{unless showPerformance 'btn-primary' '' }}"
+              aria-label="{{t "common.show-correct-answer"}}">{{t "common.show-correct-answer"}}</button>
+          </div>
+        {{/if}}
+      </div>
+    {{/if}}
+  </div>
+  {{#if areAnswersHidden}}
+    <div class="hidden-report">
+      <span>{{t "qz-assessment-report.hidden-report"}}</span>
+    </div>
+  {{else}}
+    {{#each orderedQuestions as |content seq|}}
+      {{#if content.resource.isResource}}
+        {{reports/assessment/qz-resources
+        showPerformance=showPerformance
+        contentSeq = (plus-one seq)
+        content=content
+        showReactionBar=true}}
+      {{else}}
+        {{#if (or content.resource.isOpenEnded content.isScientific)}}
+          {{reports/assessment/qz-questions
+          showPerformance=showPerformance
+          enableMorebtn=true
+          showScore=false
+          contentSeq = (plus-one seq)
+          content=content
+          contextResult=contextResult
+          currentClass=currentClass
+          isShowExemplarText=isShowExemplarText
+          viewMode='open-ended'}}
+        {{else}}
+          {{reports/assessment/qz-questions
+          showPerformance=showPerformance
+          enableMorebtn=true
+          contentSeq = (plus-one seq)
+          content=content
+          isShowExemplarText=isShowExemplarText
+        }}
+        {{/if}}
+      {{/if}}
+    {{/each}}
+  {{/if}}
+</div>
+
+<div class="collection-summary">
+  <div class="summary-report-container">
+    <div class="header-panel">
+      <div class="collection-info">
+        <div class="icon-container {{unless collection.isAssessment 'collection' 'assessment'}}"></div>
+        <div class="title-container {{if isSuggestedContent 'suggestion'}}">
+          {{contextResult.title}}
+        </div>
+        <div class="score-container">
+          {{#if (and collection.isAssessment (not hasOnlyLikertScale))}}
+            {{#if (and isGraded isDefaultGrade (or (eq contextResult.correctPercentage null) (eq contextResult.correctPercentage undefined)))}}
+              <div class="grading-icon" data-toggle="tooltip" title="{{t 'teacher-not-graded'}}"></div>
+            {{else}}
+              <div class="grade" style={{safe-html (concat "color:" (grade-color contextResult.correctPercentage))}}>
+                {{#if (or (eq contextResult.correctPercentage null) (eq contextResult.correctPercentage undefined))}}
+                  <span class="percentage">--</span>
+                {{else}}
+                  <span class="percentage">{{round-number contextResult.correctPercentage}}%</span>
+                {{/if}}
+              </div>
+            {{/if}}
+          {{/if}}
+        </div>
+        <div class="timespent-container"> {{format-time contextResult.totalTimeSpent}}</div>
+      </div>
+      <div class="collection-desc">
+        <div class="resource-count {{if contextResult.learningObjectives 'show-description' 'hidden-description'}}" {{action 'toggleDesction'}}>
+          {{#if hasCollectionItems }}
+            <div class="resource-icon-count">
+              {{#if (and collection.isCollection (gt collection.resourceCount 0)) }}
+                <div class="resource">
+                  <span>{{collection.resourceCount}}</span>
+                  <i class="icon"></i>
+                </div>
+              {{/if}}
+              {{#if (gt collection.questionCount 0)}}
+                <div class="question">
+                  <span>{{collection.questionCount}}</span>
+                  <i class="icon"></i>
+                </div>
+              {{/if}}
+            </div>
+          {{/if}}
+          <div class="accordion-icon">
+            {{gru-icon name=(if isDisplayDescription 'arrow_drop_up' 'arrow_drop_down')}}
+          </div>
+        </div>
+       <div class="description">
+        <div class="desc-img">
+          <div class="desc-icon" style="background-image: url({{collection.thumbnailUrl}})"></div>
+        </div>
+        <div class="desc">
+          {{#if collection.isCollection}}
+            <p>
+              {{#if collection.standards.length}}
+              {{t 'collection-summary.collection-desc' collectionTitle = collection.title}}
+              {{else}}
+              {{t 'collection-summary.collection-without-desc' collectionTitle = collection.title}}
+              {{/if}}
+              <div class="taxonomy">
+                {{#if tags.length}}
+                  {{taxonomy/gru-taxonomy-tag-list tags=tags tagsVisible=1 isInCard=true}}
+                {{/if}}
+              </div>
+            </p>
+          {{else}}
+            <p>
+              {{#if collection.standards.length}}
+              {{t 'collection-summary.assessment-desc' collectionTitle = collection.title}}
+              {{else}}
+              {{t 'collection-summary.assessment-without-desc' collectionTitle = collection.title}}
+              {{/if}}
+              <div class="taxonomy">
+                {{#if tags.length}}
+                  {{taxonomy/gru-taxonomy-tag-list tags=tags tagsVisible=1 isInCard=true}}
+                {{/if}}
+              </div>
+            </p>
+          {{/if}}
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="body-panel">
+      {{#each orderedQuestions as |content seq|}}
+        {{#if content.resource.isResource}}
+          {{reports/assessment/qz-resources
+          showPerformance=showPerformance
+          contentSeq = (plus-one seq)
+          content=content
+          showReactionBar=true}}
+        {{else}}
+          {{#if (or content.resource.isOpenEnded content.isScientific)}}
+            {{reports/assessment/qz-questions
+            showPerformance=showPerformance
+            showScore=false
+            enableMorebtn=true
+            contentSeq = (plus-one seq)
+            content=content
+            isShowExemplarText=isShowExemplarText
+            viewMode='open-ended'}}
+          {{else}}
+            {{reports/assessment/qz-questions
+            showPerformance=showPerformance
+            enableMorebtn=true
+            contentSeq = (plus-one seq)
+            content=content
+            isShowExemplarText=isShowExemplarText
+            }}
+          {{/if}}
+        {{/if}}
+      {{/each}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+.standard-dropdown {
+  .app-dropdown {
+    > .btn-group {
+      .caret {
+        color: $white;
+      }
+
+      .selected-text {
+        width: inherit;
+      }
+    }
+
+    .dropdown-menu {
+      li:not(.disabled) {
+        &.selected {
+          p {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

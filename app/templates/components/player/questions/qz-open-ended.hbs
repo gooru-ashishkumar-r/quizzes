@@ -1,0 +1,9 @@
+<p class="instructions">
+  {{t "qz-open-ended.instructions" action=(t instructionsActionTextKey)}}
+</p>
+
+<div class="answer-panel">
+    <p class="character-limit help-block text-right">{{t "qz-open-ended.characterLimit"}}:
+      <span>{{charactersLeft}}</span></p>
+    {{textarea value=answer class="form-control" rows="5" maxlength=maxLength disabled=readOnly}}
+</div>

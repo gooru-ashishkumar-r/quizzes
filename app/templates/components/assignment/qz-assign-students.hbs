@@ -1,0 +1,45 @@
+<div class="panel-body">
+  <div class="row">
+    <div class="col-sm-offset-3 col-sm-6 col-xs-12">
+      <div class="panel panel-default panel-view">
+        <div class="panel-heading">Create Context</div>
+        <div class="panel-body containers">
+          <form>
+            <div class="form-group">
+              <label for="class-id">Class ID:</label>
+              {{validation/gru-input class="form-control" id="class-id" model=assignment valuePath='classId'}}
+            </div>
+            <div class="form-group">
+              <label for="collection-id">Collection ID:</label>
+              {{validation/gru-input class="form-control" id="collection-id" model=assignment valuePath='collectionId'}}
+            </div>
+            <div class="form-group">
+              <label for="title">Title:</label>
+              {{validation/gru-input class="form-control" id="title" model=assignment valuePath='title'}}
+            </div>
+            <div class="form-group">
+              {{
+                        validation.gru-radio
+                        model=assignment
+                        groupValue=assignment.isCollection
+                        valuePath=true
+                        name='isCollection'
+                        translationPath='common.collection'
+                        }}
+              {{
+                        validation.gru-radio
+                        model=assignment
+                        groupValue=assignment.isCollection
+                        valuePath=false
+                        name='isCollection'
+                        translationPath='common.assessment'
+                        }}
+            </div>
+            <button {{action "createContext"}}>Submit</button>
+            <button {{action "createContextAnonymous"}}>Create as Anonymous</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

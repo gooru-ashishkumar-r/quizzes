@@ -1,0 +1,21 @@
+<div class="form-group">
+  {{input type="number"
+    value=rawInputValue
+    disabled=disabled
+    placeholder=placeholder
+    class="form-control" name=valuePath
+    key-press="inputTyping"
+    focus-out="inputValueChange"
+    autofocus=autofocus
+    min=min
+    max=max
+    step=step
+  }}
+  <div class="error-messages">
+    {{#if showMessage}}
+      <span class="error">
+        {{v-get model valuePath 'message'}}
+      </span>
+    {{/if}}
+  </div>
+</div>

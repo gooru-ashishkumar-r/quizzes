@@ -1,0 +1,30 @@
+<p class="instructions">
+  {{t "qz-fib.instructions" action=(t instructionsActionTextKey)}}
+</p>
+
+<div class="answer-panel">
+  <div class="fib-answers">
+    {{#each answers as | item index|}}
+      <div class="answer-details form-group">
+        <label for="answers">
+          <span>{{item.answer_category}}</span> <span class="category-info" data-toggle="tooltip" data-placement="right" data-trigger="hover" title="{{t (concat "qz-player-definitions-of-" item.answer_category)}}">{{gru-icon name="info" style='material-icons-outlined'}}</span>
+        </label>
+        <div class="answer-text">
+            {{{gru-math-text text=item.answer_text}}}
+        </div>
+        {{#if item.ishintShow}}
+          <div class="hint-details hint{{index}}">
+            <label for="answers">
+              <span>{{t 'qz-answer-hint' category=item.answer_category}}</span>
+            </label>
+              <span>{{safe-html item.hint}}</span>
+          </div>
+        {{/if}}
+      </div>
+      <div class="info-icon {{if item.ishintShow 'hidden' 'show'}}" {{action toggleAction item}}>
+      </div>
+      <div class="close-icon {{if item.ishintShow 'show' 'hidden'}}" {{action toggleAction item}}>
+      </div>
+    {{/each}}
+  </div>
+</div>

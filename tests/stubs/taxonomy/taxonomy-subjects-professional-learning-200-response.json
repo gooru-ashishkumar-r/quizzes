@@ -1,0 +1,57 @@
+{
+  "subjects": [{
+    "id": "GDF.PL.DCE",
+    "title": "Deepening of Content Expertise",
+    "description": null,
+    "code": "GDF.PL.DCE",
+    "standard_framework_id": "GDF"
+  }, {
+    "id": "GDF.PL.IP",
+    "title": "Instructional Pedagogy",
+    "description": null,
+    "code": "GDF.PL.IP",
+    "standard_framework_id": "GDF"
+  }, {
+    "id": "GDF.PL.UNSS",
+    "title": "Understanding the New State Standards",
+    "description": null,
+    "code": "GDF.PL.UNSS",
+    "standard_framework_id": "GDF"
+  }, {
+    "id": "GDF.PL.EUA",
+    "title": "Effective Use of Assessments",
+    "description": null,
+    "code": "GDF.PL.EUA",
+    "standard_framework_id": "GDF"
+  }, {
+    "id": "GDF.PL.EUT",
+    "title": "Effective Use of Technology",
+    "description": null,
+    "code": "GDF.PL.EUT",
+    "standard_framework_id": "GDF"
+  }, {
+    "id": "GDF.PL.ACL",
+    "title": "Application of 21st Century Learning",
+    "description": null,
+    "code": "GDF.PL.ACL",
+    "standard_framework_id": "GDF"
+  }, {
+    "id": "GDF.PL.SFSP",
+    "title": "Support for Fragile Student Populations",
+    "description": null,
+    "code": "GDF.PL.SFSP",
+    "standard_framework_id": "GDF"
+  }, {
+    "id": "GDF.PL.DI",
+    "title": "District Initiatives",
+    "description": null,
+    "code": "GDF.PL.DI",
+    "standard_framework_id": "GDF"
+  }, {
+    "id": "GDF.PL.OT",
+    "title": "Other",
+    "description": null,
+    "code": "GDF.PL.OT",
+    "standard_framework_id": "GDF"
+  }]
+}

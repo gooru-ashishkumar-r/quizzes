@@ -1,0 +1,25 @@
+<ul class="filters hidden">
+  {{#each questionProperties as |property index|}}
+    <li class="checkbox">
+      <label>
+        {{input type="checkbox"
+          class=property.value
+          checked=property.visible
+          disabled=property.filter.disabled
+        }}
+        <span>{{property.filter.label}}</span>
+      </label>
+    </li>
+  {{/each}}
+</ul>
+{{gru-two-tier-header-table-1
+  anonymous=anonymous
+  firstTierHeaders=assessmentQuestions
+  secondTierHeaders=questionProperties
+  rowHeadersHeader=studentsHeader
+  averageScore=averageScore
+  isCollectionType=isCollectionType
+  data=tableData
+  onSelectFirstTierHeader=(action 'selectQuestion')
+  onSelectRowHeader=(action 'selectStudent')
+}}

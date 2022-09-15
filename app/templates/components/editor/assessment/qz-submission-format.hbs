@@ -1,0 +1,10 @@
+{{#each submissionFormats as |submissionFormat|}}
+    <div class="panel panel-default {{concat 'submission-format-' submissionFormat.format}} {{set-if-equal 'active' submissionFormat.format selectedType}}" {{action 'selectType' submissionFormat.format}}>
+        <div class="panel-body">
+            <i class="format-icon"></i>
+        </div>
+        <div class="panel-footer">
+          {{t (concat 'qz-submission-format.' submissionFormat.format) }}
+        </div>
+    </div>
+{{/each}}

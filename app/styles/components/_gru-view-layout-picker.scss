@@ -1,0 +1,25 @@
+.gru-view-layout-picker {
+  line-height: 1;
+  .view-layout-list {
+    display: inline-block;
+    border-radius: 4px;
+    div {
+      cursor: pointer;
+      display: block;
+      float: $tab-float-dir;
+      padding-left: 5px;
+      padding-right: 5px;
+      span {
+        i {
+          font-size: 32px;
+        }
+      }
+    }
+    a {
+      color: $gray-light;
+    }
+    div.active a {
+      color: $dark-300;
+    }
+  }
+}

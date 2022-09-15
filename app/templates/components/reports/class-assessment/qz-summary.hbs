@@ -1,0 +1,58 @@
+<div class="content {{if isQuestionView 'all-questions'}}">
+  <ul class="overview col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <li class="scores col-xs-4 col-sm-4 col-md-4 col-lg-4 hidden">
+      {{charts/gru-pie-chart data=assignmentScores }}
+      <span>{{t "common.classScores"}}</span>
+    </li>
+    <li class="average-score average-time col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      {{#if isCollection}}
+        {{charts/gru-bubble-chart content=(concat averageTime) color=(grade-color averageTime)}}
+        <span>{{t "common.averageTime" }}</span>
+      {{else}}
+        {{charts/gru-bubble-chart content=(concat averageScore '%') color=(grade-color averageScore)}}
+        <span>{{t "common.averageScore"}}</span>
+      {{/if}}
+    </li>
+    <li class="completion col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      {{charts/gru-radial-chart
+        value=totalCompleted
+        minValue=0
+        maxValue=studentsIds.length
+      }}
+      <span>{{t "common.completed"}}</span>
+    </li>
+  </ul>
+  <ul class="overview small {{if isFullScreen 'visible'}}">
+    <li class="scores">
+      {{ charts/gru-pie-chart data=assignmentScores }}
+      <span>{{t "common.classScores"}}</span>
+    </li>
+    <li class="completion">
+      {{charts/gru-radial-chart
+      value=totalCompleted
+      minValue=0
+      maxValue=studentsIds.length }}
+      <span>{{t "common.completed"}}</span>
+    </li>
+    <li class="average-score">
+      {{#if isCollection}}
+        {{charts/gru-bubble-chart content=(concat averageScore) color=(grade-color averageTime)}}
+        <span>{{t "common.averageScore"}}</span>
+      {{else}}
+        {{charts/gru-bubble-chart content=(concat averageScore '%') color=(grade-color averageScore)}}
+        <span>{{t "common.averageScore"}}</span>
+      {{/if}}
+    </li>
+  </ul>
+  {{reports/class-assessment/qz-questions-summary
+    isCollection=isCollection
+    data=questionsData
+    isExpanded=isQuestionView
+    onSelectQuestion=(action 'selectQuestion')
+    onToggleView=(action 'toggleView')
+  }}
+</div>
+<div class="grading-scale hidden">
+  <span class="average">{{t "common.averageScore"}}</span>
+  {{grading-scale-legend notStarted=(t "common.notStarted") notScored=(t "common.notScored")}}
+</div>

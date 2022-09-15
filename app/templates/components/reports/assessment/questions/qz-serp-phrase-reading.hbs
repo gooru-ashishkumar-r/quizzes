@@ -1,0 +1,45 @@
+<ul>
+    {{#if showCorrect}}
+   {{#each answers as |answer index|}}
+    <li>
+        <div class="answer-container base-answer">
+            <div class="">
+                {{answer.answer_text}}
+            </div>
+        </div>
+    </li>
+    {{else}}
+    --
+    {{/each}}
+    {{else}}
+    {{#each answers as |answer index|}}
+    <li>
+        <div class="exercise-seq {{if showCorrect 'in-visible'}}">
+            Excercise {{plus-one index}}
+        </div>
+        <div class="answer-container">
+            <div class="audio-player wpm-audio-player player-{{index}}">
+              <span class="wpm-timer-section">
+                  {{gru-icon name="query_builder"}}
+              <span class="timer-count"><small class="current-count">00:00:00</small>/<small class="duration">00:00:00</small></span>
+              </span>
+                <span class="audio-progress">
+                    <span class="progress-filling">
+                        <span class="progress-pointer"></span>
+                    </span>
+                </span>
+                {{#if (and (eq activeIndex (concat 'player-' index)) isPlaying)}}
+                <span class="audio-play" data-audio-url="{{answer.value}}" {{action "onPauseAudio" (concat 'player-' index)}}>
+                    {{gru-icon name="pause"}}
+                </span>
+                {{else}}
+                <span class="audio-play" data-audio-url="{{answer.value}}" {{action "onPlayAudio" (concat 'player-' index) answer.value}}>
+                    {{gru-icon name="play_arrow"}}
+                </span>
+                {{/if}}
+            </div>
+        </div>
+    </li>
+    {{/each}}
+    {{/if}}
+</ul>

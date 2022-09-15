@@ -1,0 +1,20 @@
+{
+  "codes": [
+    {
+      "id": "TEKS.K12.SC-K-SIR-01",
+      "code": "TEKS.S.K.1",
+      "title": "The student conducts classroom and outdoor investigations following home and school safety procedures and uses environmentally appropriate and responsible practices.",
+      "code_type": "standard_level_1",
+      "is_selectable": false,
+      "sequence_id": 1
+    },
+    {
+      "id": "TEKS.K12.SC-K-SIR-02",
+      "code": "TEKS.S.K.2",
+      "title": "The student conducts classroom and outdoor investigations following home and school safety procedures and uses environmentally appropriate and responsible practices.",
+      "code_type": "standard_level_1",
+      "is_selectable": false,
+      "sequence_id": 2
+    }
+  ]
+}

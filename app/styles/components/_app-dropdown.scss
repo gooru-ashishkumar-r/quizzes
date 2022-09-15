@@ -1,0 +1,24 @@
+.app-dropdown {
+  > .btn-group {
+    .caret {
+      color: $white;
+    }
+
+    .selected-text {
+      width: 120px;
+    }
+  }
+
+  .dropdown-menu {
+    li:not(.disabled) {
+      &.selected {
+        background-color: $brand-primary;
+        a,
+        a:hover {
+          background-color: $brand-primary;
+          color: $white;
+        }
+      }
+    }
+  }
+}

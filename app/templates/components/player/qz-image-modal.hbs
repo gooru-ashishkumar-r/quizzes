@@ -1,0 +1,11 @@
+<div class="panel panel-primary">
+    <div class="zoomMenu hidden">
+        <span class="icon zoomPlus" aria-hidden="true" {{ action 'zoomPlus'  }}>{{gru-icon name='zoom_out'}}</span>
+        <span class="icon zoomMinus" aria-hidden="true" {{ action 'zoomMinus'  }}>{{gru-icon name='zoom_in'}}</span>
+    </div>
+    <div class="panel-body panel-height">
+        {{#if model.thumbnail}}
+            <img role="presentation" src='{{model.thumbnail}}' alt="thumbnailImg" {{action 'closeModal'}} style="transform: scale({{zoomImg}})" />
+        {{/if}}
+    </div>
+</div>

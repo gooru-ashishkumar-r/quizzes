@@ -1,0 +1,55 @@
+.qz-player-confirmation {
+  @media screen and (max-width: $sm-width-max) {
+    .confirmation-panel {
+      .header {
+        .title-info {
+          .collection-info {
+            .title {
+              font-size: 16px;
+              width: 283px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (min-width: $screen-375) and (max-width: $screen-824) and (orientation: landscape) {
+    top: 125px;
+    left: auto;
+    right: auto;
+    zoom: 0.9;
+
+    .confirmation-panel {
+      width: 450px;
+      height: max-content;
+
+      .body .description {
+        min-height: max-content;
+        padding-bottom: 4px;
+        -webkit-line-clamp: 3;
+      }
+    }
+
+    .confirmation-panel {
+      .body .properties {
+        padding-bottom: 6px;
+      }
+
+      .header {
+        .title-info {
+          .collection-info {
+            .content-info {
+              padding: 12px 0;
+            }
+
+            .title {
+              margin-top: -16px;
+              font-size: 13px;
+              width: 314px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

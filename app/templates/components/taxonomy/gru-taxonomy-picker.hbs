@@ -1,0 +1,36 @@
+<form {{action "saveSelectedTags" selectedTags on="submit"}}>
+  {{#if shortcutTags.length}}
+    <div class="shortcut-list">
+      <span>{{shortcutText}}</span>
+      <ul>
+        {{#each shortcutTags as |tag|}}
+          <li>
+            {{taxonomy/gru-taxonomy-tag model=tag onSelect=(action 'openShortcut') }}
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/if}}
+  <div class="browse-selector">
+    <span>{{browseSelectorText}}</span>
+    {{taxonomy/gru-browse-selector
+    data=browseItems
+    headers=panelHeaders
+    selectedPath=selectedPath
+    onSelectItem=(action 'updatePath')
+    onCheckItem=(action 'addSelectedTag')
+    onUncheckItem=(action 'removeSelectedTag')}}
+  </div>
+  <div class="selected-list">
+    {{#if selectedTextKey}}
+      <span>{{t selectedTextKey count=selectedTags.length}}</span>
+    {{/if}}
+    {{taxonomy/gru-taxonomy-tag-list tags=selectedTags onRemove=(action 'uncheckItem')}}
+  </div>
+  <div class="actions">
+    <button type="button" class="btn btn-default cancel" data-dismiss="modal" aria-label="{{t 'common.cancel'}}">
+      <span aria-hidden="true">{{t 'common.cancel'}}</span>
+    </button>
+    <button type="submit" class="btn btn-primary save">{{if fromSearch (t "common.search") (t "common.add") }}</button>
+  </div>
+</form>

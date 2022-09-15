@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Quizzes</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <link href='https://www.gooru.org/css?family=Lato:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link href="https://www.gooru.org/icon?family=Material+Icons" rel="stylesheet">
+
+
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="assets/vendor.css">
+  <link rel="stylesheet" href="assets/dummy.css">
+</head>
+<body>
+<script src="assets/vendor.js"></script>
+<script src="assets/dummy.js"></script>
+
+<script type="text/javascript">
+  (function () {
+    jQuery(document).ready(function () {
+      var emberApp = window['QuizzesWebApp'];
+      emberApp.start({
+        transition: [ 'edit.assessment', '' ],
+        properties: {
+          token: localStorage.getItem('token')
+        }
+      });
+    });
+  })(); // call anonymous function
+</script>
+<div id="quizzes-application-container" style="height: 100vh"></div>
+</body>
+</html>

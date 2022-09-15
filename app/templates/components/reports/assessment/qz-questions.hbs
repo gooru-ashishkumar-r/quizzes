@@ -1,0 +1,253 @@
+<div class="summary-report-questions">
+  <div class="questions-header">
+    <div class="title">
+      <h4>{{title}}</h4>
+    </div>
+    {{#unless isOpenEnded}}
+      {{#if isAnswerKeyHidden}}
+        <em>{{t "common.answer-key-was-hidden"}}</em>
+      {{else}}
+        <div class="btn-group summary-report-btn" role="group">
+          <button type="button" {{action 'selectPerformanceOption' true}} class="performance btn {{if showPerformance 'btn-primary' ' '}}">{{t "common.performance"}}</button>
+          <button type="button" {{action 'selectPerformanceOption' false}} class="correct-answer btn {{unless showPerformance 'btn-primary' '' }}">{{t "common.show-correct-answer"}}</button>
+        </div>
+      {{/if}}
+    {{/unless}}
+  </div>
+  <div class="question-container {{content.resource.type}} {{if isShowCorrectAnswer 'answer-visible'}}">
+    <div class="resource-icon">
+      {{#if showScore}}
+        {{#if (and content.started content.skipped)}}
+          <div class="question-status" data-toggle="tooltip" title="Skipped">
+            {{gru-icon name="block"}}
+          </div>
+        {{else}}
+            <div class="question-score">
+              <span class="{{if content.started content.correct 'not-started'}}" data-toggle="tooltip"  title={{t content.tooltip}}>
+                {{#unless content.isComprehension}}
+                {{#if content.started}}
+                  <i class="icon"> </i>
+                {{else}}
+                  {{gru-icon name="block"}}
+                {{/if}}
+                {{/unless}}
+              </span>
+            </div>
+        {{/if}}
+      {{else}}
+        {{#if content.skipped}}
+          <div class="question-status" data-toggle="tooltip" title="Skipped">
+            {{gru-icon name="block"}}
+          </div>
+          {{else}}
+              <div class="question-icon {{if content.started 'started'}}"></div>
+        {{/if}}
+      {{/if}}
+    </div>
+    <div class="resource-title">
+      <div class="title ellipsis">{{contentSeq}}. {{safe-html content.resource.title}}</div>
+      <div class="show-more-container-panel {{unless isExpanded 'show-more'}}" >
+        <span class="desc">{{{gru-math-text text=content.resource.description}}}</span>
+        {{#if content.resource.hasMedia}}
+          <div class="question-thumbnail">
+            <img role="presentation" class="img-responsive" src="{{content.resource.mediaUrl}}" alt="mediaUrl" />
+          </div>
+        {{/if}}
+        {{#if (and isSerp isHideDescription) }}
+          <div class="question-additional-info">
+            {{#if isChooseOne}}
+              <div class="choose-one-questions question-description">
+                {{{gru-math-text text=content.resource.questionText}}}
+              </div>
+            {{/if}}
+            {{#if isWPM}}
+              <div class="wpm-count-header">
+                {{t 'qz-report-wpm'}} - {{wpmCount}}
+              </div>
+            {{/if}}
+            {{#each content.resource.baseAnswers as |baseAnswer index|}}
+              {{#if baseAnswer.answer_audio_filename}}
+                {{player/audio-player url=baseAnswer.answer_audio_filename identifier=index}}
+              {{/if}}
+              {{#if (eq content.resource.type 'serp_words_per_minute')}}
+                {{{text-highlight baseAnswer.answer_text  (array-index content.answer index)}}}
+              {{else}}
+                {{{gru-math-text text=baseAnswer.answer_text}}}
+                {{#if (eq content.resource.type 'serp_silent_reading')}}
+                  <span class="silent-reading-box">{{input type="checkbox" checked="true"}} {{t 'common.completed'}}</span>
+                {{/if}}
+              {{/if}}
+            {{/each}}
+          </div>
+        {{/if}}
+      </div>
+      {{#if hasMoreText}}
+        <div class="show-more-desc" {{action 'onShowMore'}}>
+            <span class="show-more-btn">{{t (if isExpanded 'student-independent-learning.show-less' 'student-independent-learning.show-more')}}</span>
+        </div>
+      {{/if}}
+      <div class="answer-container {{if (or isH5PContent (eq content.resource.type 'serp_silent_reading')) 'hidden'}}">
+          <div class="user-answer answer-section">
+            <div class="answer-type-label type-label">
+              {{#if (not content.resource.userAnswer)}}
+                {{t 'common.report-your'}} {{answerHead}}
+              {{else}}
+                {{#if isStudent}}
+                  {{t 'common.answer'}}
+                {{else}}
+                  {{t 'common.student'}} {{answerHead}}
+                {{/if}}
+              {{/if}}
+            </div>
+            {{#if (or content.started content.isComprehension isShowComp)}}
+              <div class="answer-value-container">
+                {{#if (or content.started content.isComprehension isShowComp)}}
+                  {{{component (qz-question-config content.resource.type 'component.answer') profile=profile currentClass=currentClass showPerformance=showPerformance question=content}}}
+                {{/if}}
+              </div>
+            {{else}}
+              <div>{{t 'common.not-answered'}}</div>
+            {{/if}}
+          </div>
+        {{#if (or (and (not showPerformance) (not-eq content.resource.type 'likert_scale_question') (not content.isScientific)) isShowComp)}}
+          <div class="correct-answer answer-section {{if (or (eq content.resource.type 'serp_words_per_minute') (eq content.resource.type 'serp_phrase_cued_reading')) 'hidden'}}">
+            <div class="answer-type-label type-label">{{t 'common.correct-answer'}}</div>
+            <div class="answer-value-container">
+              {{{component (qz-question-config content.resource.type 'component.answer') question=content showCorrect=true}}}
+            </div>
+          </div>
+        {{/if}}
+      </div>
+      {{#if (and (not showPerformance) (not content.isScientific) isShowExemplarText)}}
+        {{#if (or content.resource.hint.exemplar content.resource.hint.exemplar_docs.length)}}
+          <div class="solution">{{t 'common.solution'}}</div>
+          {{#if content.resource.hint.exemplar}}
+            <div class='exemplar-answer'>
+              <p class='exemplar-readonly'>
+                {{safe-html (if content.resource.hint.exemplar content.resource.hint.exemplar '--')}}
+              </p>
+            </div>
+          {{/if}}
+          {{#if content.resource.hint.exemplar_docs.length}}
+            <div class="exemplar-file">
+              {{#each content.resource.hint.exemplar_docs as | item index|}}
+                <a href='{{item.filePath}}' target="_blank">{{item.fileName}}</a>
+              {{/each}}
+            </div>
+          {{/if}}
+        {{/if}}
+      {{/if}}
+      {{#if content.evidence}}
+        <div class="evidence">
+          <div class="title">{{t 'common.evidence'}}</div>
+          {{#each content.evidence as |evidence|}}
+            <div class="evidence-view">
+              <i class="material-icons" {{action 'onShowPullUp' evidence}}>visibility</i>
+              <div class="file-details" {{action 'onShowPullUp' evidence}}>
+                <div class="title-name">{{t 'common.evidence'}}</div>
+                <div class="name">{{evidence.originalFileName}}</div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+        {{#if isShowFilePullUp}}
+          <div class="iframe-container">
+            <div class="back-drop" {{action 'onClosePullup'}}></div>
+            <div class="iframe-panel">
+              <div class="close-panel">
+                <div class="fileName">{{activeFile.originalFileName}}</div>
+                <i class="gru-icon material-icons close" {{action 'onClosePullup'}}>close</i>
+              </div>
+              <iframe src="{{activeFile.fileName}}" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        {{/if}}
+      {{/if}}
+    </div>
+    <div role="timer" class="resource-timespent">
+      {{format-time content.savedTime}}
+    </div>
+
+    <div class="question-header-container">
+      <div class="question-title-container">
+        <div class="question-order">{{contentSeq}}.</div>
+        <div class="question-icon"></div>
+        <div class="title ellipsis">{{safe-html content.resource.title}}</div>
+      </div>
+      <div class="question-performance-container">
+        <div class="question-reaction">
+          {{qz-reaction-icon content.reaction }}
+        </div>
+        {{#if showScore}}
+          {{#if (and content.started content.skipped)}}
+            <div class="question-status" data-toggle="tooltip" title="Skipped">
+              {{gru-icon name="block"}}
+            </div>
+          {{else}}
+            <div class="question-score">
+              <span class="{{if content.started content.correct 'not-started'}}" data-toggle="tooltip"  title={{t content.tooltip}}>
+                {{#unless content.isComprehension}}
+                {{#if content.started}}
+                  <i class="icon"> </i>
+                {{else}}
+                  {{gru-icon name="block"}}
+                {{/if}}
+                {{/unless}}
+              </span>
+            </div>
+          {{/if}}
+        {{/if}}
+        <div class="question-timespent">
+          {{format-time content.savedTime}}
+        </div>
+      </div>
+    </div>
+    <!-- <div class="taxonomies-conatiner">
+      {{#if taxonomyTags.length}}
+        {{taxonomy/gru-taxonomy-tag-list tags=taxonomyTags tagsVisible=1 isInCard=true}}
+      {{/if}}
+    </div>
+
+    <div class="question-description">
+      {{{gru-math-text text=content.resource.description}}}
+    </div> -->
+
+
+
+    <!-- {{#if content.resource.hasMedia}}
+      <div class="question-thumbnail">
+        <img role="presentation" class="img-responsive" src="{{content.resource.mediaUrl}}" alt="mediaUrl" />
+      </div>
+    {{/if}} -->
+    <!-- <div class="answer-container {{if (eq content.resource.type 'serp_silent_reading') 'hidden'}}">
+      {{#if (or content.started content.isComprehension isShowComp)}}
+        <div class="user-answer answer-section">
+          <div class="answer-type-label type-label">
+            {{#if (not content.resource.userAnswer)}}
+              {{t 'common.answer'}}
+            {{else}}
+              {{#if isStudent}}
+                {{t 'common.answer'}}
+              {{else}}
+                {{t 'common.student'}} {{t 'gru-question-viewer.answer'}}
+              {{/if}}
+            {{/if}}
+          </div>
+          <div class="answer-value-container">
+            {{#if (or content.started content.isComprehension isShowComp)}}
+              {{{component (qz-question-config content.resource.type 'component.answer') showPerformance=showPerformance question=content}}}
+            {{/if}}
+          </div>
+        </div>
+      {{/if}}
+      {{#if (or (and (not showPerformance) (not content.isScientific)) isShowComp)}}
+        <div class="correct-answer answer-section">
+          <div class="answer-type-label type-label">{{t 'common.correct-answer'}}</div>
+          <div class="answer-value-container">
+            {{{component (qz-question-config content.resource.type 'component.answer') question=content showCorrect=true}}}
+          </div>
+        </div>
+      {{/if}}
+    </div> -->
+  </div>
+</div>

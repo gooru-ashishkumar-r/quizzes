@@ -1,0 +1,36 @@
+.datepicker {
+  padding: 0;
+
+  .btn-default {
+    border: 0 solid transparent;
+  }
+
+  .input-group .form-control:first-child {
+    border-radius: 4px;
+  }
+
+  .form-control[readonly] {
+    border-radius: 4px;
+    background-color: $white;
+  }
+
+  .input-group-btn {
+    position: absolute;
+    padding: 7px 17px;
+    right: 0;
+  }
+
+  .datepicker-field {
+  }
+
+  .datepicker-icon {
+    background: url("quizzes-addon/quizzes/icon-sprite.png") no-repeat scroll -7px -472px
+      transparent;
+    cursor: pointer;
+    display: block;
+    float: $menu-float-dir;
+    height: 22px;
+    margin-left: -20px;
+    width: 32px;
+  }
+}

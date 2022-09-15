@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Create-Class" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Trophies" transform="translate(-937.000000, -120.000000)" fill="#37424B">
+            <path d="M958.84,120 L958,120 L956.2,120 C955.12,120 953.8,121.2 953.8,122.4 L944.2,122.4 C944.2,121.2 942.88,120 941.8,120 L940,120 L939.16,120 L937,120 L937,130.8 C937,132 938.2,133.2 939.4,133.2 L942.04,133.2 C942.52,135.6 944.08,137.64 947.8,138 L947.8,140.52 C945.16,140.76 944.2,142.08 944.2,143.64 L944.2,144 L953.8,144 L953.8,143.64 C953.8,142.08 952.84,140.76 950.2,140.52 L950.2,138 C953.92,137.64 955.48,135.6 955.96,133.2 L958.6,133.2 C959.8,133.2 961,132 961,130.8 L961,120 L958.84,120 L958.84,120 Z M939.4,130.8 L939.4,122.4 L941.8,122.4 L941.8,124.8 L941.8,130.8 L939.4,130.8 L939.4,130.8 Z M958.6,130.8 L956.2,130.8 L956.2,124.8 L956.2,122.4 L958.6,122.4 L958.6,130.8 L958.6,130.8 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

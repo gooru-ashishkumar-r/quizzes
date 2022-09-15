@@ -1,0 +1,50 @@
+.header.assessment.edit {
+  header {
+    display: block;
+    background-color: $dark-400;
+    padding: 20px 20px 0 5%;
+    h1 {
+      font-size: 34px;
+      margin: 0;
+      color: $white;
+      display: block;
+    }
+  }
+  .actions {
+    float: $menu-float-dir;
+    display: inline-block;
+    padding-top: 10px;
+    font-size: 14px;
+    button {
+      padding: 6px 8px;
+      margin-left: 2px;
+    }
+    i {
+      font-size: 18px;
+    }
+  }
+  nav {
+    padding-top: 15px;
+    white-space: nowrap;
+    display: inline-block;
+    .tab {
+      display: inline-block;
+      vertical-align: middle;
+      opacity: 6;
+      font-size: 14px;
+      border-bottom: 3px solid $dark-400;
+      padding: 5px;
+      margin-right: 5px;
+      color: $white;
+      text-decoration: none;
+      @media (min-width: 768px) {
+        padding: 5px 10px;
+        margin-right: 20px;
+      }
+    }
+    .selected {
+      opacity: 1;
+      border-bottom-color: $white;
+    }
+  }
+}

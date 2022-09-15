@@ -1,0 +1,49 @@
+[
+  {
+    "assignees": [
+      {
+        "id": "student-1"
+      }
+    ],
+    "collection": {
+      "id": "collection-id"
+    },
+    "contextData": {
+      "contextMap": {},
+      "metadata": {
+        "description": "string",
+        "dueDate": 3,
+        "startDate": 2,
+        "title": "assignment title"
+      }
+    },
+    "createdDate": 1482244459644,
+    "id": "context-id",
+    "modifiedDate": 1
+  },
+  {
+    "assignees": [
+      {
+        "id": "student-1"
+      },
+      {
+        "id": "student-2"
+      }
+    ],
+    "collection": {
+      "id": "collection-id2"
+    },
+    "contextData": {
+      "contextMap": {},
+      "metadata": {
+        "description": "string",
+        "dueDate": 2,
+        "startDate": 2,
+        "title": "Context title"
+      }
+    },
+    "createdDate": 1482161906118,
+    "id": "context-id2",
+    "modifiedDate": 2
+  }
+]

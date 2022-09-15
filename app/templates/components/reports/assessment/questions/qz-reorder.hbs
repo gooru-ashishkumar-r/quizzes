@@ -1,0 +1,12 @@
+<ul>
+  {{#each answers as |answer index|}}
+    <li class="{{if (or showCorrect answer.correct) 'correct_answer' 'incorrect_answer'}}">
+      {{#if (eq answer.showCorrect true) }}
+        <span class="answer-text">{{{gru-math-text text=answer.text}}}</span>
+      {{else }}
+        <span class="your-answer-text">
+          {{{gru-math-text text=answer.selectedOrderText}}}</span>
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>

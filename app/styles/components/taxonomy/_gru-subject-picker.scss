@@ -1,0 +1,40 @@
+.taxonomy.gru-subject-picker {
+  .dropdown-menu {
+    li {
+      &.has-children {
+        position: relative;
+        &:hover {
+          background-color: $sky-100;
+          .sub-menu {
+            display: block;
+          }
+        }
+      }
+      a {
+        .gru-icon {
+          font-size: $font-size-large;
+          vertical-align: text-top;
+          height: auto;
+          width: auto;
+        }
+        &:hover {
+          background-color: $sky-100;
+        }
+        &:active + .sub-menu,
+        &:focus + .sub-menu {
+          display: block;
+        }
+      }
+    }
+
+    .sub-menu {
+      top: -5px;
+      &.dropdown-menu-left {
+        left: 100%;
+      }
+      &.dropdown-menu-right {
+        right: 100%;
+      }
+    }
+  }
+}

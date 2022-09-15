@@ -1,0 +1,19 @@
+.editor.assessment.qz-file-picker {
+  > div {
+    @include flexbox;
+    input {
+      width: 80%;
+      border-bottom: 1px solid $table-border-color;
+    }
+    .file-picker {
+      @include flexbox;
+      .upload.btn {
+        margin-left: 5px;
+        .fa-upload {
+          font-size: $font-size-large;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

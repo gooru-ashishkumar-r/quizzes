@@ -1,0 +1,104 @@
+{
+  "school-districts": [
+    {
+      "id": "1f2dea15-c4f5-4ebd-938b-1fc33a3aac3e",
+      "name": "ALABAMA SCHOOL OF FINE ARTS",
+      "code": "ALABAMA SCHOOL OF FINE ARTS"
+    },
+    {
+      "id": "c8154889-7a62-4fc6-9df6-ae2748a4650a",
+      "name": "BALDWIN COUNTY",
+      "code": "BALDWIN COUNTY"
+    },
+    {
+      "id": "1a19ba88-865f-4137-b4c5-5fefe2dd9f31",
+      "name": "BARBOUR COUNTY",
+      "code": "BARBOUR COUNTY"
+    },
+    {
+      "id": "9558535c-f57a-49eb-ae97-97c524ab3479",
+      "name": "BESSEMER CITY",
+      "code": "BESSEMER CITY"
+    },
+    {
+      "id": "b46d79d8-2791-4489-8e35-4fe02aae2b31",
+      "name": "BIRMINGHAM CITY",
+      "code": "BIRMINGHAM CITY"
+    },
+    {
+      "id": "397edca0-2d9d-43fa-b915-5d66fcea96be",
+      "name": "BLOUNT COUNTY",
+      "code": "BLOUNT COUNTY"
+    },
+    {
+      "id": "83653a9e-cd47-45a6-a670-4ac6bb74066b",
+      "name": "CHILTON COUNTY",
+      "code": "CHILTON COUNTY"
+    },
+    {
+      "id": "7578b8df-5ee1-4c1e-b25e-e211039f5404",
+      "name": "CHOCTAW COUNTY",
+      "code": "CHOCTAW COUNTY"
+    },
+    {
+      "id": "8d0d3510-3e35-4710-9283-b365fad9b9c2",
+      "name": "DECATUR CITY",
+      "code": "DECATUR CITY"
+    },
+    {
+      "id": "173ff5ad-01ef-4814-b11b-3c3ddb8e48ea",
+      "name": "ELMORE COUNTY",
+      "code": "ELMORE COUNTY"
+    },
+    {
+      "id": "524f6a0d-9638-4f0e-b486-d9da82d483ce",
+      "name": "FAIRFIELD CITY",
+      "code": "FAIRFIELD CITY"
+    },
+    {
+      "id": "f9f928d8-986a-40d2-aa51-3505eef71b80",
+      "name": "FLORENCE CITY",
+      "code": "FLORENCE CITY"
+    },
+    {
+      "id": "5ab574ec-bdca-42d4-9cfd-004e4de28472",
+      "name": "LAUDERDALE COUNTY",
+      "code": "LAUDERDALE COUNTY"
+    },
+    {
+      "id": "d4890f7e-06b3-4d68-ac9f-ff076b3d7d05",
+      "name": "LAUDERDALE COUNTY",
+      "code": "LAUDERDALE COUNTY"
+    },
+    {
+      "id": "c8a3443b-10ce-4667-8de2-ddc84bcc057f",
+      "name": "MADISON COUNTY",
+      "code": "MADISON COUNTY"
+    },
+    {
+      "id": "0130efe9-17c1-4544-beaa-cdd7fc3282d9",
+      "name": "MONROE COUNTY",
+      "code": "MONROE COUNTY"
+    },
+    {
+      "id": "61efc814-e411-4a94-b6b3-db00d887f3a0",
+      "name": "MOUNTAIN BROOK CITY",
+      "code": "MOUNTAIN BROOK CITY"
+    },
+    {
+      "id": "272d15cf-f089-46c9-b07b-e67d1e82ec79",
+      "name": "PIEDMONT CITY",
+      "code": "PIEDMONT CITY"
+    },
+    {
+      "id": "dc9f2b37-6e08-4c9c-9936-89939a24f8f7",
+      "name": "PIEDMONT CITY",
+      "code": "PIEDMONT CITY"
+    },
+    {
+      "id": "069fab79-5496-4630-8f67-c804b0cc498e",
+      "name": "SCOTTSBORO CITY",
+      "code": "SCOTTSBORO CITY"
+    }
+  ]
+}

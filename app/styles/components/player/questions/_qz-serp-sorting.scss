@@ -1,0 +1,54 @@
+.serp-sorting {
+  .qz-serp-sorting-container {
+    .qz-column-panel {
+      .qz-column-header {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        border-bottom: 1px solid $dark-300;
+
+        span {
+          padding: 5px;
+          text-align: center;
+          font-size: 16px;
+
+          &:first-child {
+            border-right: 1px dashed $light-200;
+          }
+          &:last-child {
+            border-left: 1px dashed $light-200;
+          }
+        }
+      }
+
+      .qz-column-body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        min-height: calc(100vh - 265px);
+
+        ul {
+          padding: 0;
+          margin: 0;
+          list-style: none;
+
+          &.qz-column-soft-blk {
+            border-right: 1px dashed $light-200;
+          }
+          &.qz-column-hard-blk {
+            border-left: 1px dashed $light-200;
+          }
+
+          li {
+            padding: 5px;
+            border: 1px solid $light-200;
+            background-color: $light-100;
+            margin: 5px;
+            text-align: center;
+            font-size: 14px;
+            cursor: move;
+          }
+        }
+      }
+    }
+  }
+}

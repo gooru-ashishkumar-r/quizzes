@@ -1,0 +1,40 @@
+.quizzes {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.app-container {
+  > .controller,
+  > .ember-view > .component {
+    @include flexbox;
+    @include flex-direction(row);
+    @include align-content(flex-start);
+    min-height: 100%;
+
+    > .navigation {
+      @media (min-width: $screen-md) {
+        width: 20%;
+      }
+      @include linear-gradient($blue-500, $blue-400);
+      box-shadow: inset 0 1px 3px 0 $navigation-box-shadow;
+
+      * {
+        background-color: transparent;
+      }
+    }
+
+    > .main {
+      width: 100%;
+    }
+
+    > .content {
+      @media (min-width: $screen-md) {
+        width: 80%;
+      }
+
+      &.full-screen {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.reports.qz-class-assessment-report {
+  $space-top: 30px;
+
+  > .view-container {
+    position: relative;
+
+    > .gru-view-layout-picker {
+      position: absolute;
+      top: $space-top - 3;
+      left: 318px;
+    }
+
+    &.table-view {
+      .qz-student-view {
+        display: none;
+      }
+    }
+
+    &.student-view {
+      .qz-table-view {
+        display: none;
+      }
+    }
+  }
+}
+
+.qz-modal {
+  &.qz-questions-detail-modal {
+    .modal-dialog {
+      width: 80%;
+      height: 100%;
+      display: table;
+    }
+  }
+  &.qz-assessment-report-modal {
+    .modal-dialog {
+      width: 80% !important;
+      height: 100%;
+    }
+  }
+  .resource-view {
+    height: 50vh;
+  }
+}

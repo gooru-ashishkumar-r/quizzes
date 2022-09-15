@@ -1,0 +1,8 @@
+<div class="disabled" {{action 'closeMenu'}}>
+
+</div>
+<div class="list-group slide-menu">
+    {{#each options as |option|}}
+    <a class="list-group-item {{option.option}}" {{action 'sendOptionAction' option}}>{{t (concat 'assignment-details.' option.option)}}</a>
+    {{/each}}
+</div>

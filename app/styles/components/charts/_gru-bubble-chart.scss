@@ -1,0 +1,20 @@
+.charts.gru-bubble-chart {
+  width: inherit;
+  height: inherit;
+  .bubble-circle {
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    position: relative;
+    span {
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      width: 100%;
+      text-align: center;
+      margin-top: -1em;
+      color: $white;
+      font-size: $font-size-large;
+    }
+  }
+}

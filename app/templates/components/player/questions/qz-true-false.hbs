@@ -1,0 +1,25 @@
+<p class="instructions">
+  {{t "qz-true-false.instructions" action=(t instructionsActionTextKey)}}
+</p>
+<div class="answer-choices">
+  <div class="radio {{if readOnly 'disabled'}}">
+    {{#radio-button
+            disabled=readOnly
+            value=firstAnswerId
+            groupValue=useGroup
+            changed="selectAnswerChoice"
+            name="answer-choice-radio"}}
+      <span>({{answer-letter 0}})</span>{{firstAnswerObject.text}}
+    {{/radio-button}}
+  </div>
+  <div class="radio {{if readOnly 'disabled'}}">
+    {{#radio-button
+            disabled=readOnly
+            value=secondAnswerId
+            groupValue=useGroup
+            changed="selectAnswerChoice"
+            name="answer-choice-radio"}}
+      <span>({{answer-letter 1}})</span>{{secondAnswerObject.text}}
+    {{/radio-button}}
+  </div>
+</div>

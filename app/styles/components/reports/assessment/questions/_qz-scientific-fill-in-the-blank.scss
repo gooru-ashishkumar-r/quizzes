@@ -1,0 +1,33 @@
+.anonymous .reports.assessment.questions.qz-scientific-fill-in-the-blank {
+  line-height: 42px;
+}
+.reports.assessment.questions.qz-scientific-fill-in-the-blank {
+  span {
+    line-height: 30px;
+  }
+
+  .answer,
+  .sentence {
+    p {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .answer {
+    padding: 0px 5px;
+    border-bottom: 1px solid $input-gray;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .answer.correct {
+    border-bottom-color: $brand-success;
+  }
+  .answer.incorrect {
+    border-bottom-color: $brand-incorrect;
+  }
+  .answer.anonymous {
+    border-bottom-color: $brand-anonymous;
+  }
+}

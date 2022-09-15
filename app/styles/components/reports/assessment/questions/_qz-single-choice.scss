@@ -1,0 +1,52 @@
+.reports.assessment.questions.qz-single-choice {
+  ul {
+    padding-left: 0;
+
+    li {
+      list-style: none;
+      position: relative;
+      display: flex;
+      margin: 8px 0;
+      border: 1px solid $border-box-shadow;
+      border-radius: 8px;
+      height: 35px;
+      span.correct {
+        color: $brand-success;
+      }
+
+      span.incorrect {
+        color: $brand-incorrect;
+      }
+
+      span.correct.anonymous,
+      span.incorrect.anonymous {
+        color: $brand-anonymous;
+      }
+    }
+
+    span.answer-text {
+      margin-left: 2.5em;
+      margin-top: 0.4em;
+      display: inherit;
+      word-wrap: break-word;
+      overflow: auto;
+      max-width: 10em;
+
+      > span {
+        margin: 0 0 0 5px;
+      }
+
+      p {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  li span i {
+    position: absolute;
+    top: 0.2em;
+    left: 0;
+  }
+}

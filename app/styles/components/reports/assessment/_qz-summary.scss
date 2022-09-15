@@ -1,0 +1,305 @@
+.reports.assessment.qz-summary {
+  .header-container {
+    height: 48px;
+    background-color: $header-bg-color;
+    display: flex;
+    position: relative;
+
+    .preview-title {
+      font-size: 15px;
+      font-weight: bold;
+      line-height: 48px;
+      color: $white;
+      text-transform: capitalize;
+      padding: 0 12px;
+      width: 100%;
+    }
+  }
+  .summary-container {
+    display: grid;
+    width: auto;
+    object-fit: contain;
+    background-color: $white;
+    box-shadow: 0 0 4px 0 $container-box-shadow;
+    grid-template-columns: 80px 24px 1fr;
+    @media screen and (max-width: 600px) {
+      grid-template-columns: 50px 24px 1fr;
+    }
+    column-gap: 16px;
+    align-items: center;
+
+    .thumbnail {
+      width: 100%;
+      height: 88px;
+      padding: 0;
+      box-shadow: 0 2px 5px 0 $ruberic-box-shadow;
+      -webkit-flex: 0 1 auto;
+      -ms-flex: 0 1 auto;
+      flex: 0 1 auto;
+      -webkit-align-self: auto;
+      -ms-flex-item-align: auto;
+      align-self: auto;
+      background-image: url("quizzes-addon/quizzes/collection-default.png");
+      background-color: $blue-b5;
+      background-position: 0;
+      background-repeat: no-repeat;
+      background-size: contain;
+      text-align: center;
+      color: $white;
+      display: none;
+      @media (min-width: $screen-xs) {
+        width: 112px;
+        height: 106px;
+      }
+      @media (min-width: $screen-lg-min) {
+        height: 106px;
+        width: 112px;
+      }
+      span {
+        &.title {
+          display: block;
+          font-size: $font-size-h6;
+          padding-top: 10px;
+          @media (min-width: $screen-xs) {
+            padding-top: 16px;
+            padding-bottom: 9px;
+          }
+        }
+        &.time-spent {
+          span {
+            font-size: 20px;
+            line-height: $font-size-h4;
+          }
+          i {
+            font-size: 20px;
+            line-height: 19px;
+            vertical-align: middle;
+            margin-bottom: 6px;
+          }
+        }
+      }
+    }
+
+    .profile-image {
+      width: 80px;
+      @media screen and (max-width:600px) {
+        width: 60px;
+      }
+      height: 48px;
+      padding: 0;
+      -webkit-flex: 0 1 auto;
+      -ms-flex: 0 1 auto;
+      flex: 0 1 auto;
+      -webkit-align-self: auto;
+      -ms-flex-item-align: auto;
+      align-self: auto;
+      background-position: 0;
+      background-repeat: no-repeat;
+      background-size: contain;
+      text-align: center;
+      color: $white;
+      .img-responsive {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .grade {
+      width: 100%;
+      height: 106px;
+      padding: 10px 25px;
+      text-align: center;
+      border-left: 2px solid;
+      color: $white;
+      -webkit-flex: 0 1 auto;
+      -ms-flex: 0 1 auto;
+      flex: 0 1 auto;
+      -webkit-align-self: auto;
+      -ms-flex-item-align: auto;
+      justify-self: center;
+      align-self: auto;
+      display: none;
+
+      &.only-oe {
+        color: $light-200 !important;
+      }
+
+      span {
+        &.percentage {
+          font-size: $font-size-h3;
+          line-height: $font-size-h3;
+          @media (min-width: $screen-xs) {
+            display: inline-block;
+            font-size: $font-size-h2;
+            line-height: $font-size-h2;
+          }
+        }
+
+        &.attempts {
+          font-size: $font-size-h6;
+          display: inline-block;
+          margin: 0 0 0 15px;
+          text-align: center;
+
+          .fractional {
+            width: 25px;
+            margin: 0 10px 0 0;
+
+            .bottom {
+              border-color: $white;
+            }
+          }
+
+          .text {
+            font-size: 12px;
+            line-height: $font-size-h6;
+          }
+          @media (min-width: $screen-xs) {
+            display: table;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+
+    .content-icon {
+      background-size: 24px 18px;
+      width: 24px;
+      height: 18px;
+      background-repeat: no-repeat;
+      display: block;
+
+      &.assessment {
+        background-image: url("gooru/images/add_assessment.svg");
+      }
+
+      &.collection {
+        background-image: url("gooru/images/add_collection.svg");
+      }
+    }
+
+    .overview {
+      -ms-flex: 1 1 auto;
+      -webkit-align-self: auto;
+      -ms-flex-item-align: auto;
+      align-self: auto;
+      border-radius: 5px;
+      margin: 0;
+
+      h5 {
+        margin: 0;
+        width: 100%;
+        font-size: 16px;
+        $line-height: 1.25;
+        $lines-to-show: 1;
+        @include ellipsis(
+          $line-height: $line-height,
+          $lines-to-show: $lines-to-show,
+          $font-size: 16px
+        );
+        max-height: 21.25px;
+        color: $title-color;
+      }
+
+      .information {
+        margin: 10px 0 0;
+        height: 30px;
+        font-size: $font-size-h6;
+        display: inline-block;
+        display: none;
+        i {
+          vertical-align: middle;
+          margin: 0 3px 0 0;
+        }
+
+        span {
+          font-size: 13px;
+        }
+
+        .attempt {
+          margin: 0 13px 0 0;
+
+          .attempt-selector {
+            display: inline-block;
+
+            .current-attempt {
+              display: inline-block;
+
+              button {
+                line-height: 1;
+
+                .caret {
+                  margin-left: 10px;
+                }
+                color: $gray;
+              }
+            }
+          }
+        }
+
+        .date {
+          margin: 0 3px 0 0;
+        }
+
+        .time {
+          margin: 0 4px 0 0;
+        }
+      }
+    }
+
+    .reactions {
+      width: 70px;
+      text-align: center;
+      margin-top: 18px;
+      margin-right: 10px;
+      display: none;
+      .reaction {
+        .emotion {
+          width: 55px;
+          height: 55px;
+          text-align: center;
+          cursor: default;
+        }
+
+        .align-center {
+          font-size: 30px;
+        }
+      }
+    }
+
+    .bubbles {
+      width: auto;
+      display: inline-block;
+      overflow: auto;
+      display: none;
+
+      .gru-bubbles {
+        .bubbles-list {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          list-style: none;
+          padding: 10px 0 0;
+          margin: 0;
+
+          li {
+            display: inline-block;
+            padding: 0;
+            margin: 0 4px 10px 0;
+          }
+        }
+      }
+    }
+
+    .bubbles::-webkit-scrollbar {
+      height: 6px;
+      width: 8px;
+    }
+
+    .bubbles::-webkit-scrollbar-thumb {
+      background: $gray-light;
+      border: 1px solid $gray-light;
+      border-radius: 5px;
+    }
+  }
+}

@@ -1,0 +1,131 @@
+<div class="nav-player-container {{if showFinishConfirmation 'disabled'}} {{if hasCollectionItems '' 'disabled'}}">
+  <div class="title-container">
+      <div class="title-info">
+        {{#if showConfirmation}}
+          <div class="icon {{if isCollection 'collection' 'assessment'}} "></div>
+        {{else}}
+          <div class="icon {{resource.format}}"></div>
+        {{/if}}
+        <div class="title">
+          {{#unless diagnosticActive}}
+            {{#if showConfirmation}}
+              <span> {{collection.title}} </span>
+            {{else}}
+              <span> {{resource.sequence}}. {{format-title resource.title}}</span>
+            {{/if}}
+          {{else}}
+            <span>{{t 'diagnostic.title'}}</span>
+          {{/unless}}
+        </div>
+      </div>
+      <div class="close-button" {{action 'toggleLeftPanel'}}>
+        {{gru-icon name=(if isOpenLeftPanal 'close' 'list')}}
+      </div>
+  </div>
+  <div class="information-container {{if resourceButton 'resource-button'}} {{if hasAllCards 'show-all-cards'}}">
+    <ul>
+      {{#if (and isStudent (not isPublicClass) isShowStudyTimerWidget)}}
+        <li {{action 'showTimer'}} class="{{if isShowStudyTimer 'active'}} hide-div">
+          <span>{{t 'common.timeSpent'}}</span><span class="active-icon {{unless showConfirmation 'blink'}}"></span>
+        </li>
+        <li {{action 'showTimer'}} class="{{if isShowStudyTimer 'active'}} show-div">
+          <span class="material-icons-two-tone">av_timer</span>
+        </li>
+      {{/if}}
+      {{#unless showConfirmation}}
+        {{#if (and suggestedResources isCollection (not diagnosticActive))}}
+          <li {{action 'showRelatedContentContainer'}} class="{{if isShowRelatedContentContainer 'active'}} hide-div">
+            {{t 'common.related-content'}}
+          </li>
+          <li {{action 'showRelatedContentContainer'}} class="{{if isShowRelatedContentContainer 'active'}} show-div">
+            <span class="material-icons-outlined">stream</span>
+          </li>
+        {{/if}}
+        {{#if resource.isResource}}
+          <li {{action 'showNarrationContainer'}} class="{{if isShowNarrationContainer 'active'}} hide-div">
+            {{t 'common.instructions'}}
+          </li>
+          <li {{action 'showNarrationContainer'}} class="{{if isShowNarrationContainer 'active'}} show-div">
+            <span class="material-icons-outlined">priority_high</span>
+          </li>
+        {{/if}}
+        {{#if (and isShowActivityFeedback feedbackCategory)}}
+          <li {{action 'showFeedbackContainer'}} class="{{if isShowFeedbackContainer 'active'}} hide-div">
+            {{t 'common.give-feedback'}}
+          </li>
+          <li {{action 'showFeedbackContainer'}} class="{{if isShowFeedbackContainer 'active'}} show-div">
+            <span class="material-icons-outlined">thumbs_up_down</span>
+          </li>
+        {{/if}}
+      {{/unless}}
+    </ul>
+    <div class="button-container">
+      {{#if diagnosticActive}}
+        <div role="button" aria-label="diagnostic next" class="next {{unless isNextEnabled 'disabled'}}" {{action 'onDiagnosticNext'}}>
+          <span>{{t 'common.next'}}</span>
+          {{gru-icon name="arrow_forward"}}
+        </div>
+      {{else}}
+        {{#unless showConfirmation}}
+          <div role="button" aria-label="previous" class="prev {{unless showPrevious 'disabled'}}" {{action 'previousResource'}}>
+            {{gru-icon name="arrow_back"}}
+            <span>{{t "qz-question-viewer.previous"}}</span>
+          </div>
+          {{#if showNext}}
+            <div aria-label="next" class="next {{unless isNextEnabled 'disabled'}}" {{action 'nextResource'}} onmouseover={{action "onShowFeedback"}} onmouseout={{action 'onCloseFeedback'}} >
+              <span>{{t 'common.next'}}</span>
+              {{gru-icon name="arrow_forward"}}
+            </div>
+          {{else}}
+            {{#if collection.isCollection}}
+              {{#unless (or showFinishConfirmation submitted)}}
+                <div class="usage-report next {{unless isNextEnabled 'disabled'}}" {{action 'seeUsageReport'}} onmouseover={{action "onShowFeedback"}} onmouseout={{action 'onCloseFeedback'}}>
+                  <span>{{t 'study-player.summary'}}</span>
+                  {{gru-icon name="subject"}}
+                </div>
+              {{/unless}}
+            {{else}}
+              <div class="submit-all next {{unless isNextEnabled 'disabled'}}"  {{action "finishCollection"}} onmouseover={{action "onShowFeedback"}} onmouseout={{action 'onCloseFeedback'}}>
+                <span>{{t 'common.submitAll'}}</span>
+                {{gru-icon name="done_all"}}
+              </div>
+            {{/if}}
+          {{/if}}
+        {{else}}
+          {{#if hasCollectionItems}}
+            {{#if noMoreAttempts}}
+              {{#if isStatusDone}}
+                <div aria-label="exit" class="next" {{action 'onExit'}} disabled={{disableStart}}>
+                  <span>{{t 'common.exit'}}</span>
+                  {{gru-icon name="arrow_forward"}}
+                </div>
+              {{else}}
+                <div aria-label="next" class="next" {{action 'playNext'}} disabled={{disableStart}}>
+                  <span>{{t 'common.next'}}</span>
+                  {{gru-icon name="arrow_forward"}}
+                </div>
+              {{/if}}
+            {{else}}
+              <div aria-label="continue" class="next" {{action 'start'}} disabled={{disableStart}}>
+                <span>{{t 'qz-assessment-confirmation.continue'}}</span>
+                {{gru-icon name="arrow_forward"}}
+              </div>
+            {{/if}}
+          {{else}}
+            {{#if playAttempts }}
+              <div class="next onExit playAttempts" {{action 'onExit'}} disabled={{disableStart}}>
+                <span>{{t 'common.exit'}}</span>
+                {{gru-icon name="arrow_forward"}}
+              </div>
+            {{else}}
+              <div class="next emptyNextPlay" {{action 'emptyNextPlay' }} disabled={{disableStart}}>
+                <span>{{t 'common.next'}}</span>
+                {{gru-icon name="arrow_forward"}}
+              </div>
+            {{/if}}
+          {{/if}}
+        {{/unless}}
+      {{/if}}
+    </div>
+  </div>
+</div>

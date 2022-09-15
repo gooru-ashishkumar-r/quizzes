@@ -1,0 +1,24 @@
+<div class="answer-choices">
+    {{#each answers as |item|}}
+  <div class="answer-details form-group">
+    <label for="answers">
+      <span>{{item.answer_category}}</span> <span class="category-info" data-toggle="tooltip" data-placement="right" data-trigger="hover" title="{{t (concat "qz-player-definitions-of-" item.answer_category)}}">{{gru-icon name="info" style='material-icons-outlined'}}</span>
+    </label>
+    <div class="answer-text">
+        {{validation/gru-input class="free-response" placeholder=(t 'qz-answer-category' category=item.answer_category) model=item valuePath='answer_text' maxLength=254}}
+    </div>
+    {{#if (and isShow (eq category item.answer_category))}}
+    <div class="hint-details hint{{index}}">
+      <label for="answers">
+        <span>{{t 'qz-answer-hint' category=item.answer_category}}</span>
+      </label>
+        <span>{{safe-html item.hint}}</span>
+    </div>
+    {{/if}}
+  </div>
+  <div class="info-icon {{if (and isShow (eq category item.answer_category)) 'hidden'}}" {{action toggleAction isShow item.answer_category}}>
+  </div>
+  <div class="close-icon {{if (and isShow (eq category item.answer_category)) 'show' 'hidden'}}" {{action toggleAction isShow item.answer_category}}>
+  </div>
+  {{/each}}
+</div>

@@ -1,0 +1,13 @@
+<div class="qz-serp-pick-n-choose-container">
+    <div class="choose-answer-section">
+        <ul class="answer-panel-item">
+          {{#each baseAnswers as | answer index |}}
+                {{#if showCorrect}}
+                  <li class="answer-item {{if (eq answer.is_correct '1') 'correct'}}">{{answer.answer_text}}</li>
+                {{else}}
+                  <li class="answer-item {{pick-n-choose answer userAnswers}}">{{answer.answer_text}}</li>
+                {{/if}}
+          {{/each}}
+        </ul>
+    </div>
+</div>

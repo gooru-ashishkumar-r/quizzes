@@ -1,0 +1,42 @@
+.reports.assessment.questions.qz-hs-text {
+  ul {
+    padding-left: 0px;
+    li {
+      list-style: none;
+      margin: 0 5px 5px 0;
+      padding: 15px;
+      border: 2px solid $gray-lighter;
+      border-radius: 4px;
+
+      .text {
+        p {
+          display: inline-block;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+    li.selected.correct {
+      border-color: $brand-success;
+    }
+    li.selected.incorrect {
+      border-color: $brand-incorrect;
+    }
+    li.selected.anonymous {
+      border-color: $brand-anonymous;
+    }
+  }
+}
+.reports.assessment.qz-questions {
+  .question-container {
+    .answer-container {
+      .qz-hs-text {
+        ul.hs-texts {
+          li.incorrect {
+            border-color: $brand-incorrect;
+          }
+        }
+      }
+    }
+  }
+}

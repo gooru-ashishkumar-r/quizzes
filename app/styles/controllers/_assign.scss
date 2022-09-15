@@ -1,0 +1,32 @@
+.assign {
+  .settings {
+    width: inherit;
+    margin: 0 auto;
+
+    h2 {
+      display: inline-block;
+      font-size: 24px;
+      padding: 0;
+      margin: 0;
+      line-height: 34px;
+    }
+    .panel {
+      border-radius: 6px;
+
+      .panel-heading {
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
+        padding-top: 10px;
+        padding-bottom: 0;
+
+        h3 {
+          font-size: 17px;
+          padding-bottom: 15px;
+          border-bottom: 1px solid $gray-light;
+          margin-bottom: 0;
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,143 @@
+<ol>
+
+  {{#each headerItems as |headerItem index|}}
+    <li>
+      <strong>{{headerItem.title}}</strong>
+      <ul class="browse-panel level-{{plus-one index}}">
+
+        {{#if (eq headerItem headerItems.lastObject)}}
+
+          {{!-- last level browser items --}}
+          {{#each headerItem.data as |browseItem|}}
+
+            {{!-- domain picker only has 2 levels --}}
+            {{#if (eq browseItem.level 2)}}
+
+            <li>
+              <label>
+                <input type="checkbox"
+                       checked={{browseItem.isSelected}}
+                       onclick={{action 'selectCheckableItem' browseItem}} />
+                <div>
+                  <strong>{{browseItem.title}}</strong>
+                </div>
+              </label>
+            </li>
+
+            {{else}}
+
+              <li>
+                {{#if browseItem.title}}
+                  <p class="category">{{browseItem.title}}</p>
+                {{/if}}
+
+                {{#each browseItem.children as |L1Standard|}}
+                  <div class="standard">
+                    <label>
+                      <input type="checkbox"
+                             checked={{L1Standard.isSelected}}
+                             onclick={{action 'selectCheckableItem' L1Standard}} />
+                      <div>
+                        <strong>{{L1Standard.code}}</strong>
+                        <span>{{L1Standard.title}}</span>
+                      </div>
+                    </label>
+
+                    {{#if L1Standard.children.length}}
+                      <button data-toggle="collapse" class="collapsed" data-target="#{{L1Standard.accordionId}}">
+                        {{gru-icon name='keyboard_arrow_up'}}
+                        {{gru-icon name='keyboard_arrow_down'}}
+                      </button>
+                      <ul id="{{L1Standard.accordionId}}" class="collapse level-panel sublevel-1">
+
+                        {{#each L1Standard.children as |L2Standard|}}
+
+                          {{#if L2Standard.title}}
+                            <li>
+                              <label>
+                                <input type="checkbox"
+                                       checked={{L2Standard.isSelected}}
+                                       onclick={{action 'selectCheckableItem' L2Standard}} />
+                                <div>
+                                  <strong>{{L2Standard.code}}</strong>
+                                  <span>{{L2Standard.title}}</span>
+                                </div>
+                              </label>
+
+                              {{#if L2Standard.children.length}}
+                                <button data-toggle="collapse"
+                                        class="collapsed"
+                                        data-target="#{{L2Standard.accordionId}}">
+                                  {{gru-icon name='keyboard_arrow_up'}}
+                                  {{gru-icon name='keyboard_arrow_down'}}
+                                </button>
+                                <ul id="{{L2Standard.accordionId}}" class="collapse level-panel sublevel-2">
+
+                                  {{#each L2Standard.children as |LearningTarget|}}
+                                    <li>
+                                      <label>
+                                        <input type="checkbox"
+                                               checked={{LearningTarget.isSelected}}
+                                               onclick={{action 'selectCheckableItem' LearningTarget}} />
+                                        <div>
+                                          <span>{{LearningTarget.title}}</span>
+                                        </div>
+                                      </label>
+                                    </li>
+                                  {{/each}}
+
+                                </ul>
+                              {{/if}}
+                            </li>
+
+                          {{else}}
+
+                            <li class="no-content">
+                              {{#if L2Standard.children.length}}
+                                <ul id="{{L2Standard.accordionId}}" class="level-panel sublevel-2">
+
+                                  {{#each L2Standard.children as |LearningTarget|}}
+                                    <li>
+                                      <label>
+                                        <input type="checkbox"
+                                               checked={{LearningTarget.isSelected}}
+                                                   onclick={{action 'selectCheckableItem' LearningTarget}} />
+                                        <div>
+                                          <span>{{LearningTarget.title}}</span>
+                                        </div>
+                                      </label>
+                                    </li>
+                                  {{/each}}
+
+                                </ul>
+                              {{/if}}
+                            </li>
+
+                          {{/if}}
+
+                        {{/each}}
+
+                      </ul>
+                    {{/if}}
+                  </div>
+                {{/each}}
+              </li>
+
+            {{/if}}
+          {{/each}}
+
+        {{else}}
+
+          {{#each headerItem.data as |browseItem|}}
+            <li class="{{if browseItem.hasChildrenSelected 'selected'}} {{if browseItem.isActive 'active'}}">
+              <a {{action 'selectInsideItem' browseItem}}>{{browseItem.title}}</a>
+            </li>
+          {{/each}}
+
+        {{/if}}
+
+      </ul>
+    </li>
+  {{/each}}
+
+</ol>

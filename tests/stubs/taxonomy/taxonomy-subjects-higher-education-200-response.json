@@ -1,0 +1,21 @@
+{
+  "subjects": [{
+    "id": "GDF.HE.AH",
+    "title": "Arts & Humanities",
+    "description": null,
+    "code": "GDF.HE.AH",
+    "standard_framework_id": "GDF"
+  }, {
+    "id": "GDF.HE.TE",
+    "title": "Technology & Engineering",
+    "description": null,
+    "code": "GDF.HE.TE",
+    "standard_framework_id": "GDF"
+  }, {
+    "id": "GDF.HE.OT",
+    "title": "Other",
+    "description": null,
+    "code": "GDF.HE.OT",
+    "standard_framework_id": "GDF"
+  }]
+}

@@ -1,0 +1,19 @@
+<p class="instructions">
+  {{instructions}}
+</p>
+
+<div class="answer-choices clearfix">
+  <ul>
+    {{#each answers as |answer|}}
+      <li data-id="{{answer.id}}" class="answer {{if readOnly 'disabled'}}">
+        {{#if question.isHotSpotImage}}
+            <img class="img-thumbnail" src="{{answer.content}}" alt="thumbnailImg" />
+            <div>{{gru-icon name='check_circle'}}</div>
+        {{else}}
+            <span>{{{gru-math-text text=answer.content}}}</span>
+            <div>{{gru-icon name='done'}}</div>
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</div>

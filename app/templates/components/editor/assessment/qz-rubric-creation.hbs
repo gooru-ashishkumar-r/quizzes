@@ -1,0 +1,36 @@
+<ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active from-web tab">
+        <a href="#from-web" aria-controls="fromWeb" role="tab" data-toggle="tab" {{action 'selectOption' 'fromWeb'}}>
+            <span class="lead">{{t 'qz-rubric-creation.from-web'}}</span>
+        </a>
+    </li>
+    <li role="presentation" class="from-computer tab">
+        <a href="#from-computer" aria-controls="fromComputer" role="tab" data-toggle="tab" {{action 'selectOption' 'fromComputer'}}>
+            <span class="lead">{{t 'qz-rubric-creation.from-computer'}}</span>
+        </a>
+    </li>
+</ul>
+<div class="content tab-content">
+    <div role="tabpanel" class="tab-pane {{if showFromWeb 'active'}}" id="from-web">
+        <div class="add-from-web">
+            <label class="url-label">
+                {{validation/gru-input model=rubric valuePath='url' placeholder=(t 'qz-rubric-creation.url')}}
+            </label>
+            <button class="btn btn-default btn-primary add-btn" title={{t 'common.add'}} {{action 'addURL' rubric.url}}>{{t 'common.add'}}</button>
+            {{qz-preview-url resource=resource isRubric=true}}
+        </div>
+    </div>
+    <div role="tabpanel" class="tab-pane {{if showFromComputer 'active'}}" id="from-computer">
+        <div class="add-from-computer">
+            <div class="information">
+                <span class="icon">{{gru-icon name="link"}}</span>
+                <span class="title">{{t 'common.upload-file'}}</span>
+            </div>
+            <label class="filename-label">
+                <span class="required file-name">{{t 'common.file-name'}}</span>
+                <span class="formats">{{t 'common.valid-extensions' extensions=validExtensions}}</span>
+            </label>
+            {{editor/assessment/qz-file-picker validMimeType=rubric.mimeType onSelectFile=(action 'selectFile')}}
+        </div>
+    </div>
+</div>

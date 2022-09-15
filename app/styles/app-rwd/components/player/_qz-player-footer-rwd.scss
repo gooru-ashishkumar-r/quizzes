@@ -1,0 +1,106 @@
+.qz-player-footer {
+  //Make resource list width to screen size
+  .nav-player-container {
+    .player-container {
+      .list-resources {
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+  /*mobile view portrait*/
+  @media only screen and (max-width: $sm-width-max) {
+    .nav-player-container {
+      .player-container {
+        .player-info {
+          .current-resource-info {
+            grid-template-columns: 18px 18px 1fr 40px;
+
+            .resource-question {
+              i {
+                background-size: 18px 18px;
+              }
+
+              .resource-icon {
+                height: 18px;
+                width: 18px;
+              }
+            }
+
+            .resource-title {
+              max-width: 100%;
+              min-width: 80px;
+
+              span {
+                max-width: max-content;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  /*mobile view landscape and portrait*/
+  @media only screen and (max-width: $screen-sm) {
+    .nav-player-container {
+      // grid-template-columns: 50px 1fr 50px;
+
+      .prev {
+        span {
+          display: none;
+        }
+      }
+      .next {
+        span {
+          display: none;
+        }
+      }
+
+      .player-container {
+        grid-template-columns: 1fr auto;
+
+        .list-resource-nav {
+          i {
+            margin-left: -66px;
+          }
+        }
+
+        .reaction-bar {
+          width: 50px;
+          margin: 0;
+        }
+      }
+
+      .next-action {
+        .next {
+          .label {
+            display: none;
+          }
+        }
+
+        .submit-all,
+        .usage-report {
+          span {
+            display: none;
+          }
+
+          span.icon {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 320px) {
+    .nav-player-container {
+      // grid-template-columns: 40px 1fr 40px;
+      .next {
+        &.disabled {
+          .icon i {
+            margin-left: 0px;
+          }
+        }
+      }
+    }
+  }
+}

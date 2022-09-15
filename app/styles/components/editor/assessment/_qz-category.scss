@@ -1,0 +1,73 @@
+.editor.assessment.qz-category {
+  .panel.category {
+    width: 100%;
+    .panel-body {
+      padding-top: 30px;
+      @include flexbox;
+      .category-info {
+        width: 100%;
+        margin-left: 20px;
+        .title,
+        .feedback-guidance {
+          @include flexbox;
+          @include align-self(center);
+          margin-bottom: 6px;
+        }
+        .gru-input.title {
+          margin-left: 44px;
+        }
+        .gru-textarea.feedbackGuidance {
+          margin-left: 15px;
+        }
+        .gru-input.title {
+          width: 45%;
+          .form-group {
+            width: 100%;
+            input {
+              margin-top: -15px;
+              font-size: $font-size-base;
+            }
+          }
+        }
+        .gru-textarea.feedbackGuidance {
+          width: 85%;
+          textarea {
+            margin-top: -6px;
+            font-size: $font-size-base;
+          }
+        }
+        .required-feedback {
+          display: flex;
+          margin-left: 133px;
+          .check_box {
+            color: $blue-500;
+          }
+        }
+        .scoring {
+          @include flexbox;
+          @include align-items(baseline);
+          .qz-switch,
+          .qz-scoring-levels {
+            margin-left: 11px;
+          }
+        }
+      }
+    }
+    .panel-footer {
+      background-color: $white;
+      min-height: 54px;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+      padding-top: 0;
+      .actions {
+        float: $menu-float-dir;
+        .btn {
+          background-color: transparent;
+          font-size: 24px;
+          line-height: 1;
+          padding: 7px 5px;
+        }
+      }
+    }
+  }
+}

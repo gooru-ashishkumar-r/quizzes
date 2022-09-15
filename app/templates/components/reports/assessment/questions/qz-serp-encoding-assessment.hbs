@@ -1,0 +1,22 @@
+<ul>
+  {{#each answers as |answer index|}}
+  <li class="question-answer-container {{if showCorrect 'show-correct'}}">
+    <div class="exercise-seq {{if showCorrect 'in-visible'}}">
+      Excercise {{plus-one index}}
+      {{#if (eq (get (array-index baseAnswers index) 'answer_text') answer.value)}}
+          {{gru-icon name="check_circle"}}
+      {{/if}}
+    </div>
+    {{#if showCorrect}}
+    <div class="base-answer answer">
+      {{get (array-index baseAnswers index) 'answer_text'}}
+    </div>
+    {{else}}
+    <div class="answer">
+      {{answer.value}}
+    </div>
+    {{/if}}
+
+  </li>
+  {{/each}}
+</ul>

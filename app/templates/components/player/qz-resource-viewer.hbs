@@ -1,0 +1,27 @@
+<div class="qz-resource-viewer-panel {{if (or isNotIframeUrl isLinkOut) 'external-panel'}} {{if resource.hasNarration 'has-narration'}}">
+  {{#if isH5PContent}}
+    <iframe src="{{contentURL}}" class="h5p-content" frameborder="0" allowfullscreen></iframe>
+  {{else}}
+    {{#if (or isNotIframeUrl isLinkOut)}}
+      <div class="panel panel-default not-iframe {{if (or isNotIframeUrl isLinkOut) 'launchExternalLink'}}">
+        <div class="panel-body">
+           {{player/qz-resource-viewer-linkout
+            resource=resource
+            sendEvents=false
+            collection=collection
+            isNotIframeUrl=isNotIframeUrl
+          }}
+        </div>
+      </div>
+    {{else}}
+       {{#if resourceComponentSelected}}
+        {{component resourceComponentSelected resource=resource calculatedResourceContentHeight=calculatedResourceContentHeight}}
+      {{else}}
+        Not implemented
+      {{/if}}
+    {{/if}}
+  {{/if}}
+</div>
+{{#if sendEvents}}
+  <button class="btn btn-primary btn-next" disabled={{isNextDisabled}} {{action 'next'}}><span>{{t "common.next"}}</span></button>
+{{/if}}

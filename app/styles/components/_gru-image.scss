@@ -1,0 +1,86 @@
+.content.gru-image {
+  $component-height: 210px;
+
+  position: relative;
+  width: 180px;
+  height: $component-height;
+  background-color: $dark-300;
+  border: none;
+  border-radius: 6px;
+  @include box-shadow(0 1px 4px $navbar-box-shadow);
+
+  img {
+    margin: 5px;
+    max-width: 94%;
+    max-height: $component-height - 10px;
+  }
+
+  > i {
+    $size: 62px;
+    font-size: $size;
+    color: $dark-400;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    margin-left: -($size / 2);
+    margin-top: -($size / 2);
+  }
+
+  button {
+    position: absolute;
+
+    &.btn-info {
+      left: 0;
+      bottom: 0;
+      background-color: $dark-400;
+      width: 100%;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+      padding: 4px 0;
+    }
+
+    &.delete {
+      top: 0;
+      right: 0;
+      padding: 8px;
+      background-color: transparent;
+
+      i {
+        font-size: 26px;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .file-picker {
+    max-width: 100%;
+    height: auto;
+
+    .file-picker__preview > img {
+      max-width: 94%;
+      max-height: $component-height - 10px;
+      height: auto;
+      padding: 0;
+      margin: 5px 5px 0;
+      background-color: transparent;
+      border: 0 none;
+    }
+  }
+
+  &.is-viewing.has-src-image,
+  &.is-editing.has-edit-image {
+    background-color: $white;
+  }
+
+  > .validation {
+    position: absolute;
+    bottom: -45px;
+    left: 0;
+
+    span.error {
+      line-height: 1.4;
+    }
+  }
+}

@@ -1,0 +1,384 @@
+@mixin make-padding($total, $class, $increaseBy) {
+  @for $i from 0 through $total {
+    @if $class == null {
+      .pa-#{$i} {
+        padding: $i * $increaseBy;
+      }
+
+      .pa-top-#{$i} {
+        padding-top: $i * $increaseBy;
+      }
+
+      .pa-bottom-#{$i} {
+        padding-bottom: $i * $increaseBy;
+      }
+
+      .pa-left-#{$i} {
+        padding-left: $i * $increaseBy;
+      }
+
+      .pa-right-#{$i} {
+        padding-right: $i * $increaseBy;
+      }
+    } @else {
+      .pa-#{$class}-#{$i} {
+        padding: $i * $increaseBy $i * $increaseBy $i * $increaseBy $i *
+          $increaseBy;
+      }
+
+      .pa-#{$class}-top-#{$i} {
+        padding-top: $i * $increaseBy;
+      }
+
+      .pa-#{$class}-bottom-#{$i} {
+        padding-bottom: $i * $increaseBy;
+      }
+
+      .pa-#{$class}-left-#{$i} {
+        padding-left: $i * $increaseBy;
+      }
+
+      .pa-#{$class}-right-#{$i} {
+        padding-right: $i * $increaseBy;
+      }
+    }
+  }
+}
+
+@mixin make-margin($total, $class, $increaseBy) {
+  @for $i from 0 through $total {
+    @if $class == null {
+      .ma-#{$i} {
+        margin: $i * $increaseBy;
+      }
+
+      .ma-top-#{$i} {
+        margin-top: $i * $increaseBy;
+      }
+
+      .ma-bottom-#{$i} {
+        margin-bottom: $i * $increaseBy;
+      }
+
+      .ma-left-#{$i} {
+        margin-left: $i * $increaseBy;
+      }
+
+      .ma-right-#{$i} {
+        margin-right: $i * $increaseBy;
+      }
+    } @else {
+      .ma-#{$class}-#{$i} {
+        margin: $i * $increaseBy $i * $increaseBy $i * $increaseBy $i *
+          $increaseBy;
+      }
+
+      .ma-#{$class}-top-#{$i} {
+        margin-top: $i * $increaseBy;
+      }
+
+      .ma-#{$class}-bottom-#{$i} {
+        margin-bottom: $i * $increaseBy;
+      }
+
+      .ma-#{$class}-left-#{$i} {
+        margin-left: $i * $increaseBy;
+      }
+
+      .ma-#{$class}-right-#{$i} {
+        margin-right: $i * $increaseBy;
+      }
+    }
+  }
+}
+
+@mixin position($type,$left,$right,$top,$bottom) {
+  position: $type;
+  left: $left;
+  right: $right;
+  top: $top;
+  bottom: $bottom;
+}
+
+@mixin translateX($value) {
+  -webkit-transform: translateX($value);
+  -ms-transform: translateX($value);
+  -o-transform: translateX($value);
+  transform: translateX($value);
+}
+
+@mixin translateY($value) {
+  -webkit-transform: translateY($value);
+  -ms-transform: translateY($value);
+  -o-transform: translateY($value);
+  transform: translateY($value);
+}
+
+@mixin translate-show {
+  @include translateX(0);
+  transition: transform 0.6s ease-out 0.5s;
+}
+
+@mixin translate-hide($value) {
+  @include translateX($value);
+  transition: transform 0.5s ease-in 0s;
+}
+
+@mixin respond-to($media) {
+  @if $media == xs {
+    @media only screen and (max-width: $screen-xs-max) {
+      @content;
+    }
+  } @else if $media == sm {
+    @media only screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+      @content;
+    }
+  } @else if $media == md {
+    @media only screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+      @content;
+    }
+  } @else if $media == lg {
+    @media only screen and (min-width: $screen-lg-min) {
+      @content;
+    }
+  } @else if $media == xs-to-lg {
+    @media only screen and (min-width: $screen-xs-min) {
+      @content;
+    }
+  } @else if $media == sm-to-lg {
+    @media only screen and (min-width: $screen-sm-min) {
+      @content;
+    }
+  } @else if $media == md-to-lg {
+    @media only screen and (min-width: $screen-md-min) {
+      @content;
+    }
+  } @else {
+    @error '$media is not one of the supported media targets,
+      supported media targets are: [xs,
+      sm,
+      md,
+      lg,
+      xs-to-lg,
+      sm-to-lg,
+      md-to-lg]';
+  }
+}
+//Multi-line Ellipsis using pure CSS as a work around - http://revelry.co/multi-line-ellipsis-using-pure-css
+
+@mixin ellipsis($font-size, $line-height, $lines-to-show, $excerpt-bg: transparent) {
+  background: $excerpt-bg;
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  max-height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
+  font-size: $font-size;
+  line-height: $line-height;
+  -webkit-line-clamp: $lines-to-show;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @-moz-document url-prefix() {
+    overflow: hidden;
+    position: relative;
+    &:before {
+      background: $excerpt-bg;
+      bottom: 0;
+      position: absolute;
+      right: 0;
+      float: $menu-float-dir;
+      content: "\2026";
+      margin-left: -3rem;
+      width: 3rem;
+    }
+    &:after {
+      content: "";
+      background: $excerpt-bg;
+      position: absolute;
+      height: 50px;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+}
+
+/* Flexbox Mixins */
+
+// Flexbox Containers
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin inline-flex() {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+// Flexbox Direction
+@mixin flex-direction($value: row) {
+  @if $value == row-reverse {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+  } @else if $value == column {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+  } @else if $value == column-reverse {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+  } @else {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+  }
+  -webkit-flex-direction: $value;
+  -ms-flex-direction: $value;
+  flex-direction: $value;
+}
+
+// Flexbox Wrap
+@mixin flex-wrap($value: nowrap) {
+  -webkit-flex-wrap: $value;
+  -ms-flex-wrap: $value;
+  flex-wrap: $value;
+}
+
+// Flexbox Flow (shorthand)
+@mixin flex-flow($values: (row nowrap)) {
+  -webkit-flex-flow: $values;
+  -ms-flex-flow: $values;
+  flex-flow: $values;
+}
+
+// Flexbox Order
+@mixin order($int: 0) {
+  -webkit-box-ordinal-group: $int + 1;
+  -webkit-order: $int;
+  -ms-flex-order: $int;
+  order: $int;
+}
+
+// Flexbox Grow
+@mixin flex-grow($int: 0) {
+  -webkit-box-flex: $int;
+  -webkit-flex-grow: $int;
+  -ms-flex-positive: $int;
+  flex-grow: $int;
+}
+
+// Flexbox Shrink
+@mixin flex-shrink($int: 1) {
+  -webkit-flex-shrink: $int;
+  -ms-flex-negative: $int;
+  flex-shrink: $int;
+}
+
+// Flexbox Basis
+@mixin flex-basis($value: auto) {
+  -webkit-flex-basis: $value;
+  -ms-flex-preferred-size: $value;
+  flex-basis: $value;
+}
+
+// Flexbox "Flex" (shorthand)
+@mixin flex($fg: 1, $fs: null, $fb: null) {
+  // Set a variable to be used by box-flex properties
+  $fg-boxflex: $fg;
+
+  // Box-Flex only supports a flex-grow value so let's grab the
+  // first item in the list and just return that.
+  @if type-of($fg) == "list" {
+    $fg-boxflex: nth($fg, 1);
+  }
+
+  -webkit-box-flex: $fg-boxflex;
+  -webkit-flex: $fg $fs $fb;
+  -ms-flex: $fg $fs $fb;
+  flex: $fg $fs $fb;
+}
+
+// Flexbox Justify Content
+@mixin justify-content($value: flex-start) {
+  @if $value == flex-start {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+  } @else if $value == flex-end {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+  } @else if $value == space-between {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+  } @else if $value == space-around {
+    -ms-flex-pack: distribute;
+  } @else {
+    -webkit-box-pack: $value;
+    -ms-flex-pack: $value;
+  }
+  -webkit-justify-content: $value;
+  justify-content: $value;
+}
+
+// Flexbox Align Items
+@mixin align-items($value: stretch) {
+  @if $value == flex-start {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+  } @else if $value == flex-end {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+  } @else {
+    -webkit-box-align: $value;
+    -ms-flex-align: $value;
+  }
+  -webkit-align-items: $value;
+  align-items: $value;
+}
+
+// Flexbox Align Self
+@mixin align-self($value: auto) {
+  // No Webkit Box Fallback.
+  -webkit-align-self: $value;
+  @if $value == flex-start {
+    -ms-flex-item-align: start;
+  } @else if $value == flex-end {
+    -ms-flex-item-align: end;
+  } @else {
+    -ms-flex-item-align: $value;
+  }
+  align-self: $value;
+}
+
+// Flexbox Align Content
+@mixin align-content($value: stretch) {
+  // No Webkit Box Fallback.
+  -webkit-align-content: $value;
+  @if $value == flex-start {
+    -ms-flex-line-pack: start;
+  } @else if $value == flex-end {
+    -ms-flex-line-pack: end;
+  } @else if $value == space-between {
+    -ms-flex-line-pack: justify;
+  } @else if $value == space-around {
+    -ms-flex-line-pack: distribute;
+  } @else {
+    -ms-flex-line-pack: $value;
+  }
+  align-content: $value;
+}
+
+@mixin linear-gradient($startColor, $endColor) {
+  background: $startColor; /* Old browsers */
+  background: -moz-linear-gradient(
+    left,
+    $startColor 0%,
+    $endColor 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    $startColor 0%,
+    $endColor 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(-90deg, $startColor 0%, $endColor 100%);
+}

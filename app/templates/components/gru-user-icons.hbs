@@ -1,0 +1,52 @@
+<a class="first-view">
+{{#if showOnlyNumbers}}
+    <ul>
+      <li class="item num-left">
+          <span>{{membersCount}}</span>
+      </li>
+    </ul>
+{{else}}
+    <ul>
+      {{#each firstUsers as |entity index|}}
+          <li class="item user {{if entity.isActive 'active' ''}}">
+              <img class="img-circle name-{{index}}" src="{{entity.avatarUrl}}" title="{{entity.fullName}}" alt="avatarUrl" />
+            <span class="user-name">{{truncate-text text=entity.firstName maxLength=10}} {{truncate-text text=entity.lastName maxLength=10}}</span>
+          </li>
+      {{/each}}
+
+      {{#if showMoreUsers}}
+          <li class="item num-left pointer">
+              <span {{action 'showMoreUsers'}}>{{remainingUsersNumber}}+</span>
+          </li>
+      {{else}}
+        {{#each remainingUsers as |entity|}}
+            <li class="item user {{if entity.isActive 'active' ''}}">
+                <img class="img-circle" src="{{entity.avatarUrl}}" title="{{entity.fullName}}" alt="avatarUrl" />
+            </li>
+        {{/each}}
+      {{/if}}
+    </ul>
+{{/if}}
+</a>
+{{#if showMoreUsers}}
+  <div class="remaining modal fade">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">{{t "common.numberStudents" count=users.length}}</h4>
+        </div>
+        <div class="modal-body">
+          <ul>
+            {{#each usersSorted as |entity|}}
+              <li class="item user {{if entity.isActive 'active' ''}}">
+                <img class="img-circle" src="{{entity.avatarUrl}}" title="{{entity.fullName}}" alt="avatarUrl" />
+                <span class="user-name">{{truncate-text text=entity.firstName maxLength=10}} {{truncate-text text=entity.lastName maxLength=10}}</span>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/if}}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Remix" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Remix-Course" transform="translate(-367.000000, -188.000000)" fill="#F8BA41">
+            <path d="M378.5,188 C372.175,188 367,193.175 367,199.5 C367,205.825 372.175,211 378.5,211 C384.825,211 390,205.825 390,199.5 C390,193.175 384.825,188 378.5,188 L378.5,188 Z M379.65,205.25 L377.35,205.25 L377.35,202.95 L379.65,202.95 L379.65,205.25 L379.65,205.25 Z M379.65,200.65 L377.35,200.65 L377.35,193.75 L379.65,193.75 L379.65,200.65 L379.65,200.65 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

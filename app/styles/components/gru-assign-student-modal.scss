@@ -1,0 +1,37 @@
+.qz-modal {
+  .modal-dialog {
+    .gru-assign-student-modal {
+      background-color: transparent;
+      padding-top: 20px;
+
+      .modal-header {
+        border-top-left-radius: $border-radius-base;
+        border-top-right-radius: $border-radius-base;
+        background-color: $blue-400;
+
+        .modal-title {
+          color: $white;
+          font-size: $font-size-large;
+          line-height: 1;
+          margin-left: 5px;
+          text-align: left;
+        }
+      }
+
+      .modal-body {
+        background-color: $white;
+        border-bottom-left-radius: $border-radius-base;
+        border-bottom-right-radius: $border-radius-base;
+        padding: 30px 30px 0;
+
+        @media (max-width: $screen-xs-max) {
+          padding: 30px 22px 0;
+        }
+
+        .toggle-group {
+          top: -4px;
+        }
+      }
+    }
+  }
+}

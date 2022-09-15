@@ -1,0 +1,25 @@
+<div class="controller analytics collection student">
+  <div class="row">
+    <div class="col-sm-12">
+      {{#if attemptData}}
+        {{reports/qz-assessment-report
+          showAttempts=false
+          areAnswersHidden=false
+          areAnswersHidden=areAnswersHidden
+          isAnswerKeyHidden=isAnswerKeyHidden
+          contextResult=contextResult
+          profile=profile
+          sourceType=sourceType
+          currentClass=currentClass
+          isIframeMode=isIframeMode
+          isShowExemplarText=isShowExemplarText
+          isSuggestedContent=isSuggestedContent
+          isGraded=isGraded
+          isGradedScore=isGradedScore
+          isDefaultGrade=isDefaultGrade
+          role=role
+        }}
+      {{/if}}
+    </div>
+  </div>
+</div>

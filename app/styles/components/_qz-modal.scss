@@ -1,0 +1,38 @@
+/*qz-modal component*/
+.qz-modal {
+  .modal-header {
+    display: table;
+    text-align: right;
+    width: 100%;
+    padding: 10px;
+    .close {
+      opacity: 1;
+      color: $white;
+      span {
+        vertical-align: middle;
+        display: table-cell;
+      }
+      .text {
+        font-size: $font-size-h4;
+        padding: 0 10px 0 0;
+      }
+      .icon i {
+        font-size: $font-size-h3;
+      }
+    }
+  }
+  .modal-body {
+    border: 1px solid $gray-lighter;
+
+    .wrapper {
+      width: 520px;
+      color: $dark-500;
+      margin: 0 auto;
+      position: relative;
+      font-family: arial, sans-serif;
+      font-size: $font-size-small;
+      border-radius: 0;
+      padding: 3px 3px;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<div class="qz-serp-classic-container">
+    <div class="choose-answer-section">
+        <ul role="tablist" class="answer-panel-item">
+          {{#each baseAnswers as | answer index |}}
+                {{#if showCorrect}}
+                  <li role="tab" class="answer-item answer-edit-{{index}}"><div class="answer-item-text">{{answer.text}}</div>
+                    {{#if answer.text_image}}
+                      <img src="{{answer.text_image}}" alt=""> 
+                    {{/if}}
+                  </li>
+                {{else}}
+                  <li role="tab" class="answer-item answer-edit-{{index}}"><div class="answer-item-text">{{answer.text}}</div>
+                    {{#if answer.text_image}}
+                      <img src="{{answer.text_image}}" alt="">
+                    {{/if}}
+                  </li>
+                {{/if}}
+          {{/each}}
+        </ul>
+    </div>
+</div>

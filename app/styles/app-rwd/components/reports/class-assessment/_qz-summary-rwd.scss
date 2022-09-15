@@ -1,0 +1,26 @@
+.reports.class-assessment.qz-summary {
+  .content {
+    @media only screen and (max-width: $screen-380) {
+      ul.overview {
+        li {
+          margin: 0;
+          padding: 0;
+
+          span {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .grading-scale {
+    @media only screen and (max-width: $screen-xs) {
+      .grading-scale-legend {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: auto auto;
+      }
+    }
+  }
+}

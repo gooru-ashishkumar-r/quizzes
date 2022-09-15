@@ -1,0 +1,43 @@
+.reports.assessment.qz-questions {
+  @media only screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+    .summary-report-questions {
+      .questions-header {
+        margin-right: 0;
+        text-align: center;
+
+        .title {
+          float: none;
+          margin: 0;
+        }
+      }
+
+      table {
+        zoom: 0.8;
+      }
+    }
+  }
+  @media only screen and (min-width: $screen-xs) and (max-width: $screen-sm) {
+    .summary-report-questions {
+      table {
+        zoom: 0.6;
+      }
+    }
+  }
+  @media only screen and (max-width: $screen-xs) {
+    .summary-report-questions {
+      table {
+        zoom: 0.6;
+
+        .header {
+          .title {
+            display: none;
+          }
+
+          .icon {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}

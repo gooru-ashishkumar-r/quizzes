@@ -1,0 +1,315 @@
+.qz-rich-text-editor {
+  .btn-toolbar {
+    position: relative;
+    .btn.btn-math {
+      margin-left: 8px;
+      color: $white;
+      background-color: $blue-300;
+      border-right: 1px solid $white;
+      font-weight: bold;
+      font-size: $font-size-base;
+      min-width: 35px;
+      @include border-bottom-radius(0);
+      padding: 4px 7px;
+      &:last-of-type {
+        border-right: 0;
+      }
+      &.wysihtml5-command-active,
+      &.active {
+        background-color: $blue-600;
+      }
+      .gru-icon {
+        font-size: $font-size-large;
+      }
+    }
+    .expressions-panel {
+      clear: both;
+      display: none;
+      background-color: $white;
+      margin-left: 5px;
+      @include clearfix();
+      &.show {
+        display: block;
+      }
+      .equation-editor {
+        @include flexbox;
+        .equation-wrapper {
+          display: inline-block;
+          width: 38%;
+          padding: 20px 10px 10px 10px;
+          text-align: center;
+          background-color: $blue-100;
+          .math-editor {
+            width: 100%;
+            height: 56px;
+            padding: 5px;
+            text-align: left;
+            border-color: $gray-lighter;
+            outline: none;
+            background-color: $white;
+            .mq-empty {
+              background: $sky-100;
+            }
+            .mq-root-block {
+              padding: 8px 2px 2px 2px;
+            }
+          }
+          .actions {
+            text-align: right;
+            padding: 15px 5px 5px 5px;
+            display: block;
+            .btn {
+              float: none;
+            }
+          }
+        }
+        .nav {
+          white-space: nowrap;
+          font-size: $font-size-small;
+          border-bottom: 1px solid $gray-lighter;
+          border-top: 1px solid $gray-lighter;
+          li {
+            &.active {
+              a {
+                background-color: $gray-lighter;
+              }
+            }
+            a {
+              padding: 4px 10px;
+              @include box-shadow(none);
+              @include border-bottom-radius(0);
+              @include border-top-radius(0);
+            }
+          }
+        }
+        .tab-content {
+          display: inline-block;
+          width: 65%;
+          background-color: $blue-100;
+          .tab-pane {
+            border-left: 1px solid $white;
+            margin: 10px 0px;
+            div {
+              min-height: 50px;
+              margin: 0 5px;
+              a {
+                display: inline-block;
+                line-height: 1;
+              }
+            }
+          }
+          .fraction {
+            background: url("quizzes-addon/quizzes/images/math-icons/fraction.svg");
+            background-size: 50px 50px;
+            height: 50px;
+            width: 50px;
+          }
+          .sqrt {
+            background: url("quizzes-addon/quizzes/images/math-icons/square-root.svg");
+            background-size: 50px 50px;
+            height: 50px;
+            width: 50px;
+          }
+          .sqrtn {
+            background: url("quizzes-addon/quizzes/images/math-icons/square-root-magnitude.svg");
+            background-size: 50px 50px;
+            height: 50px;
+            width: 50px;
+          }
+          .subscript {
+            background: url("quizzes-addon/quizzes/images/math-icons/sub-script.svg");
+            background-size: 50px 50px;
+            height: 50px;
+            width: 50px;
+          }
+          .superscript {
+            background: url("quizzes-addon/quizzes/images/math-icons/super-script.svg");
+            background-size: 50px 50px;
+            height: 50px;
+            width: 50px;
+          }
+          .overline {
+            background: url("quizzes-addon/quizzes/images/math-icons/overline.svg");
+            background-size: 50px 50px;
+            height: 50px;
+            width: 50px;
+          }
+          .sum {
+            background: url("quizzes-addon/quizzes/images/math-icons/sum-sub-super.svg");
+            background-size: 50px 50px;
+            height: 50px;
+            width: 50px;
+          }
+          .plus {
+            background: url("quizzes-addon/quizzes/images/math-icons/plus.svg");
+            background-size: 45px 45px;
+            height: 45px;
+            width: 40px;
+          }
+          .minus {
+            background: url("quizzes-addon/quizzes/images/math-icons/minus.svg");
+            background-size: 45px 45px;
+            height: 45px;
+            width: 40px;
+          }
+          .div {
+            background: url("quizzes-addon/quizzes/images/math-icons/div.svg");
+            background-size: 45px 45px;
+            height: 45px;
+            width: 40px;
+          }
+          .mult {
+            background: url("quizzes-addon/quizzes/images/math-icons/mult.svg");
+            background-size: 45px 45px;
+            height: 45px;
+            width: 30px;
+          }
+          .cdot {
+            background: url("quizzes-addon/quizzes/images/math-icons/cdot.svg");
+            background-size: 45px 45px;
+            height: 45px;
+            width: 30px;
+          }
+          .not-equal {
+            background: url("quizzes-addon/quizzes/images/math-icons/not-equal.svg");
+            background-size: 45px 45px;
+            height: 45px;
+            width: 40px;
+          }
+          .greater-equal {
+            background: url("quizzes-addon/quizzes/images/math-icons/greater-equal-than.svg");
+            background-size: 45px 45px;
+            height: 45px;
+            width: 40px;
+          }
+          .less-equal {
+            background: url("quizzes-addon/quizzes/images/math-icons/less-equal-than.svg");
+            background-size: 45px 45px;
+            height: 45px;
+            width: 40px;
+          }
+          .greater {
+            background: url("quizzes-addon/quizzes/images/math-icons/greater-than.svg");
+            background-size: 45px 45px;
+            height: 45px;
+            width: 40px;
+          }
+          .less {
+            background: url("quizzes-addon/quizzes/images/math-icons/less-than.svg");
+            background-size: 45px 45px;
+            height: 45px;
+            width: 40px;
+          }
+          .sim {
+            background: url("quizzes-addon/quizzes/images/math-icons/sim.svg");
+            background-size: 45px 45px;
+            height: 45px;
+            width: 40px;
+          }
+          .approx {
+            background: url("quizzes-addon/quizzes/images/math-icons/approx.svg");
+            background-size: 45px 45px;
+            height: 45px;
+            width: 30px;
+          }
+          .alpha {
+            background: url("quizzes-addon/quizzes/images/math-icons/alpha.svg");
+            background-size: 45px 45px;
+            height: 45px;
+            width: 30px;
+          }
+          .pmatrix {
+            background: url("quizzes-addon/quizzes/images/math-icons/pmatrix.svg");
+            background-size: 50px 50px;
+            height: 50px;
+            width: 40px;
+          }
+          .Bmatrix {
+            background: url("quizzes-addon/quizzes/images/math-icons/Bmatrix.svg");
+            background-size: 50px 50px;
+            height: 50px;
+            width: 40px;
+          }
+          .vmatrix {
+            background: url("quizzes-addon/quizzes/images/math-icons/vmatrix.svg");
+            background-size: 50px 50px;
+            height: 50px;
+            width: 40px;
+          }
+          .angle {
+            background: url("quizzes-addon/quizzes/images/math-icons/angle.svg");
+            background-size: 50px 50px;
+            height: 50px;
+            width: 40px;
+          }
+          .measuredangle {
+            background: url("quizzes-addon/quizzes/images/math-icons/measured-angle.svg");
+            background-size: 50px 50px;
+            height: 50px;
+            width: 40px;
+          }
+          .infinity {
+            background: url("quizzes-addon/quizzes/images/math-icons/infinity.svg");
+            background-size: 50px 50px;
+            height: 50px;
+            width: 40px;
+          }
+          .bot {
+            background: url("quizzes-addon/quizzes/images/math-icons/bot.svg");
+            background-size: 50px 50px;
+            height: 50px;
+            width: 40px;
+          }
+          .parallel {
+            background: url("quizzes-addon/quizzes/images/math-icons/parallel.svg");
+            background-size: 50px 50px;
+            height: 50px;
+            width: 40px;
+          }
+          .sigma {
+            background: url("quizzes-addon/quizzes/images/math-icons/sigma.svg");
+            background-size: 50px 50px;
+            height: 50px;
+            width: 40px;
+          }
+          .theta {
+            background: url("quizzes-addon/quizzes/images/math-icons/theta.svg");
+            background-size: 50px 50px;
+            height: 50px;
+            width: 40px;
+          }
+          .pi {
+            background: url("quizzes-addon/quizzes/images/math-icons/pi.svg");
+            background-size: 50px 50px;
+            height: 50px;
+            width: 40px;
+          }
+        }
+      }
+    }
+  }
+  .rich-editor {
+    min-height: 250px;
+    border: 1px solid $gray-lighter;
+    padding: 10px;
+    outline: none;
+    &:focus {
+      box-shadow: inset 0 -2px 0 $blue-500;
+    }
+    .gru-math-expression {
+      .katex {
+        cursor: pointer;
+      }
+    }
+    &.not-editable {
+      .gru-math-expression {
+        .katex {
+          cursor: text;
+        }
+      }
+    }
+  }
+  .border-bottom {
+    border-bottom: 1px solid $white;
+  }
+}

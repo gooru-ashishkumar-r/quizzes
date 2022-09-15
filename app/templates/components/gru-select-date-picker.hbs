@@ -1,0 +1,42 @@
+<div class="form-group birth-day-date">
+  <label>
+    <span class="required">{{t "sign-up.dateOfBirth.title"}}</span>
+    <div class="birth-months">
+      <select class="selectpicker months" id="months" title="{{t "sign-up.dateOfBirth.month"}}" data-live-search="true" size="false" mobile="true">
+        <option value="01">{{t "sign-up.dateOfBirth.months.january"}}</option>
+        <option value="02">{{t "sign-up.dateOfBirth.months.february"}}</option>
+        <option value="03">{{t "sign-up.dateOfBirth.months.march"}}</option>
+        <option value="04">{{t "sign-up.dateOfBirth.months.april"}}</option>
+        <option value="05">{{t "sign-up.dateOfBirth.months.may"}}</option>
+        <option value="06">{{t "sign-up.dateOfBirth.months.june"}}</option>
+        <option value="07">{{t "sign-up.dateOfBirth.months.july"}}</option>
+        <option value="08">{{t "sign-up.dateOfBirth.months.august"}}</option>
+        <option value="09">{{t "sign-up.dateOfBirth.months.september"}}</option>
+        <option value="10">{{t "sign-up.dateOfBirth.months.october"}}</option>
+        <option value="11">{{t "sign-up.dateOfBirth.months.november"}}</option>
+        <option value="12">{{t "sign-up.dateOfBirth.months.december"}}</option>
+      </select>
+    </div>
+    <div class="birth-days">
+      <select class="selectpicker days" id="days" title="{{t "sign-up.dateOfBirth.day"}}" data-live-search="true" size="false" mobile="true">
+        {{#each birthDays as |birthDay|}}
+          <option value="{{birthDay}}">{{birthDay}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="birth-years">
+      <select class="selectpicker years" id="years" title="{{t "sign-up.dateOfBirth.year"}}" data-live-search="true" size="false" mobile="true">
+        {{#each birthYears as |birthYear|}}
+          <option value="{{birthYear}}">{{birthYear}}</option>
+        {{/each}}
+      </select>
+    </div>
+  </label>
+  <div class="error-messages">
+    {{#if showBirthMessage}}
+      <span class="error">
+        {{t "sign-up.dateOfBirth.error-message"}}
+      </span>
+    {{/if}}
+  </div>
+</div>

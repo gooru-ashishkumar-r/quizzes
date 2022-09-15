@@ -1,0 +1,76 @@
+<div class="qz-feedback-form">
+  <div class="feedback-container">
+    <div class="feedback-header-panel" style="display:none">
+      <div class="note">
+        <p>{{t (concat 'common.feedback-' format '-note') }}</p>
+      </div>
+    </div>
+    <div class="feedback-body-panel">
+      {{#each categoryLists as |category index|}}
+        {{#unless isShowReaction}}
+          {{#if (eq category.feedbackTypeId 1)}}
+            <div class="category-panel">
+                <div class="category-title" {{action 'onToggleCategoryDetails' category index}}>
+                  <div class="info-icon">{{plus-one index}}</div>
+                  <div class="category-name">{{category.categoryName}}</div>
+                  <div class="accordion-icon">
+                    {{gru-icon name=(if category.isExpanded 'arrow_drop_up' 'arrow_drop_down')}}
+                  </div>
+                </div>
+                <div class="category-info category-{{index}}">
+                  <div class="category-rating">{{rating-stars rating = category.rating maxRating = category.maxScale}}</div>
+                </div>
+            </div>
+          {{/if}}
+        {{/unless}}
+        {{#if (eq category.feedbackTypeId 2 )}}
+          <div class="category-panel">
+            <div class="category-title" {{action 'onToggleCategoryDetails' category index}}>
+              <div class="info-icon">{{plus-one index}}</div>
+              <div class="category-name">{{category.categoryName}}</div>
+              <div class="accordion-icon">
+                {{gru-icon name=(if category.isExpanded 'arrow_drop_up' 'arrow_drop_down')}}
+              </div>
+            </div>
+            <div class="category-info category-{{index}}">
+              <div class="category-quality">
+                {{
+                validation/gru-radio
+                model=category
+                valuePath='yes'
+                groupValue=category.quality
+                name=(concat "category-radio-"index)
+                translationPath="common.yes"
+                onChange = "updateFeedback"
+                }}
+                {{
+                validation/gru-radio
+                model=category
+                valuePath='no'
+                groupValue=category.quality
+                name=(concat "category-radio-"index)
+                translationPath="common.no"
+                onChange = "updateFeedback"
+                }}
+              </div>
+            </div>
+          </div>
+        {{/if}}
+        {{#if (eq category.feedbackTypeId 3 )}}
+          <div class="category-panel">
+            <div class="category-title" {{action 'onToggleCategoryDetails' category index}}>
+              <div class="info-icon">{{plus-one index}}</div>
+              <div class="category-name">{{category.categoryName}}</div>
+              <div class="accordion-icon">
+                {{gru-icon name="mode_comment"}}
+              </div>
+            </div>
+            <div class="category-info category-{{index}}">
+              {{validation/gru-textarea model=category valuePath='comments' placeholder=(t 'common.feedback-review-placeholder') inputId='commentsId' isRequired=false onTyping="updateFeedback"}}
+            </div>
+          </div>
+        {{/if}}
+      {{/each}}
+    </div>
+  </div>
+</div>

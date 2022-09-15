@@ -1,0 +1,67 @@
+.qz-assessment-settings {
+  display: flex;
+  flex-wrap: wrap;
+  .swap_horizontal {
+    width: 24px;
+  }
+  .panel {
+    width: 100%;
+    margin-right: 10px;
+    background-color: $light-100;
+
+    .panel-body {
+      padding: 10px;
+    }
+    @media (min-width: $screen-sm) {
+      width: 47%;
+    }
+  }
+  .setting {
+    display: block;
+    .instructions {
+      @include flexbox;
+      .gru-icon {
+        margin-right: 10px;
+      }
+    }
+    .qz-switch {
+      margin: 10px 0 0 30px;
+    }
+    &:not(.attempts, .publish-to) {
+      > span {
+        width: 40%;
+      }
+    }
+    &.attempts,
+    &.publish-to {
+      > span {
+        padding-right: 10px;
+      }
+      .gru-select .form-group {
+        margin-bottom: 0;
+      }
+    }
+    &.attempts {
+      .form-group {
+        margin: 10px 0 0 30px;
+        .btn-group {
+          width: 150px;
+        }
+      }
+    }
+    .feedback {
+      max-width: 500px;
+      padding: 5px;
+      .gru-radio {
+        margin-left: 30px;
+        display: block;
+        .form-group {
+          margin: 10px 0 0 0;
+        }
+      }
+    }
+    .gru-select {
+      padding-left: 5px;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div class="form-group">
+  {{datepicker-field
+  onSelectDateAction=(action 'setValue')
+  placeholder=placeholder
+  class=class}}
+    <div class="error-messages">
+      {{#if showMessage}}
+          <span class="error">
+            {{v-get model valuePath 'message'}}
+          </span>
+      {{/if}}
+    </div>
+</div>

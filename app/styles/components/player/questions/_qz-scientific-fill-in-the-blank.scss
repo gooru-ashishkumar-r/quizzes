@@ -1,0 +1,67 @@
+.qz-scientific-fill-in-the-blank {
+  .fib-answers {
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    align-items: center;
+    .answer-details {
+      label {
+        text-transform: capitalize;
+        color: $black-15;
+        font-size: 11px;
+        letter-spacing: normal;
+        display: flex;
+        align-items: center;
+        span {
+          opacity: 0.7;
+        }
+        .category-info {
+          cursor: pointer;
+          height: 27px;
+          padding-left: 5px;
+          i {
+            font-size: 18px;
+            line-height: 27px;
+          }
+        }
+      }
+      .answer-text {
+        outline: none;
+        letter-spacing: normal;
+        color: $black-15;
+        display: flex;
+        font-size: 15px;
+        z-index: 9;
+        input {
+          border-bottom: 1px solid$black-15;
+          margin: 0px 10px;
+        }
+      }
+      .hint-details {
+        display: grid;
+        span {
+          font-style: italic;
+        }
+      }
+    }
+    .info-icon {
+      width: 24px;
+      height: 24px;
+      background-size: 24px 24px;
+      background-image: url("./gooru/images/question-icon.png");
+      display: block;
+      justify-self: center;
+      object-fit: contain;
+      cursor: pointer;
+    }
+    .close-icon {
+      width: 24px;
+      height: 24px;
+      background-size: 24px 24px;
+      background-image: url("./gooru/images/close-btn.png");
+      display: block;
+      justify-self: center;
+      object-fit: contain;
+      cursor: pointer;
+    }
+  }
+}

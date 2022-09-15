@@ -1,0 +1,121 @@
+.modals {
+  background-color: transparent;
+
+  .modal-header {
+    border-top-left-radius: $border-radius-base;
+    border-top-right-radius: $border-radius-base;
+    background-color: $blue-400;
+
+    .modal-title {
+      color: $white;
+      font-size: $font-size-large;
+      line-height: 1;
+      margin-left: 5px;
+      text-align: left;
+    }
+  }
+
+  .modal-body {
+    background-color: $white;
+    border-bottom-left-radius: $border-radius-base;
+    border-bottom-right-radius: $border-radius-base;
+    padding: 30px 30px 20px;
+
+    form {
+      label {
+        display: block;
+
+        span.required {
+          &:after {
+            content: ' *';
+          }
+        }
+
+        .gru-input {
+          width: 80%;
+        }
+      }
+
+      .btn-group {
+        .btn {
+          background-color: $dark-400;
+          color: $white;
+          border-right: 1px solid $white;
+          padding-top: 3px;
+          padding-bottom: 3px;
+
+          &:last-child {
+            border-right: 1px solid $white;
+          }
+
+          &.selected {
+            background-color: $blue-400;
+          }
+        }
+      }
+      .question-types,
+      .resource-types {
+        margin-top: 10px;
+        @include flexbox;
+        @include justify-content(center);
+        @include flex-direction(row);
+        @include flex-wrap(wrap);
+        .panel {
+          border-radius: 4px;
+          width: 184px;
+          height: 96px;
+          float: $tab-float-dir;
+          margin: 0 10px 40px 10px;
+          cursor: pointer;
+
+          .panel-body {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            background-color: $blue-400;
+            padding: 10px 15px 10px 15px;
+
+            .question-type-icon {
+              display: inline-block;
+              margin: 0 auto;
+              vertical-align: top;
+              -webkit-background-size: 70px 70px;
+              background-size: 70px 70px;
+              height: 70px;
+              width: 70px;
+            }
+            .resource-type-icon {
+              display: inline-block;
+              margin: 10px auto;
+              vertical-align: top;
+              -webkit-background-size: 40px 40px;
+              background-size: 40px 40px;
+              height: 40px;
+              width: 40px;
+            }
+          }
+          .panel-footer {
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            background-color: $blue-500;
+            color: $white;
+            padding: 5px 15px 5px 15px;
+          }
+        }
+      }
+    }
+
+    .actions {
+      text-align: right;
+      margin-top: 70px;
+
+      button {
+        padding-left: 24px;
+        padding-right: 24px;
+
+        &.btn-default {
+          border: 1px solid $gray-light;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<!-- {{#if isShowBackdrop }}
+  <div class="backdrop-close" {{action 'onToggleRelatedContent'}}></div>
+{{/if}} -->
+<!-- <div class="related-content-tabs">
+  <div class="related-content-tab" {{action 'onToggleRelatedContent'}}>
+    <div class="tab-info">
+      <span>{{t 'common.related-content'}}</span> {{gru-icon name="explore"}}
+    </div>
+    <div class="related-content-tab-box"></div>
+  </div>
+</div> -->
+<div class="related-content-body">
+  <div class="header-panel">
+    <div class="title">
+      {{t 'common.related-content'}}
+    </div>
+    <div class="close-icon" {{action "clossRelatedContent"}}>
+      {{gru-icon name="close"}}
+    </div>
+  </div>
+  <div class="resource-cards {{concat 'cards-'  suggestedResources.length}}">
+    {{#each suggestedResources as |resource|}}
+      {{cards/resource-card resource=resource onPlayResource='onPlayResource'}}
+    {{/each}}
+  </div>
+</div>

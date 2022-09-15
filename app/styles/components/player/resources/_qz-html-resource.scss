@@ -1,0 +1,25 @@
+.qz-html-resource {
+  height: 100%;
+  width: 100%;
+
+  .player-content {
+    height: 100%;
+    width: 100%;
+    background-color: $white;
+    overflow: auto;
+
+    .content {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+    }
+
+    .gru-html-editor {
+      #html-editor {
+        height: 100%;
+      }
+    }
+  }
+}

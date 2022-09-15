@@ -1,0 +1,23 @@
+<div class="feedback-header">
+  <div class="text">
+    {{t 'common.give-feedback'}}
+  </div>
+  <div class="close-icon" {{action "onCloseFeedback"}}>
+    {{gru-icon name="close"}}
+  </div>
+</div>
+<div class="feedback-content-body">
+  {{#if (and feedbackCategoryLists (not isAnonymous))}}
+    {{player/qz-feedback-form feedbackContent=feedbackContent feedbackCategoryLists=feedbackCategoryLists categoryLists=categoryLists format=format isShowReaction=isShowReaction}}
+  {{/if}}
+  {{#if isShowReaction}}
+    <div class="reaction-bar">
+      <div class="reaction-header">
+        {{t 'common.feedback-overall-reaction'}}
+      </div>
+      <div class="reaction-content">
+        {{qz-emotion-picker startEmotion=ratingScore onChangeEmotion="changeEmotion" readOnly=submitted}}
+      </div>
+    </div>
+  {{/if}}
+</div>

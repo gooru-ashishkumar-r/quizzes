@@ -1,0 +1,24 @@
+<div class="qz-serp-sorting-container">
+  <div class="qz-column-panel">
+    <div class="qz-column-header">
+      <span>{{question.softText}}</span>
+      <span></span>
+      <span>{{question.hardText}}</span>
+    </div>
+    <div class="qz-column-body">
+      <ul class="qz-column-soft-blk qz-sorting-blk">
+
+      </ul>
+      <ul class="qz-sorting-list-item">
+        {{#each answers as | answer answerIndex |}}
+          {{#unless answer.answer_type}}
+            <li data-answer-index={{answerIndex}}> {{answer.answer_text}}</li>
+          {{/unless}}
+        {{/each}}
+      </ul>
+      <ul class="qz-column-hard-blk qz-sorting-blk">
+
+      </ul>
+    </div>
+  </div>
+</div>

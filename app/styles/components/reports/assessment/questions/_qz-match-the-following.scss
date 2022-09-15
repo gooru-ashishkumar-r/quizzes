@@ -1,0 +1,53 @@
+.qz-match-the-following {
+  .gru-match-question-container {
+    .matching-container {
+      .panel-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .text-or-image {
+          display: grid;
+          align-items: center;
+          .preview-image {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            padding: 6px 12px;
+            .content.gru-image {
+              width: 55px;
+              height: 55px;
+            }
+            .img-responsive {
+              height: 55px;
+              width: 55px;
+            }
+          }
+        }
+
+        .sortable {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: grid !important;
+          align-items: center;
+
+          li {
+            font-size: 15px;
+            height: 67px;
+            padding: 6px 12px;
+            display: flex;
+            align-items: center;
+            .content.gru-image {
+              width: 55px;
+              height: 55px;
+            }
+            .img-responsive {
+              height: 55px;
+              width: 55px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

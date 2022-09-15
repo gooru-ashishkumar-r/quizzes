@@ -1,0 +1,13 @@
+<p class="instructions">
+  {{t "qz-hot-text.instructions" action=(t instructionsActionTextKey)}}
+</p>
+
+<p class="phrases">
+  {{#each items as |item|}}
+    {{#if readOnly}}
+      <span class="item disabled {{if item.selected 'selected'}}">{{{item.text}}}</span>
+    {{else}}
+      <span {{action 'markItem' item}} class="item {{if item.selected 'selected'}}">{{{item.text}}}</span>
+    {{/if}}
+  {{/each}}
+</p>

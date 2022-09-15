@@ -1,0 +1,85 @@
+<div id="wysihtml-toolbar{{editorIndex}}" class="btn-toolbar {{if disableButtons 'hidden'}}" role="toolbar">
+    <button type="button" class="btn btn-math bold" data-wysihtml5-command="bold" title="{{t 'qz-rich-text-editor.bold'}}">
+      <strong>B</strong>
+    </button>
+    <button type="button" class="btn btn-math italic" data-wysihtml5-command="italic" title="{{t 'qz-rich-text-editor.italic'}}">
+      <i>I</i>
+    </button>
+    <button type="button" class="btn btn-math underline" data-wysihtml5-command="underline" title="{{t 'qz-rich-text-editor.underline'}}">
+      <u>U</u>
+    </button>
+    <button type="button" class="btn btn-math superscript" data-wysihtml5-command="superscript" title="{{t 'qz-rich-text-editor.superscript'}}">
+      x<sup>2</sup>
+    </button>
+    <button type="button" class="btn btn-math subscript" data-wysihtml5-command="subscript" title="{{t 'qz-rich-text-editor.subscript'}}">
+      x<sub>2</sub>
+    </button>
+    <button type="button" class="btn  btn-math add-function {{if showExpressionsPanel 'active'}}" title="{{t 'qz-rich-text-editor.expression'}}" {{action 'toggleExpressionsPanel'}}>
+      {{t 'qz-rich-text-editor.expressions-panel.create-expression'}}
+    </button>
+  <div class="expressions-panel {{if showExpressionsPanel 'show'}}">
+    <div class="equation-editor">
+        <div class="equation-wrapper">
+            <span class="math-field{{editorIndex}} math-editor"></span>
+            <div class="actions">
+              {{#if isEditingExpression}}
+                  <button class="btn btn-primary" {{action 'updateExpression'}}>{{t 'qz-rich-text-editor.expressions-panel.update-expression'}}</button>
+              {{else}}
+                  <button class="btn btn-primary" {{action 'insertExpression'}}>{{t 'qz-rich-text-editor.expressions-panel.insert-expression'}}</button>
+              {{/if}}
+            </div>
+        </div>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="layout">
+                <div class="border-bottom toolbar-1">
+                    <a href="#" class="fraction" data-expression="fraction"></a>
+                    <a href="#" class="sqrtn" data-expression="sqrtn"></a>
+                    <a href="#" class="sqrt" data-expression="sqrt"></a>
+                    <a href="#" class="subscript" data-expression="subscript"></a>
+                    <a href="#" class="superscript" data-expression="superscript"></a>
+                    <!--<a href="#" class="over-left-arrow" data-expression="over-left-arrow"></a>-->
+                    <!--<a href="#" class="over-right-arrow" data-expression="over-right-arrow"></a>-->
+                    <a href="#" class="overline" data-expression="overline"></a>
+                    <a href="#" class="sum" data-expression="sum"></a>
+                </div>
+               <div class="border-bottom toolbar-2">
+                   <a href="#" class="plus" data-expression="plus"></a>
+                   <a href="#" class="minus" data-expression="minus"></a>
+                   <a href="#" class="div" data-expression="div"></a>
+                   <a href="#" class="mult" data-expression="mult"></a>
+                   <a href="#" class="cdot" data-expression="cdot"></a>
+                   <a href="#" class="not-equal" data-expression="not-equal"></a>
+                   <a href="#" class="less" data-expression="lt"></a>
+                   <a href="#" class="greater" data-expression="gt"></a>
+                   <a href="#" class="less-equal" data-expression="le"></a>
+                   <a href="#" class="greater-equal" data-expression="ge"></a>
+                   <a href="#" class="sim" data-expression="sim"></a>
+                   <a href="#" class="approx" data-expression="approx"></a>
+                   <a href="#" class="alpha" data-expression="alpha"></a>
+               </div>
+              <div class="toolbar-3">
+                  <a href="#" class="pmatrix" data-expression="pmatrix"></a>
+                  <a href="#" class="Bmatrix" data-expression="Bmatrix"></a>
+                  <a href="#" class="vmatrix" data-expression="vmatrix"></a>
+                  <a href="#" class="angle" data-expression="angle"></a>
+                  <a href="#" class="measuredangle" data-expression="measuredangle"></a>
+                  <a href="#" class="infinity" data-expression="infinity"></a>
+                  <a href="#" class="bot" data-expression="bot"></a>
+                  <a href="#" class="parallel" data-expression="parallel"></a>
+                  <a href="#" class="sigma" data-expression="sigma"></a>
+                  <a href="#" class="theta" data-expression="theta"></a>
+                  <a href="#" class="pi" data-expression="pi"></a>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<div id="wysihtml-editor{{editorIndex}}" class="rich-editor editor-box{{editorIndex}} {{if disableButtons 'not-editable' 'editable'}}"></div>
+<div class="error-messages validation">
+  {{#if showMessage}}
+    <span class="error">
+      {{v-get model valuePath 'message'}}
+    </span>
+  {{/if}}
+</div>

@@ -1,0 +1,28 @@
+<div class="score-section level">
+  <span>{{t 'qz-rubric-creation.qz-category.qz-scoring-levels.levels'}}</span>
+  <div class="levels">
+    <div class="scale">
+      <span class="best">{{t 'qz-rubric-creation.qz-category.qz-scoring-levels.best'}}</span>
+      <div class="line"></div>
+      <div class="arrow-down"></div>
+      <span class="worst">{{t 'qz-rubric-creation.qz-category.qz-scoring-levels.worst'}}</span>
+    </div>
+    <div class="level-list">
+      {{#each scoringLevels as |level|}}
+        {{validation/gru-input model=level valuePath='description' maxLength=50 placeholder=(t  (concat 'qz-rubric-creation.qz-category.qz-scoring-levels.' level.id))}}
+      {{/each}}
+    </div>
+  </div>
+  <button class="btn btn-primary btn-new-level">{{gru-icon name='add'}}{{t 'qz-rubric-creation.qz-category.qz-scoring-levels.new-level'}}</button>
+</div>
+<div class="score-section points">
+  <span>{{t 'qz-rubric-creation.qz-category.qz-scoring-levels.points'}}</span>
+  <div class="point-list">
+    {{#each scoringLevels as |level|}}
+      <div>
+        {{validation/gru-input model=level valuePath='point'}}
+        <button title="{{t 'common.delete'}}" class="btn no-bgd delete" {{action 'deleteLevel' level}} data-toggle="tooltip" data-placement="auto">{{gru-icon name="delete"}}</button>
+      </div>
+    {{/each}}
+  </div>
+</div>

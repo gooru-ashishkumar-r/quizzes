@@ -1,0 +1,40 @@
+<span class="instruction">
+  {{t "gru-image-picker.instruction"}}
+</span>
+
+<em class="restriction">
+  {{t "gru-image-picker.restriction"}}
+</em>
+
+{{#file-picker
+accept=".jpg,.jpeg,.gif,.png"
+dropzone=false
+fileLoaded=(action 'prepareForSubmission')
+readAs="readAsFile"
+errors=filePickerErrors
+onRemoveFile=(action 'disableButtons')
+removePreview=isFileInputEmpty }}
+
+  <button class="upload btn btn-default">
+    {{fa-icon icon="fa-upload"}}
+    {{#if isFileLoaded}}
+      {{image.filename}}
+    {{else}}
+      {{t "gru-image-picker.chooseFile"}}
+    {{/if}}
+  </button>
+
+{{/file-picker}}
+
+<div class="validation">
+  {{#each filePickerErrors as |error|}}
+    <span class="error">{{error}}</span>
+  {{/each}}
+</div>
+
+{{#if isFileLoaded}}
+  <div class="actions">
+    <button class="reset btn btn-default" {{action 'resetPicker'}}>{{t "common.cancel"}}</button>
+    <button class="submit btn btn-default" {{action 'submitImage'}}>{{t "gru-image-picker.submit"}}</button>
+  </div>
+{{/if}}

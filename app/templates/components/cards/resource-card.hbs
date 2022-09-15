@@ -1,0 +1,50 @@
+<div class="card-panel-container" >
+  <div class="card-panel-header">
+    <div class='icon {{resource.format}}'></div>
+  </div>
+  <div class="info">
+    <div class="title">{{resource.title}}</div>
+    <div class="description">{{safe-html resource.description}}</div>
+  </div>
+  <!-- <div class="resource-format-container">
+    <span>{{resource.format}}</span>
+  </div> -->
+  <!-- <div class="resource-info-container">
+    <div class="resource-user-info">
+      <div class="created-by">{{t 'common.created-by'}}</div>
+      <div class="img-container pull-left">
+        <img class="img-responsive" src="{{resource.owner.avatarUrl}}" alt="avatarUrl">
+      </div>
+      <div class="username">{{resource.owner.displayName}}</div>
+    </div>
+    <div class="resource-description">
+      {{safe-html resource.description}}
+    </div>
+    <div class="resource-standards ">
+      {{#if tags.length}}
+        {{taxonomy/gru-taxonomy-tag-list tags=tags tagsVisible=1 isInCard=true showDescription=true}}
+      {{/if}}
+    </div>
+  </div> -->
+  <div class="card-panel-footer">
+    <div class="buttons-container">
+      <div class="play-btn" title="Play" data-toggle="tooltip" data-placement="right" {{action "onPlayResource" resource}}>{{gru-icon name="play_arrow"}}</div>
+    </div>
+    <!-- <div class="resource-prefs-container">
+      <span class="left-arc"></span>
+      <span class="right-arc"></span>
+      <div class="resource-prefs relevance pull-left" style="background-color:rgba(0, 114, 188, {{resource.relevance}})">
+        <div class="count">{{resource.relevance}}</div>
+        <div class="title">{{t 'common.relevance'}}</div>
+      </div>
+      <div class="resource-prefs engagement pull-left" style="background-color:rgba(0, 114, 188, {{resource.engagement}})">
+        <div class="count">{{resource.engagement}}</div>
+        <div class="title">{{t 'common.engagement'}}</div>
+      </div>
+      <div class="resource-prefs efficacy pull-left" style="background-color:rgba(0, 114, 188, {{resource.efficacy}})">
+        <div class="count">{{resource.efficacy}}</div>
+        <div class="title">{{t 'common.efficacy'}}</div>
+      </div>
+    </div> -->
+  </div>
+</div>

@@ -1,0 +1,62 @@
+.bootstrap-select {
+  border-bottom: 1px solid $table-border-color;
+  .dropdown-toggle {
+    color: $gray;
+    font-size: $font-size-large;
+    font-weight: 300;
+    padding: 0 0 0 3px;
+    background-color: $white;
+    box-shadow: none;
+    background-position: 0;
+    background-size: unset;
+    &.btn-default {
+      &:focus,
+      &:hover,
+      &:active,
+      &:active:hover {
+        background-color: $white !important;
+        background-image: none;
+        color: $gray !important;
+      }
+    }
+  }
+  &.open > .btn-default.dropdown-toggle {
+    box-shadow: none;
+    background-color: $white !important;
+  }
+}
+.bootstrap-select.btn-group {
+  &.open {
+    .dropdown-toggle {
+      .caret {
+        border-top: 0;
+        border-bottom: 4px dashed;
+      }
+      &:focus,
+      &:hover,
+      &:active,
+      &:active:hover {
+        background-color: $white;
+        background-image: none;
+      }
+    }
+  }
+  .dropdown-toggle {
+    .caret {
+      border-bottom: 0;
+      border-top: 4px dashed;
+    }
+    .filter-option {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 95%;
+    }
+  }
+  .dropdown-menu.inner {
+    max-height: 300px !important;
+    position: relative;
+    padding-bottom: 5px;
+    width: 100%;
+  }
+}

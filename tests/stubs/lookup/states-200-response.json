@@ -1,0 +1,269 @@
+{
+  "states": [
+    {
+      "id": "27a84e40-d478-11e4-bfe7-22000abfab1d",
+      "name": "ALABAMA",
+      "code": "AL"
+    },
+    {
+      "id": "27a84c4c-d478-11e4-bfe7-22000abfab1d",
+      "name": "ALASKA ",
+      "code": "AK"
+    },
+    {
+      "id": "27a85214-d478-11e4-bfe7-22000abfab1d",
+      "name": "ARIZONA",
+      "code": "AZ"
+    },
+    {
+      "id": "27a84fee-d478-11e4-bfe7-22000abfab1d",
+      "name": "ARKANSAS",
+      "code": "AR"
+    },
+    {
+      "id": "27a85368-d478-11e4-bfe7-22000abfab1d",
+      "name": "CALIFORNIA",
+      "code": "CA"
+    },
+    {
+      "id": "27a854d0-d478-11e4-bfe7-22000abfab1d",
+      "name": "COLORADO",
+      "code": "CO"
+    },
+    {
+      "id": "27a8557a-d478-11e4-bfe7-22000abfab1d",
+      "name": "CONNECTICUT",
+      "code": "CT"
+    },
+    {
+      "id": "27a856d8-d478-11e4-bfe7-22000abfab1d",
+      "name": "DELAWARE",
+      "code": "DE"
+    },
+    {
+      "id": "27a8562e-d478-11e4-bfe7-22000abfab1d",
+      "name": "DISTRICT OF COLUMBIA",
+      "code": "DC"
+    },
+    {
+      "id": "27a857a0-d478-11e4-bfe7-22000abfab1d",
+      "name": "FLORIDA",
+      "code": "FL"
+    },
+    {
+      "id": "27a8584a-d478-11e4-bfe7-22000abfab1d",
+      "name": "GEORGIA",
+      "code": "GA"
+    },
+    {
+      "id": "27a85ade-d478-11e4-bfe7-22000abfab1d",
+      "name": "HAWAII ",
+      "code": "HI"
+    },
+    {
+      "id": "27a85cdc-d478-11e4-bfe7-22000abfab1d",
+      "name": "IDAHO",
+      "code": "ID"
+    },
+    {
+      "id": "27a85d7c-d478-11e4-bfe7-22000abfab1d",
+      "name": "ILLINOIS",
+      "code": "IL"
+    },
+    {
+      "id": "27a85e26-d478-11e4-bfe7-22000abfab1d",
+      "name": "INDIANA",
+      "code": "IN"
+    },
+    {
+      "id": "27a85c32-d478-11e4-bfe7-22000abfab1d",
+      "name": "IOWA",
+      "code": "IA"
+    },
+    {
+      "id": "27a86178-d478-11e4-bfe7-22000abfab1d",
+      "name": "KANSAS ",
+      "code": "KS"
+    },
+    {
+      "id": "27a86218-d478-11e4-bfe7-22000abfab1d",
+      "name": "KENTUCKY",
+      "code": "KY"
+    },
+    {
+      "id": "27a862b8-d478-11e4-bfe7-22000abfab1d",
+      "name": "LOUISIANA",
+      "code": "LA"
+    },
+    {
+      "id": "27a865ec-d478-11e4-bfe7-22000abfab1d",
+      "name": "MAINE",
+      "code": "ME"
+    },
+    {
+      "id": "27a8654c-d478-11e4-bfe7-22000abfab1d",
+      "name": "MARYLAND",
+      "code": "MD"
+    },
+    {
+      "id": "27a86362-d478-11e4-bfe7-22000abfab1d",
+      "name": "MASSACHUSETTS",
+      "code": "MA"
+    },
+    {
+      "id": "27a86952-d478-11e4-bfe7-22000abfab1d",
+      "name": "MICHIGAN",
+      "code": "MI"
+    },
+    {
+      "id": "27a86af6-d478-11e4-bfe7-22000abfab1d",
+      "name": "MINNESOTA",
+      "code": "MN"
+    },
+    {
+      "id": "27a86da8-d478-11e4-bfe7-22000abfab1d",
+      "name": "MISSISSIPPI",
+      "code": "MS"
+    },
+    {
+      "id": "27a86bdc-d478-11e4-bfe7-22000abfab1d",
+      "name": "MISSOURI",
+      "code": "MO"
+    },
+    {
+      "id": "27a86e70-d478-11e4-bfe7-22000abfab1d",
+      "name": "MONTANA",
+      "code": "MT"
+    },
+    {
+      "id": "27a87122-d478-11e4-bfe7-22000abfab1d",
+      "name": "NEBRASKA",
+      "code": "NE"
+    },
+    {
+      "id": "27a8742e-d478-11e4-bfe7-22000abfab1d",
+      "name": "NEVADA ",
+      "code": "NV"
+    },
+    {
+      "id": "27a871c2-d478-11e4-bfe7-22000abfab1d",
+      "name": "NEW HAMPSHIRE",
+      "code": "NH"
+    },
+    {
+      "id": "27a87280-d478-11e4-bfe7-22000abfab1d",
+      "name": "NEW JERSEY",
+      "code": "NJ"
+    },
+    {
+      "id": "27a87348-d478-11e4-bfe7-22000abfab1d",
+      "name": "NEW MEXICO",
+      "code": "NM"
+    },
+    {
+      "id": "27a874d8-d478-11e4-bfe7-22000abfab1d",
+      "name": "NEW YORK",
+      "code": "NY"
+    },
+    {
+      "id": "27a86fd8-d478-11e4-bfe7-22000abfab1d",
+      "name": "NORTH CAROLINA",
+      "code": "NC"
+    },
+    {
+      "id": "27a87082-d478-11e4-bfe7-22000abfab1d",
+      "name": "NORTH DAKOTA",
+      "code": "ND"
+    },
+    {
+      "id": "27a87582-d478-11e4-bfe7-22000abfab1d",
+      "name": "OHIO",
+      "code": "OH"
+    },
+    {
+      "id": "27a87622-d478-11e4-bfe7-22000abfab1d",
+      "name": "OKLAHOMA",
+      "code": "OK"
+    },
+    {
+      "id": "27a876d6-d478-11e4-bfe7-22000abfab1d",
+      "name": "OREGON ",
+      "code": "OR"
+    },
+    {
+      "id": "27a87a0a-d478-11e4-bfe7-22000abfab1d",
+      "name": "PENNSYLVANIA",
+      "code": "PA"
+    },
+    {
+      "id": "27a87adc-d478-11e4-bfe7-22000abfab1d",
+      "name": "PUERTO RICO",
+      "code": "PR"
+    },
+    {
+      "id": "27a87d3e-d478-11e4-bfe7-22000abfab1d",
+      "name": "RHODE ISLAND",
+      "code": "RI"
+    },
+    {
+      "id": "27a87de8-d478-11e4-bfe7-22000abfab1d",
+      "name": "SOUTH CAROLINA",
+      "code": "SC"
+    },
+    {
+      "id": "27a87e9c-d478-11e4-bfe7-22000abfab1d",
+      "name": "SOUTH DAKOTA",
+      "code": "SD"
+    },
+    {
+      "id": "27a8816c-d478-11e4-bfe7-22000abfab1d",
+      "name": "TENNESSEE",
+      "code": "TN"
+    },
+    {
+      "id": "27a885b8-d478-11e4-bfe7-22000abfab1d",
+      "name": "TEXAS",
+      "code": "TX"
+    },
+    {
+      "id": "27a88932-d478-11e4-bfe7-22000abfab1d",
+      "name": "U.S. VIRGIN ISLANDS",
+      "code": "VI"
+    },
+    {
+      "id": "27a8872a-d478-11e4-bfe7-22000abfab1d",
+      "name": "UTAH",
+      "code": "UT"
+    },
+    {
+      "id": "27a889e6-d478-11e4-bfe7-22000abfab1d",
+      "name": "VERMONT",
+      "code": "VT"
+    },
+    {
+      "id": "27a88888-d478-11e4-bfe7-22000abfab1d",
+      "name": "VIRGINIA",
+      "code": "VA"
+    },
+    {
+      "id": "27a88a9a-d478-11e4-bfe7-22000abfab1d",
+      "name": "WASHINGTON",
+      "code": "WA"
+    },
+    {
+      "id": "27a88cac-d478-11e4-bfe7-22000abfab1d",
+      "name": "WEST VIRGINIA",
+      "code": "WV"
+    },
+    {
+      "id": "27a88bf8-d478-11e4-bfe7-22000abfab1d",
+      "name": "WISCONSIN",
+      "code": "WI"
+    },
+    {
+      "id": "27a88d60-d478-11e4-bfe7-22000abfab1d",
+      "name": "WYOMING",
+      "code": "WY"
+    }
+  ]
+}

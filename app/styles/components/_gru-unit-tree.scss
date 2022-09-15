@@ -1,0 +1,12 @@
+.gru-unit-tree {
+  div {
+    display: inline-block;
+    margin: 15px;
+  }
+  div.users {
+    width: 100px;
+    height: 30px;
+    background-color: $gray-light;
+    float: $menu-float-dir;
+  }
+}

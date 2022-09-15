@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Quizzes</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <link href='https://www.gooru.org/css?family=Lato:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link href="https://www.gooru.org/icon?family=Material+Icons" rel="stylesheet">
+
+
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="assets/vendor.css">
+  <link rel="stylesheet" href="assets/dummy.css">
+  <style type="text/css">
+   a{
+     display: flex;
+     justify-content: center;
+     width: 198px;
+     padding: 11px;
+     background-color: #EEEEEE;
+     color:#212121;
+   }
+   .option{
+     display: flex;
+     justify-content: center;
+     margin: 10px;
+   }
+    .containers{
+      min-height: 158px;
+    }
+  </style>
+</head>
+<body style="background-color: #ffffff;">
+<script src="assets/vendor.js"></script>
+<script src="assets/dummy.js"></script>
+
+<script type="text/javascript">
+  (function () {
+    jQuery(document).ready(function () {
+      $('#user-login').click(function(e) {
+        e.preventDefault();
+        var username = $('#username').val();
+        var password = $('#password').val();
+        $.ajax({
+          type: 'POST',
+          url: 'https://nile-qa.gooru.org/api/nucleus-auth/v2/signin',
+          contentType: 'application/json; charset=utf-8',
+          dataType: 'json',
+          processData: false,
+          headers: {
+            'Authorization': 'Basic ' + btoa(username + ':' + password)
+          },
+          data: JSON.stringify({
+            'client_key': 'c2hlZWJhbkBnb29ydWxlYXJuaW5nLm9yZw==',
+            'client_id': 'ba956a97-ae15-11e5-a302-f8a963065976',
+            'grant_type': 'credential'
+          }),
+          global: false
+        }).done(function(response) {
+          localStorage.setItem('token', response.access_token);
+          localStorage.setItem('username', response.username);
+          localStorage.setItem('profileId', response.user_id);
+          localStorage.setItem('cdnURL', response.cdn_urls.content_cdn_url);
+          location.href = 'index.html';
+        }).fail(function() {
+          alert('There was a problem with the credentials.');
+        });
+      });
+      $('#anonymous-login').click(function(e) {
+        e.preventDefault();
+        var username = $('#username').val();
+        var password = $('#password').val();
+        $.ajax({
+          type: 'POST',
+          url: 'https://nile-qa.gooru.org/api/nucleus-auth/v2/signin',
+          contentType: 'application/json; charset=utf-8',
+          dataType: 'json',
+          processData: false,
+          data: JSON.stringify({
+            'client_key': 'c2hlZWJhbkBnb29ydWxlYXJuaW5nLm9yZw==',
+            'client_id': 'ba956a97-ae15-11e5-a302-f8a963065976',
+            'grant_type': 'anonymous'
+          }),
+          global: false
+        }).done(function(response) {
+          localStorage.setItem('token', response.access_token);
+          localStorage.setItem('profileId', response.user_id);
+          localStorage.setItem('cdnURL', response.cdn_urls.content_cdn_url);
+          location.href = 'assign-students-embedded.html';
+        }).fail(function() {
+          alert('There was a problem with the anonymous login.');
+        });
+      });
+    });
+  })();
+</script>
+
+<div class="demo" style="margin: 20px">
+    <h3>Quizzes Login Demo Page</h3>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-sm-offset-3 col-sm-6 col-xs-12">
+          <div class="panel panel-default panel-view">
+            <div class="panel-heading">Login</div>
+            <div class="panel-body containers">
+              <form>
+               <div class="form-group">
+                 <label for="email">Username:</label>
+                 <input type="text" class="form-control" id="username">
+               </div>
+               <div class="form-group">
+                 <label for="password">Password:</label>
+                 <input type="password" class="form-control" id="password">
+               </div>
+               <button id='user-login' type="submit" class="btn bt-info">Submit</button>
+             </form>
+             <div style="margin-top: 20px">
+               <button id='anonymous-login' type="submit" class="btn btn-primary">Login as Anonymous</button>
+             </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</body>
+</html>

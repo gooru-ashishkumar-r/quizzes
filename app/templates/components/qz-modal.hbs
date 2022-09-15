@@ -1,0 +1,13 @@
+<div class="modal-dialog" style="{{style }}">
+  {{#if modal.isVisible}}
+    {{#if modal.showHeader}}
+      <div class=" modal-header">
+        <button type="button" class="close" aria-label="{{t 'common.close'}}" data-dismiss="modal">
+          <span class="text" aria-hidden="true">{{t 'common.close'}}</span>
+          <span class="icon" aria-hidden="true">{{gru-icon name='clear'}}</span>
+        </button>
+      </div>
+    {{/if}}
+    {{component component-name model=component-model component-class="modal-content"}}
+  {{/if}}
+</div>

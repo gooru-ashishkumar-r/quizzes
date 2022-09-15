@@ -1,0 +1,28 @@
+<ol>
+  {{#each processedData as |questionData index|}}
+    <li>
+      {{#if isCollection}}
+        <a class="cursor-default">
+          <span title="{{questionData.title}}" data-toggle="tooltip" data-placement="top" data-html="true" class="index">{{plus-one index}}</span>
+          {{charts/gru-x-bar-chart data=questionData.data}}
+          <span class="ratio">
+            <span>{{questionData.completed}}</span>/<span>{{questionData.total}}</span>
+          </span>
+        </a>
+      {{else}}
+        <a {{action 'selectQuestion' questionData.id}}>
+          <span title="{{questionData.title}}" data-toggle="tooltip" data-placement="top" data-html="true" class="index">{{plus-one index}}</span>
+          {{charts/gru-x-bar-chart data=questionData.data}}
+          <span class="ratio">
+            <span>{{questionData.completed}}</span>/<span>{{questionData.total}}</span>
+          </span>
+        </a>
+      {{/if}}
+    </li>
+  {{/each}}
+</ol>
+{{#if showMore}}
+  <a {{action 'toggleView'}} class="show-more">
+    {{gru-icon name=(if isExpanded 'keyboard_arrow_left' 'keyboard_arrow_right')}}
+  </a>
+{{/if}}

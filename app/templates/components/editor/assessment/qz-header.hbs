@@ -1,0 +1,15 @@
+<header xmlns="http://www.w3.org/1999/html">
+  <h1>{{title}}</h1>
+
+  <nav>
+    {{#each options as |option|}}
+      <a href="#" class="tab {{option.name}} {{if (eq selected option.name) 'selected'}}" {{action 'select' option.name}}>{{option.text}}</a>
+    {{/each}}
+  </nav>
+
+  <div class="actions">
+    {{#each headerActions as |option|}}
+        <button class="btn btn-default btn-icon {{option.name}}" title="{{option.text}}">{{gru-icon name=option.icon}} {{option.text}}</button>
+    {{/each}}
+  </div>
+</header>

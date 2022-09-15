@@ -1,0 +1,17 @@
+<p class="instructions">
+  {{instructions}}
+</p>
+<div class="answer-choices clearfix">
+  <ul>
+    {{#each answers as |answer|}}
+      <li data-id="{{answer.value}}" class="answer {{if readOnly 'disabled'}}" style="position:relative">
+        <span class="img-hover btn btn-default img-hover-none">
+          <i class='pin' {{ action 'showImageModal' answer.text }}></i>
+          <i class='bookmark' {{ action 'selectAnswerImage' answer.text }}></i>
+        </span>
+        <img role="presentation" class="img-thumbnail" src="{{answer.text}}" alt="thumbnailImg" />
+        <div>{{gru-icon name='check_circle'}}</div>
+      </li>
+    {{/each}}
+  </ul>
+</div>

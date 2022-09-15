@@ -1,0 +1,21 @@
+.content.qz-depth-of-knowledge {
+  margin: 20px 0 0 0;
+  .depth-of-knowledge {
+    margin: 10px 0;
+    ul {
+      padding: 0;
+      li {
+        list-style: none;
+
+        label {
+          display: block;
+          margin: 0;
+
+          input {
+            margin-right: 3px;
+          }
+        }
+      }
+    }
+  }
+}

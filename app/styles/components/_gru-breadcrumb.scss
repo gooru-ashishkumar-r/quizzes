@@ -1,0 +1,55 @@
+.gru-breadcrumb {
+  .btn-group {
+    width: 100%;
+    .btn {
+      border-right: 1px solid $white;
+      font-size: $font-size-base;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      &:last-child {
+        cursor: default;
+        &:active,
+        &:hover {
+          background-color: $btn-info-bg;
+          background-image: none;
+        }
+      }
+      &.breadcrumb-col-1 {
+        max-width: 90%;
+      }
+      &.breadcrumb-col-2 {
+        max-width: 40%;
+      }
+      &.breadcrumb-col-2:last-child {
+        max-width: 50%;
+      }
+      &.breadcrumb-col-3 {
+        max-width: 20%;
+      }
+      &.breadcrumb-col-3:last-child {
+        max-width: 50%;
+      }
+      &.breadcrumb-col-4 {
+        max-width: 13%;
+      }
+      &.breadcrumb-col-4:last-child {
+        max-width: 48%;
+      }
+      &.breadcrumb-col-5 {
+        max-width: 10%;
+      }
+      &.breadcrumb-col-5:last-child {
+        max-width: 44%;
+      }
+    }
+  }
+}
+
+.class_analytics_performance_teacher_collection .gru-breadcrumb {
+  .btn-group .btn {
+    &:last-child {
+      cursor: pointer;
+    }
+  }
+}

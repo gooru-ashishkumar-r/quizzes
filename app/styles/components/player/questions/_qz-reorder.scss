@@ -1,0 +1,43 @@
+.player .qz-reorder {
+  .sortable {
+    list-style: none;
+    padding: 0;
+    li {
+      cursor: move;
+    }
+    &.disabled {
+      li {
+        cursor: $cursor-disabled;
+      }
+    }
+  }
+  .ui-sortable-handle {
+    position: relative;
+    border: 1px dashed $light-300;
+    margin-top: 10px;
+    border-radius: 3%;
+
+    i {
+      position: absolute;
+      top: 41%;
+      left: 7px;
+      margin-top: -8px;
+      color: $light-500;
+      font-size: 26px;
+    }
+
+    div {
+      display: block;
+      padding: 15px 10px 15px 40px;
+
+      p {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  .ui-sortable-helper {
+    background-color: $gray-lighter;
+  }
+}

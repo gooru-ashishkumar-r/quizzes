@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "url": "^/quizzes/api/v1/profile/(.)+$",
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "File not found!",
+      "file": "profile-ok-response.json"
+    }
+  },
+  {
+    "description": "API 3.0 Endpoint to return current user Profile info",
+    "request": {
+      "url": "^/api/nucleus/v2/profiles/search$",
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "File not found!",
+      "file": "profile-ok-response.json"
+    }
+  }
+]

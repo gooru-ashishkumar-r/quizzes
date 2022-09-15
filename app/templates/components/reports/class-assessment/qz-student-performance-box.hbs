@@ -1,0 +1,56 @@
+<div class="panel panel-default">
+  {{#if student.isAttemptStarted}}
+    <div class="panel-heading {{ if anonymous 'anonymous'}}" {{!-- style={{startedStyle}} --}} {{action 'selectStudent'}}>
+      {{#if anonymous}}
+        <div class='student-circle'> </div>
+        <span class="name">{{ student.profileCode }}</span>
+      {{else}}
+        <img class='student-circle' src={{studentAvatarUrl}} alt="student avatar" />
+        <div>
+          <span class="name">{{ studentLastFirstName.studentLastName }}</span><br />
+          <span class="name">{{ studentLastFirstName.studentFirstName }}</span>
+        </div>
+      {{/if}}
+      {{!-- {{#unless anonymous}}
+        {{#unless student.isAttemptFinished}}
+          <span class="question-in-progress">{{gru-icon name='av_timer'}}</span>
+        {{/unless}}
+      {{/unless}} --}}
+    </div>
+  {{else}}
+    <div class="panel-heading {{ if anonymous 'anonymous'}} not-started" {{action 'selectStudent'}}>
+      {{#if anonymous}}
+        <div class='student-circle'> </div>
+        <span class="name">{{ student.profileCode }}</span>
+      {{else}}
+        <img class='student-circle' src={{studentAvatarUrl}} />
+        <div>
+          <span class="name">{{ studentLastFirstName.studentLastName }}</span><br />
+          <span class="name">{{ studentLastFirstName.studentFirstName }}</span>
+        </div>
+      {{/if}}
+    </div>
+  {{/if}}
+  <hr>
+  {{#if isCollectionType}}
+    <div class="panel-body time">
+      {{#each questions as |question index|}}
+        {{#if (eq question.status 'started') }}
+          <span class="resource-time" data-toggle="tooltip" data-placement="auto" title={{question.title}} data-html="true">
+            {{question.savedTime}}
+          </span>
+        {{else}}
+          <span class="{{question.status}}" data-toggle="tooltip" data-placement="auto" title={{question.title}} data-html="true">
+            {{ plus-one index }}
+          </span>
+        {{/if}}
+      {{/each}}
+    </div>
+  {{else}}
+    <div class="panel-body questions">
+      {{#each questions as |question index|}}
+        <span class="{{question.status}}" {{action 'selectQuestion' question.id}} data-toggle="tooltip" data-placement="auto" data-html="true" title={{question.title}}> {{ plus-one index}} </span>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>

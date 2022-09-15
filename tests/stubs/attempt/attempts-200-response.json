@@ -1,0 +1,98 @@
+{
+  "contextId": "context-simple-id",
+  "collectionId": "collection-id",
+  "profileAttempts": [
+    {
+      "currentResourceId": "question1-id",
+      "profileId": "profile-id-1",
+      "isComplete": false,
+      "eventSummary": {
+        "averageReaction": 1,
+        "averageScore": 67,
+        "totalAnswered": 3,
+        "totalCorrect": 3,
+        "totalTimeSpent": 32000
+      },
+      "taxonomySummary":[{
+        "taxonomyId":"taxonomy-id",
+        "totalTimeSpent": 32000,
+        "averageReaction":1,
+        "averageScore":0,
+        "totalCorrect":0,
+        "totalAnswered":1,
+        "resources": ["resource-id"]
+      }
+      ],
+      "events": [
+        {
+          "resourceId": "question1-id",
+          "timeSpent": 1000,
+          "reaction": 0,
+          "answer": {
+            "isFixed": false,
+            "text": "answer-text",
+            "value": "answer-value"
+          },
+          "score": 0
+        },
+        {
+          "resourceId": "question2-id",
+          "timeSpent": 2000,
+          "reaction": 3,
+          "answer": {
+            "isFixed": false,
+            "text": "answer-text",
+            "value": "answer-value"
+          },
+          "score": 100
+        }
+      ]
+    },
+    {
+      "currentResourceId": "question1-id",
+      "profileId": "profile-id-2",
+      "isComplete": false,
+      "eventSummary": {
+        "averageReaction": 1,
+        "averageScore": 100,
+        "totalAnswered": 3,
+        "totalCorrect": 3,
+        "totalTimeSpent": 10000
+      },
+      "taxonomySummary":[{
+        "taxonomyId":"taxonomy-id",
+        "totalTimeSpent": 32000,
+        "averageReaction":1,
+        "averageScore":100,
+        "totalCorrect":3,
+        "totalAnswered":3,
+        "resources": ["resource-id"]
+      }
+      ],
+      "events": [
+        {
+          "resourceId": "question1-id",
+          "timeSpent": 1000,
+          "reaction": 0,
+          "answer": {
+            "isFixed": false,
+            "text": "answer-text",
+            "value": "answer-value"
+          },
+          "score": 100
+        },
+        {
+          "resourceId": "question2-id",
+          "timeSpent": 2000,
+          "reaction": 3,
+          "answer": {
+            "isFixed": false,
+            "text": "answer-text",
+            "value": "answer-value"
+          },
+          "score": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+  <div class="resources-header">
+  <div class="title">
+    <h4>{{t "common.resources"}}</h4>
+  </div>
+</div>
+
+<div class="resource-container">
+  <div class="resource-icon">
+    <div class="resource-type {{content.resource.type}} {{if content.savedTime 'started'}}"></div>
+  </div>
+  <div class="resource-title">
+    <div class="title ellipsis">{{contentSeq}}. {{safe-html content.resource.title}}</div>
+    {{#unless (eq content.resource.type 'html_resource')}}
+    <span class="desc"> {{safe-html content.resource.description}}</span>
+    {{/unless}}
+  </div>
+  <div class="resource-reaction">
+    {{qz-reaction-icon content.reaction }}
+  </div>
+  <div role="timer" class="resource-timespent">
+    {{format-time content.savedTime}}
+  </div>
+  <!-- <div class="resource-header-container"> -->
+
+    <!-- <div class="resource-title-container">
+      <div class="resource-order">{{contentSeq}}.</div>
+      <div class="resource-type {{content.resource.type}}"></div>
+      <div class="title ellipsis">{{safe-html content.resource.title}}</div>
+    </div>
+    <div class="resource-performance-container {{if content.skipped 'skipped-resource'}}">
+      {{#if content.skipped }}
+        <div class="resoure-status" data-toggle="tooltip" title="Skipped">
+          {{gru-icon name="block"}}
+        </div>
+      {{/if}}
+      <div class="resource-reaction">
+        {{qz-reaction-icon content.reaction }}
+      </div>
+      <div role="timer" class="resource-timespent">
+        {{format-time content.savedTime}}
+      </div>
+    </div> -->
+  <!-- </div> -->
+  <!-- {{#if taxonomyTags.length}}
+    <div class="resource-taxonomies-container">
+      {{taxonomy/gru-taxonomy-tag-list tags=taxonomyTags tagsVisible=1 isInCard=true}}
+    </div>
+  {{/if}}
+  <div class="resource-description-container">
+    {{safe-html content.resource.description}}
+  </div> -->
+</div>

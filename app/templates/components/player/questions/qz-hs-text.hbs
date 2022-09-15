@@ -1,0 +1,15 @@
+<p class="instructions">
+  {{t "qz-hs-text.instructions" action=(t instructionsActionTextKey)}}
+</p>
+<div class="answer-choices clearfix">
+
+    <ul>
+      {{#each answers as |answer|}}
+          <li data-id="{{answer.value}}" class="answer {{if readOnly 'disabled'}}">
+                <span class="answer-text">{{{gru-math-text text=answer.text}}}</span>
+                <div class="check-icon">{{gru-icon name='done'}}</div>
+          </li>
+      {{/each}}
+    </ul>
+
+</div>

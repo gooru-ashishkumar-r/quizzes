@@ -1,0 +1,205 @@
+{{#if freeResponse}}
+  {{player/qz-free-response-viewer question=question questionText=questionBody
+  isSubmitDisabled=isSubmitDisabled
+  buttonTextKey=buttonTextKey
+  content=content
+  showEvidenceKeyCheck=showEvidenceKeyCheck
+  showEvidence=showEvidence
+  userAnswer=questionResult.answer
+  onAnswerChanged="changeAnswer"
+  onAnswerCleared="clearAnswer"
+  onAnswerCompleted="completeAnswer"
+  onAnswerLoaded="loadedAnswer"
+  onSubmitQuestion="submitQuestion"
+  isComprehension=isComprehension
+  comprehensionIndex=comprehensionIndex
+  isSerpQuestion = isSerpQuestion
+  questionResult = questionResult
+}}
+{{else}}
+  {{#if isH5PContent}}
+    <iframe src="{{contentURL}}" class="h5p-content" frameborder="0" allowfullscreen></iframe>
+  {{else}}
+   <div class="question-panel {{question.type}}">
+     {{#if (eq question.type 'serp_lang_activities_for_comprehension')}}
+          <h5>
+            <div role="timer" class="font-size-loader"><span class="font-label">{{t 'qz-player-adjust-font-size'}} : </span>
+              <label for="font_changer">
+              <input class="font-changer" value="10" type="range" id="font_changer" min="10" max="20">
+            </label></div>
+            </h5>
+        {{/if}}
+    <div class="panel panel-default">
+      <div class="panel-body ">
+        <h2>
+          {{#if isComprehension}}
+            {{comprehensionIndex}} .
+          {{/if}}
+          {{t (if (or question.type 'likert_scale_question'(and isSerpQuestion (not isSerpMultiChoice))) "qz-question-viewer.instructions" "qz-question-viewer.question")}}
+          {{#if isComprehension}}
+            <i class="material-icons {{if question.isCompleted 'completed'}}">check_circle_outline</i>
+          {{/if}}
+        </h2>
+          <h6> {{question.title}} </h6>
+        <div class="question">
+          <span class="text">{{gru-math-text text=questionBody isShowVideo=true}}</span>
+          {{#if thumbnail}}
+            <div class="question-tools-section">         
+              <img role="presentation" src="{{thumbnail}}" alt="thumbnail" />
+              <span class="tool-img-hover btn btn-default tool-img-hover-none">
+                <i class='pin' {{ action 'showImageModal' thumbnail }}></i>              
+              </span>
+            </div>
+          {{/if}}
+          {{#if (eq question.type 'likert_scale_question')}}
+                  {{component (qz-question-config question.type 'component.player')
+                    instructionsActionTextKey=instructionsActionTextKey
+                    question=question
+                    readOnly=isInputDisabled
+                    userAnswer=questionResult.answer
+                    onAnswerChanged="changeAnswer"
+                    onAnswerCleared="clearAnswer"
+                    onAnswerCompleted="completeAnswer"
+                    onAnswerLoaded="loadedAnswer"
+                    baseResource=questionResult.resource
+                    answerDetails =questionResult.resource.answerDetails
+                    isComprehension = isComprehension
+                    onTriggerSubEvent="onTriggerSubEvent"
+                  }}
+          {{/if}}
+        </div>
+        <div>
+          {{partial 'components/player/qz-question-information'}}
+        </div>
+        {{#if (and (or (eq question.type 'scientific_fill_in_the_blank')(eq question.type 'scientific_free_response')) teacherRubricCategories.length)}}
+          <div class="oa-teacher-student-rubric">
+            <div class="teacher-rubric-section">
+              <div class="teacher-grading-header" {{action "onToggleRubricContainer" 'teacher'}}>
+                <div class="rubric-icon-container">
+                </div>
+                <div class="rubric-container">
+                  <div class="grader-label">{{t 'common.teacher'}} {{t 'common.rubric'}}
+                    <span class="rubric-attachment" title="{{t 'rubric-details'}}" data-toggle="tooltip" {{action 'filePreviewOpen' 'teacher'  bubbles=false}}></span>
+                  </div>
+                  <div class="grade-tag">{{t 'common.teacher'}}-{{t 'class.info.grade'}}</div>
+                </div>
+                <span class="toggle-icon">
+                  {{gru-icon name=(if isTeacherCategoriesExpanded 'expand_less' 'expand_more')}}
+                </span>
+              </div>
+              <div class="teacher categories-container">
+                {{rubric/rubric-category-grades
+              categories=teacherRubricCategories
+              isReadOnly=true}}
+              </div>
+            </div>
+          </div>
+        {{/if}}
+        {{#if isTouchQuestionType}}
+        <div class="touch-instructions">
+           <b>{{t 'qz-common.touch-instruction-header'}}</b>  <i>{{t 'qz-common.touch-instruction'}}</i>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+    {{#if hintsToDisplay}}
+      <div class="panel panel-primary hints">
+        <div class="panel-heading">
+          {{t "common.hints"}}
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <ol class="hints">
+              {{#each hintsToDisplay as |hint|}}
+                <li>{{{hint.hintText}}}</li>
+              {{/each}}
+            </ol>
+          </div>
+        </div>
+      </div>
+    {{/if}}
+    {{#if isExplanationShown}}
+      <div class="panel panel-primary explanation">
+        <div class="panel-heading">
+          {{t "common.explanation"}}
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            {{#if isExplanationShown}}
+              <p class="explanation">{{{question.explanation}}}</p>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    {{/if}}
+            </div>
+            {{#unless (eq question.type 'likert_scale_question')}}
+            <div class="answers-panel">
+              <div class="panel  {{if question.isComprehension 'sub-questions-list'}}">
+                <div class="panel-body panel-default {{question.type}}">
+                  {{#if (and (not-eq question.type 'serp_lang_activities_for_comprehension') (not isSerpMultiChoice))}}
+
+                    <h2>{{t (concat 'qz-question-viewer.' (if (or question.type 'likert_scale_question' isSerpQuestion) 'exercise' 'answer'))}}
+                      <div role="timer" class="font-size-loader"><span class="font-label">{{t 'qz-player-adjust-font-size'}} : </span>
+                        <label for="font_changer">
+                        <input class="font-changer" value="10" type="range" id="font_changer" min="10" max="20">
+                      </label>
+                        <span id="wpm-timer-clk">00:00:00</span></div>
+                    </h2>
+                  {{/if}}
+                  <form {{action "submitQuestion" on="submit"}}>
+                    {{component (qz-question-config question.type 'component.player')
+                    instructionsActionTextKey=instructionsActionTextKey
+                    question=question
+                    readOnly=isInputDisabled
+                    userAnswer=questionResult.answer
+                    onAnswerChanged="changeAnswer"
+                    onAnswerCleared="clearAnswer"
+                    onAnswerCompleted="completeAnswer"
+                    onAnswerLoaded="loadedAnswer"
+                    baseResource=questionResult.resource
+                    answerDetails =questionResult.resource.answerDetails
+                    isComprehension = isComprehension
+                    onTriggerSubEvent="onTriggerSubEvent"
+                  }}
+                  </form>
+                  <div class="loading-spinner">
+                    {{three-bounce-spinner}}
+                  </div>
+                </div>
+              </div>
+
+
+            {{#if (and showEvidenceKeyCheck (not-eq question.type 'likert_scale_question')) }}
+            {{#if (or (and showEvidence questionEvidenceVisibilityKeyCheck contentSubformatCheck) (and showEvidence (not questionEvidenceVisibilityKeyCheck)) (and showEvidence (not questionEvidenceVisibility)))}}
+            {{#unless question.isResource}}
+            {{player/qz-evidence
+            isComprehension = isComprehension
+            isSerpQuestion = isSerpQuestion
+            questionResult = questionResult}}
+            {{/unless}}
+            {{/if}}
+
+            {{else if (not showEvidenceKeyCheck)}}
+            {{#if (or (and defaultKeyCheck defaultCheck questionEvidenceVisibilityKeyCheck contentSubformatCheck)
+            (and defaultKeyCheck defaultCheck (not questionEvidenceVisibilityKeyCheck) )
+            (and (not defaultKeyCheck) questionEvidenceVisibilityKeyCheck contentSubformatCheck )
+            (and (or (not questionEvidenceVisibility) (not defaultKeyCheck)) (not questionEvidenceVisibilityKeyCheck) tmpIsEvidenceEnabled playerMetadata.isEvidenceEnabled )
+            (and (not questionEvidenceVisibility) (not defaultKeyCheck) (not questionEvidenceVisibilityKeyCheck) (not tmpIsEvidenceEnabled) ))
+            }}
+
+            {{#unless question.isResource}}
+            {{player/qz-evidence
+            isComprehension = isComprehension
+            isSerpQuestion = isSerpQuestion
+            questionResult = questionResult}}
+            {{/unless}}
+
+            {{/if}}
+            {{/if}}
+
+
+            </div>
+            {{/unless}}
+  {{/if}}
+{{/if}}

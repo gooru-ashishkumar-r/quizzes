@@ -1,0 +1,65 @@
+.qz-submission-format {
+  margin-top: 10px;
+  @include flexbox;
+  @include justify-content(left);
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  .panel {
+    border-radius: 4px;
+    width: 175px;
+    height: 93px;
+    float: $tab-float-dir;
+    margin: 0 10px 40px 10px;
+    cursor: pointer;
+    .panel-body {
+      border: solid $blue-400;
+      border-width: 4px 4px 0 4px;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      background-color: $blue-400;
+      padding: 10px 15px;
+
+      .format-icon {
+        display: inline-block;
+        margin: 0 auto;
+        vertical-align: top;
+        -webkit-background-size: 52px 52px;
+        background-size: 52px 52px;
+        height: 52px;
+        width: 52px;
+      }
+    }
+    .panel-footer {
+      text-align: center;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      background-color: $blue-500;
+      color: $white;
+      padding: 5px 15px;
+      border: solid $blue-500;
+      border-width: 0px 4px 4px 4px;
+    }
+
+    &.active {
+      opacity: 0.6;
+      .panel-body {
+        border-color: $blue-600;
+      }
+      .panel-footer {
+        border-color: $blue-600;
+      }
+    }
+  }
+  .submission-format-textbox {
+    text-align: center;
+    i {
+      background: url('quizzes-addon/quizzes/text-box-icon.svg');
+    }
+  }
+  .submission-format-upload {
+    text-align: center;
+    i {
+      background: url('quizzes-addon/quizzes/upload-icon.svg');
+    }
+  }
+}

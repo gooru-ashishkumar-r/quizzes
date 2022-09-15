@@ -1,0 +1,9 @@
+<p>
+  {{#each items as |item|}}
+    {{#if item.selected}}
+      <span class="{{if item.correct 'correct' 'incorrect'}} {{if anonymous 'anonymous'}}">{{{item.text}}}</span>
+    {{else}}
+      <span>{{{item.text}}}</span>
+    {{/if}}
+  {{/each}}
+</p>

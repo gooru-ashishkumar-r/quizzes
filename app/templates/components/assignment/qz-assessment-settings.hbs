@@ -1,0 +1,56 @@
+<div class="panel panel-default assessment-settings">
+  <div class="panel-body">
+    <div class="setting bidirectional">
+      <div class="instructions">
+        {{gru-icon name="swap_horizontal"}}
+        <span class="backwards-header">{{t "gru-settings-edit.backwards"}}</span>
+      </div>
+      {{qz-switch switchOptions=switchOptions onOptionSwitch='onBackwardsChange' isChecked=model.bidirectional}}
+    </div>
+  </div>
+</div>
+<div class="panel panel-default assessment-settings">
+  <div class="panel-body">
+    <div class="setting feedback">
+      <div class="instructions">
+        {{gru-icon name="check_circle"}}
+        <span>{{t "gru-settings-edit.performance"}}</span>
+      </div>
+      <div class="feedback">
+        {{#each-in feedbackItems as |key value|}}
+          {{
+                validation.gru-radio
+                model=model
+                groupValue=model.showFeedback
+                valuePath=value
+                name='showFeedback'
+                translationPath=(concat 'gru-settings-edit.feedback-' value)
+                onChange=(action 'onGenericChange')
+                }}
+        {{/each-in}}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel panel-default assessment-settings">
+  <div class="panel-body">
+    <div class="setting answer-key">
+      <div class="instructions">
+        {{gru-icon name="spellcheck"}}
+        <span>{{t "gru-settings-edit.answer-key"}}</span>
+      </div>
+      {{qz-switch switchOptions=switchOptions onOptionSwitch='onAnswerKeyChange' isChecked=model.showKey}}
+    </div>
+  </div>
+</div>
+<div class="panel panel-default assessment-settings">
+  <div class="panel-body">
+    <div class="setting attempts">
+      <div class="instructions">
+        {{gru-icon name="history"}}
+        <span>{{t "gru-settings-edit.attempts"}}</span>
+      </div>
+      {{validation/gru-select options=attemptsOptions optionSelected=model.attempts title=(t "common.select") search="true" onOptionSelect="onAttemptsChange"}}
+    </div>
+  </div>
+</div>

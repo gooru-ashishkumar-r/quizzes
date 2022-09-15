@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Quizzes</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <link href='https://www.gooru.org/css?family=Lato:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link href="https://www.gooru.org/icon?family=Material+Icons" rel="stylesheet">
+
+
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="assets/vendor.css">
+  <link rel="stylesheet" href="assets/dummy.css">
+  <style type="text/css">
+   .row a {
+     display: flex;
+     justify-content: center;
+     width: 198px;
+     padding: 11px;
+     background-color: #EEEEEE;
+     color:#212121;
+   }
+   .option{
+     display: flex;
+     justify-content: center;
+     margin: 10px;
+   }
+    .containers{
+      min-height: 205px;
+    }
+    .login {
+      float: $menu-float-dir;
+    }
+    h3 {
+      display: inline;
+    }
+  </style>
+</head>
+<body style="background-color: #ffffff;">
+<script src="assets/vendor.js"></script>
+<script src="assets/dummy.js"></script>
+<script type="text/javascript">
+  var token = localStorage.getItem('token');
+  $.ajax({
+    type: 'GET',
+    url: 'https://nile-qa.gooru.org/api/nucleus-auth/v2/token',
+    contentType: 'application/json; charset=utf-8',
+    dataType: 'json',
+    processData: false,
+    headers: {
+      'Authorization': 'Token ' + token
+    },
+    global: false
+  }).done(function() {
+    console.log('All good.');
+  }).fail(function() {
+    console.log('There was a problem with the credentials. Please login again.');
+    location.href = 'login.html';
+  });
+</script>
+
+  <div class="demo" style="margin: 20px">
+    <h3>Quizzes Demo Page</h3>
+    <a class="login" href="login.html">Login or change user</a>
+    <div class="panel-body">
+     <div class="row">
+       <div class="col-md-6 col-sm-6 col-xs-12">
+         <div class="panel panel-default panel-view">
+           <div class="panel-heading">Teacher Experience</div>
+           <div class="panel-body containers">
+             <div class="option">
+               <a href="assign-students-embedded.html">Create assignment</a>
+             </div>
+             <div class="option">
+               <a href="assessment-editor-embedded.html">Edit assessment</a>
+             </div>
+            <div class="option">
+              <a href="assignments-teachers-view-embedded.html">View created assignments</a>
+            </div>
+           </div>
+         </div>
+       </div>
+       <div class="col-md-6 col-sm-6 col-xs-12">
+         <div class="panel panel-default panel-view">
+           <div class="panel-heading">Student Experience</div>
+           <div class="panel-body containers">
+             <div class="option">
+              <a href="assignments-students-view-embedded.html">View my assignments</a>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+    </div>
+  </div>
+</body>
+</html>

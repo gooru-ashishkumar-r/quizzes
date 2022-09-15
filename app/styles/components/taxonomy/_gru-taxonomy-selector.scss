@@ -1,0 +1,37 @@
+.taxonomy.gru-taxonomy-selector {
+  .btn-empty {
+    border: 1px solid $gray-light;
+    background-color: $white;
+  }
+
+  button {
+    margin: 1px;
+  }
+
+  > div {
+    margin-top: 15px;
+    > label > span,
+    > span.label {
+      color: $gray;
+      padding: 0;
+      display: block;
+      font-size: 100%;
+      font-weight: normal;
+      text-align: left;
+    }
+    &.subject {
+      label {
+        display: block;
+        span {
+          padding-bottom: 0;
+        }
+      }
+      .gru-subject-picker {
+        float: $tab-float-dir;
+      }
+      .tags {
+        margin: 10px 0;
+      }
+    }
+  }
+}

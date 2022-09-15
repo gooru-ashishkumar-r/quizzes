@@ -1,0 +1,120 @@
+.player .qz-hs-image {
+  .answer-choices {
+    max-width: 550px;
+
+    .img-hover-flexed {
+      display: flex !important;
+    }
+    .img-hover-none {
+      display: none !important;
+    }
+
+    .img-hover {
+      position: absolute;
+      top: 10px;
+      display: flex;
+      width: 94px;
+      height: 44px;
+      padding: 7px;
+      border: 1px solid;
+      background-color: $white;
+      transition: background-color 0.5s;
+
+      justify-content: space-between;
+      z-index: 100;
+      .pin {
+        background-image: url("gooru/zoom_in.svg");
+      }
+      .bookmark {
+        background-image: url("gooru/check-circle-tt.svg");
+      }
+      .clear {
+        background-image: url("gooru/clear.svg");
+      }
+
+      @media (min-width: 1025px) {
+        > i:hover {
+          border-radius: 50px;
+          background-color: yellow;
+        }
+      }
+
+      > i {
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
+        background-size: 30px 30px;
+        display: block;
+        justify-self: center;
+        /* border: black; */
+      }
+    }
+
+    ul {
+      li.answer {
+        float: $tab-float-dir;
+        margin: 5px;
+        cursor: default;
+        text-align: center;
+        border-bottom: 3px solid $dark-300;
+        position: relative;
+        border-radius: 0px;
+        width: 160px;
+        height: 160px;
+
+        img {
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top: 0;
+          position: absolute;
+          border: 0 none;
+        }
+
+        &.disabled {
+          cursor: $cursor-disabled;
+        }
+
+        &:not(.disabled):hover {
+          border-color: $dark-300;
+        }
+        &.selected {
+          border-color: $blue-400;
+          div {
+            display: block;
+          }
+        }
+        .img-thumbnail {
+          padding: 0px;
+          border-radius: 0px;
+        }
+
+        div {
+          display: none;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background-color: $white;
+          i {
+            font-size: 42px;
+            margin: -5px 0px 0px -5px;
+            color: $dark-300;
+          }
+        }
+      }
+      @media (min-width: 1025px) {
+        li.answer:hover {
+          .img-hover {
+            display: flex !important;
+          }
+        }
+      }
+    }
+  }
+}

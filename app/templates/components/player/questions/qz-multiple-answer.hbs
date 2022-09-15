@@ -1,0 +1,41 @@
+<p class="instructions">
+  {{t "qz-multiple-answer.instructions" action=(t instructionsActionTextKey)}}
+</p>
+
+<div class="answer-choices">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>{{t "common.yes"}}</th>
+        <th>{{t "common.no"}}</th>
+      </tr>
+      </thead>
+      <tbody>
+      {{#each answers as |answer index|}}
+        <tr>
+          <td>
+            {{radio-button
+              disabled=readOnly
+              value=(concat "yes|" answer.value)
+              groupValue=answer.groupValue
+              changed="selectAnswerChoice"
+              name=(concat "answer-choice-radio-" answer.value)
+            }}  
+          </td>
+          <td>
+              {{radio-button
+                disabled=readOnly
+                value=(concat "no|" answer.value)
+                groupValue=answer.groupValue
+                changed="selectAnswerChoice"
+                name=(concat "answer-choice-radio-" answer.value)
+                }}
+          </td>
+          <td class="answer-text">
+            <span class="letter">({{answer-letter index}})</span>{{{gru-math-text text=answer.text}}}
+          </td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
+</div>

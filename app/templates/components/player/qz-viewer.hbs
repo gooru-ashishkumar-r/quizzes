@@ -1,0 +1,44 @@
+<div class="qz-content {{if resource.isQuestion 'question' 'resource'}}">
+  {{#if resource.isQuestion}}
+    {{player/qz-question-viewer
+      content=content
+      classId=classId
+      class=class
+      buttonTextKey=buttonTextKey
+      instructionsActionTextKey=instructionsActionTextKey
+      collection=collection
+      question=resource
+      questionResult=resourceResult
+      role=role
+      submitted=submitted
+      onSubmitQuestion="submitQuestion"
+      isNextEnabled="isNextEnabled"
+      onTriggerSubEvent="onTriggerSubEvent"
+    }}
+  {{else}}
+    {{#if isNotIframeUrl}}
+      {{player/qz-resource-viewer-linkout
+      resource=resource
+      sendEvents=false
+      collection=collection
+      isNotIframeUrl=isNotIframeUrl
+    }}
+    {{else}}
+      {{player/qz-resource-viewer
+      resource=resource
+      sendEvents=false
+      collection=collection
+      isNotIframeUrl=isNotIframeUrl
+      classId=classId
+      courseId=courseId
+      unit=unit
+      lesson=lesson
+      dcaId=dcaId
+      isStudyPlayer = isStudyPlayer
+      source=source
+      isStudent = isStudent
+      sessionId = sessionId
+    }}
+    {{/if}}
+  {{/if}}
+</div>

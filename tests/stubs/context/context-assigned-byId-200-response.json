@@ -1,0 +1,21 @@
+{
+  "classId": "class-id",
+  "collectionId": "collection-id",
+  "contextData": {
+    "contextMap": {},
+    "metadata": {
+      "description": "Context assigned by Id",
+      "title": "Context by ID"
+    }
+  },
+  "contextId": "string",
+  "createdDate": 0,
+  "dueDate": 0,
+  "hasStarted": true,
+  "isActive": true,
+  "isCollection": false,
+  "modifiedDate": 0,
+  "profileId": "string",
+  "startDate": 0
+}
+

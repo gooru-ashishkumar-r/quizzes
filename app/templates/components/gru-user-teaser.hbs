@@ -1,0 +1,11 @@
+<span>
+  <img class="avatar" src="{{firstUser.avatarUrl}}" alt="avatarImg">
+</span>
+<span class="user-full-name">
+  {{#link-to "library-search" (query-params type="my-content" profileId=firstUser.id isBack=true) role="link"}}{{firstUser.displayName}}{{/link-to}}
+</span>
+{{#if usersLeft}}
+  <span class="total-users-left">
+    <p>+{{usersLeft}}</p>
+  </span>
+{{/if}}

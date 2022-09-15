@@ -1,0 +1,17 @@
+[
+  {
+    "description": "Gets a collection with all resource types",
+    "request": {
+      "url": "^/quizzes/api/v1/collections/(.)+$",
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "File not found!",
+      "file": "get-collection-200-response.json"
+    }
+  }
+]

@@ -1,0 +1,26 @@
+<label>
+  <span>{{t "common.depth-of-knowledge"}}</span>
+</label>
+
+{{#if isEditing}}
+  <div class="depth-of-knowledge">
+    <ul>
+      {{#each editKnowledge as |knowledgeObject|}}
+        <li><label>{{input type="checkbox" checked=knowledgeObject.checked}}<span>{{knowledgeObject.name}}</span></label></li>
+      {{/each}}
+    </ul>
+  </div>
+
+{{else}}
+  <div>
+    {{#if srcSelectedKnowledge.length}}
+      {{#each srcKnowledge as |knowledgeObject|}}
+        {{#if knowledgeObject.checked}}
+          <div class="btn-empty btn btn-sm">{{knowledgeObject.name}}</div>
+        {{/if}}
+      {{/each}}
+    {{else}}
+      <span>{{t "common.not-specified"}}</span>
+    {{/if}}
+  </div>
+{{/if}}

@@ -1,0 +1,18 @@
+<div class="btn-group clearfix">
+  <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{t 'common.add'}} {{selectedSubject.subjectTitle}} {{t 'common.course'}}
+  </button>
+  <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="caret"></span>
+    <span class="sr-only">{{t "common.toggle-dropdown"}}</span>
+  </button>
+  <ul class="dropdown-menu courses">
+    {{#each courses as |subjectCourse|}}
+      <li>
+        <label class="checkbox-inline">
+          <input type="checkbox" checked={{contains subjectCourse.id selectedTaxonomyIds}} {{action 'selectSubjectCourse' subjectCourse on='change'}}> {{subjectCourse.title}}
+        </label>
+      </li>
+    {{/each}}
+  </ul>
+</div>

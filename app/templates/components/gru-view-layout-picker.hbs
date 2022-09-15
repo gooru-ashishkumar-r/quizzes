@@ -1,0 +1,7 @@
+<div class="view-layout-list">
+  {{#each viewLayouts as |viewLayout|}}
+      <div class="view-option {{viewLayout.view}} {{if viewLayout.isActive 'active' ''}}">
+        <a {{action 'setLayout' viewLayout}}><span>{{gru-icon name=viewLayout.icon}}</span></a>
+      </div>
+  {{/each}}
+</div>

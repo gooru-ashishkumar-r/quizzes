@@ -1,0 +1,86 @@
+[
+  {
+    "description": "Fetch Taxonomy Subjects for K-12",
+    "request": {
+      "url": "^/api/nucleus/v1/taxonomy/subjects",
+      "query": {
+        "classification_type": "k_12"
+      },
+      "method": "GET",
+      "headers": {
+        "authorization": "Token (.+)"
+      }
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "File not found!",
+      "file": "taxonomy-subjects-k12-200-response.json"
+    }
+  },
+  {
+    "description": "Fetch Taxonomy Subjects for Higher Education",
+    "request": {
+      "url": "^/api/nucleus/v1/taxonomy/subjects",
+      "query": {
+        "classification_type": "higher_education"
+      },
+      "method": "GET",
+      "headers": {
+        "authorization": "Token (.+)"
+      }
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "File not found!",
+      "file": "taxonomy-subjects-higher-education-200-response.json"
+    }
+  },
+  {
+    "description": "Fetch Taxonomy Subjects for Professional Learning",
+    "request": {
+      "url": "^/api/nucleus/v1/taxonomy/subjects",
+      "query": {
+        "classification_type": "professional_learning"
+      },
+      "method": "GET",
+      "headers": {
+        "authorization": "Token (.+)"
+      }
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "File not found!",
+      "file": "taxonomy-subjects-professional-learning-200-response.json"
+    }
+  },
+  {
+    "description": "Fetch Taxonomy Codes by a IDs",
+    "request": {
+      "url": "^/api/nucleus/v1/taxonomy/codes",
+      "query": {
+        "idList": "(.+)"
+      },
+      "method": "GET",
+      "headers": {
+        "authorization": "Token (.+)"
+      }
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "File not found!",
+      "file": "taxonomy-codes-200-response.json"
+    }
+  }
+]

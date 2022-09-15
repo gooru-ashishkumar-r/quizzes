@@ -1,0 +1,50 @@
+#edify h1 {
+  color: #f09428;
+  font-weight: bold;
+}
+
+#edify footer {
+  display: none;
+}
+
+#edify .gru-header {
+  background: #46525F;
+}
+
+#edify .gru-header .container .navbar-default .navbar-header .navbar-brand {
+  background-image: url("logo.png");
+  background-size: contain;
+  background-repeat: repeat-y;
+  background-position: center;
+  margin: 0;
+  height: 50px;
+  width: 50px;
+}
+
+#edify .gru-header .container .navbar-default .dropdown-toggle,
+#edify .gru-header .container .navbar-default .navbar-link,
+#edify .gru-header .container .navbar-default .navbar-link:visited,
+#edify .gru-header .container .navbar-default .navbar-link:hover,
+#edify .gru-header .container .navbar-default a,
+#edify .gru-header .container .navbar-default a:visited,
+#edify .gru-header .container .navbar-default a:hover,
+#edify .gru-header .container .navbar-default .navbar-text {
+  color: #f09428;
+}
+
+#edify .gru-header .container .navbar-default button,
+#edify .btn-primary,
+#edify .btn-primary:active,
+#edify .btn-primary:hover
+{
+  color: #fff;
+  border-color: #fAB438;
+  background: #f09428 -webkit-linear-gradient(top, #f09428, #fAB438);
+}
+
+#edify .controller.classes .joined > ul > li > div,
+#edify .controller.classes .taught > ul > li > div {
+  background-color: #fAB438;
+  color: #ffffff;
+  font-weight: bold;
+}

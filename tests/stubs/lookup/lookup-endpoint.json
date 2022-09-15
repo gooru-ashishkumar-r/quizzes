@@ -1,0 +1,92 @@
+[
+  {
+    "description": "Get Countries",
+    "request": {
+      "url": "^/api/nucleus/v1/lookups/countries$",
+      "method": "GET",
+      "headers": {
+        "Authorization": "Token (.+)"
+      }
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "File not found!",
+      "file": "countries-200-response.json"
+    }
+  },
+  {
+    "description": "Get States",
+    "request": {
+      "url": "^/api/nucleus/v1/lookups/countries/(.*)/states$",
+      "method": "GET",
+      "headers": {
+        "Authorization": "Token (.+)"
+      }
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "File not found!",
+      "file": "states-200-response.json"
+    }
+  },
+  {
+    "description": "Get Districts",
+    "request": {
+      "url": "^/api/nucleus/v1/lookups/school-districts$",
+      "method": "GET",
+      "headers": {
+        "Authorization": "Token (.+)"
+      }
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "File not found!",
+      "file": "districts-200-response.json"
+    }
+  },
+  {
+    "description": "Get Audiences",
+    "request": {
+      "url": "^/api/nucleus/v1/lookups/audience$",
+      "method": "GET",
+      "headers": {
+        "Authorization": "Token (.+)"
+      }
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "File not found!",
+      "file": "audience-200-response.json"
+    }
+  },
+  {
+    "description": "Get Depth Of Knowledge",
+    "request": {
+      "url": "^/api/nucleus/v1/lookups/dok$",
+      "method": "GET",
+      "headers": {
+        "Authorization": "Token (.+)"
+      }
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "File not found!",
+      "file": "knowledge-200-response.json"
+    }
+  }
+]

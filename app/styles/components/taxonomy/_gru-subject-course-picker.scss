@@ -1,0 +1,13 @@
+.taxonomy.gru-subject-course-picker {
+  .dropdown-menu {
+    &.courses {
+      li {
+        padding: 3px 20px;
+        label {
+          padding-left: 25px;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}

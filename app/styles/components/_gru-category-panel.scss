@@ -1,0 +1,71 @@
+.gru-category-panel {
+  > strong {
+    padding: 15px 10px;
+    text-align: center;
+    border-bottom: 4px solid $white;
+    font-size: $font-size-large;
+    font-weight: 600;
+    color: $white;
+    display: block;
+  }
+  > div {
+    color: $gray;
+    background: $gru-category-panel-bg;
+    padding: 15px 15px;
+    min-height: 190px;
+    position: relative;
+
+    .cta {
+      position: absolute;
+      bottom: 15px;
+      left: 0;
+      width: 100%;
+      padding: 0 15%;
+
+      a {
+        width: 100%;
+        color: $white;
+      }
+    }
+  }
+
+  &.teacher {
+    > strong {
+      background-color: $blue-cc;
+    }
+  }
+
+  &.student {
+    > strong {
+      background-color: $blue-do;
+    }
+  }
+
+  &.district {
+    > strong {
+      background-color: $blue-af;
+    }
+  }
+  &.partner {
+    > strong {
+      background-color: $blue-bf;
+    }
+  }
+
+  &.gru-category-panel-textfield {
+    .cta {
+      padding: 0 15px;
+
+      input {
+        float: $tab-float-dir;
+        width: 65%;
+        padding: 3px 5px;
+        margin-top: 2px;
+      }
+      button {
+        float: $menu-float-dir;
+        width: 30%;
+      }
+    }
+  }
+}

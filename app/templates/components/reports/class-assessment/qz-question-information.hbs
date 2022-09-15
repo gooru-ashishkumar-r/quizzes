@@ -1,0 +1,49 @@
+{{!-- 
+{{#if question.hasNarration}}
+  <div class="panel panel-default narration">
+    <div class="panel-body">
+      <span>{{{question.narration}}}</span>
+    </div>
+  </div>
+{{/if}}
+--}}
+<div class="panel panel-default question">
+  <div class="panel-body">
+    {{#if question.isResource}}
+      <h3>{{t "common.resource" }} </h3>
+      <div class='resource-view'>
+        {{player/qz-resource-viewer resource=question sendEvents=false showNarration=false collection=null}}
+      </div>
+    {{else}}
+      <h3>{{t "common.question" }} </h3>
+      <span>{{gru-math-text text=questionBody}}</span>
+      {{#if question.hasMedia}}
+        <img class="img-responsive" src="{{question.mediaUrl}}" alt="mediaUrl"/>
+      {{/if}}
+    {{/if}}
+  </div>
+</div>
+{{#unless anonymous}}
+  {{#if hints}}
+    <div class="panel panel-primary hints">
+      <div class="panel-heading">
+        {{t "common.hints"}}
+      </div>
+      <div class="panel-body">
+        {{#each hints as |hint|}}
+          <span>{{{hint.hintText}}}</span>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+  {{#if explanation}}
+    <div class="panel panel-primary explanation ">
+      <div class="panel-heading">
+        {{t "common.explanation"}}
+      </div>
+      <div class="panel-body">
+        <span>{{{explanation}}}</span>
+      </div>
+    </div>
+  {{/if}}
+{{/unless}}

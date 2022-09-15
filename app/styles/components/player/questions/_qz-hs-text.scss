@@ -1,0 +1,46 @@
+.player .qz-hs-text {
+  .answer-choices {
+    margin-top: 20px;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li.answer {
+        @include flexbox();
+        border: 2px solid $gray-lighter;
+        margin-top: 10px;
+        padding: 15px;
+        border-radius: 7px;
+
+        &.selected {
+          border-color: $blue-400;
+          div {
+            @include flexbox();
+          }
+        }
+
+        &.disabled {
+          cursor: $cursor-disabled;
+        }
+
+        &:not(.disabled):hover {
+          border-color: $dark-300;
+        }
+        > * {
+          display: inline-block;
+        }
+        .answer-text {
+          min-width: 94%;
+        }
+        div {
+          display: none;
+          @include align-items(center);
+          i {
+            color: $blue-400;
+          }
+        }
+      }
+    }
+  }
+}

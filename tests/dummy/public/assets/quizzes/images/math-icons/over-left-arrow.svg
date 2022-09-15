@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 113 111" style="enable-background:new 0 0 113 111;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#535E67;}
+	.st1{fill:#E3E5EA;}
+	.st2{fill:none;stroke:#535E67;stroke-width:2;stroke-linejoin:round;}
+	.st3{fill:none;stroke:#535E67;stroke-width:2;stroke-linejoin:round;stroke-dasharray:1.9552,0.9776;}
+	.st4{fill:none;stroke:#535E67;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st5{fill:#E86F6D;}
+	.st6{fill:none;stroke:#E05552;stroke-width:2;stroke-linejoin:round;}
+	.st7{fill:none;stroke:#E05552;stroke-width:2;stroke-linejoin:round;stroke-dasharray:1.9518,0.9759;}
+	.st8{fill:none;stroke:#535E67;stroke-width:2;stroke-linejoin:round;stroke-dasharray:2.1159,1.058;}
+	.st9{fill:none;stroke:#E05552;stroke-width:2;stroke-linejoin:round;stroke-dasharray:1.876,0.938;}
+	.st10{fill:none;stroke:#E05552;stroke-width:2;stroke-linejoin:round;stroke-dasharray:1.5266,0.7633;}
+	.st11{fill:none;stroke:#535E67;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st12{fill:none;}
+</style>
+<g>
+	<g>
+		<rect x="41.8" y="46.4" class="st1" width="29.4" height="29.4"/>
+		<g>
+			<polyline class="st2" points="71.2,74.7 71.2,75.7 70.2,75.7 			"/>
+			<line class="st3" x1="69.2" y1="75.7" x2="43.3" y2="75.7"/>
+			<polyline class="st2" points="42.8,75.7 41.8,75.7 41.8,74.7 			"/>
+			<line class="st3" x1="41.8" y1="73.8" x2="41.8" y2="47.9"/>
+			<polyline class="st2" points="41.8,47.4 41.8,46.4 42.8,46.4 			"/>
+			<line class="st3" x1="43.8" y1="46.4" x2="69.7" y2="46.4"/>
+			<polyline class="st2" points="70.2,46.4 71.2,46.4 71.2,47.4 			"/>
+			<line class="st3" x1="71.2" y1="48.4" x2="71.2" y2="74.3"/>
+		</g>
+	</g>
+	<polyline class="st4" points="41.8,35.7 47.9,29.6 41.8,35.7 47.9,41.7 	"/>
+	<path class="st4" d="M71.2,35.7H41.8H71.2z"/>
+</g>
+</svg>

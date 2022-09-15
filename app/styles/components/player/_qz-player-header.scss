@@ -1,0 +1,89 @@
+.qz-player-header {
+  top: 0;
+  width: 100%;
+  position: fixed;
+  color: $white;
+  z-index: $zindex-navbar-fixed + 1;
+
+  .header-panel {
+    height: 40px;
+    background-color: $blue-400;
+
+    .back-to-collection {
+      width: 75px;
+      height: 40px;
+      border-right: 2px solid $light-200;
+      cursor: pointer;
+
+      .nav-icon-container {
+        i {
+          margin-left: -42px;
+          margin-top: 9px;
+        }
+      }
+    }
+
+    .content-title {
+      width: calc(100% - 200px);
+      height: 40px;
+      .title-info {
+        height: 40px;
+      }
+      i {
+        background: url("gooru/images/navigation_collection_selected.svg");
+        display: inline-block;
+        width: 20px;
+        height: 15px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 14px;
+      }
+
+      &.assessment {
+        i {
+          -webkit-mask-image: url("gooru/images/navigation_assessment.svg");
+          mask-image: url("gooru/images/navigation_assessment.svg");
+          background-image: none;
+          background-color: $white;
+        }
+      }
+
+      .title {
+        width: calc(100% - 60px);
+        position: relative;
+        @include translateY(-50%);
+        top: 50%;
+        $line-height: 1.3;
+        $lines-to-show: 2;
+        @include ellipsis(
+          $font-size: 16px,
+          $line-height: $line-height,
+          $lines-to-show: 2,
+          $excerpt-bg: $blue-400
+        );
+        @media screen and (max-width: 567px) {
+          max-height: 40px;
+          line-height: 1;
+        }
+      }
+    }
+
+    .remix {
+      width: 125px;
+      height: 40px;
+      border-left: 2px solid $light-200;
+      cursor: pointer;
+
+      .nav-icon-container {
+        i {
+          margin-left: -53px;
+          margin-top: 9px;
+        }
+        span {
+          padding-left: 4px;
+          padding-top: 9px;
+        }
+      }
+    }
+  }
+}

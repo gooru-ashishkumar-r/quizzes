@@ -1,0 +1,91 @@
+.reports.assessment.qz-resources-xs {
+  display: table;
+  width: 100%;
+
+  .resource-card {
+    display: table-row;
+    width: 100%;
+    .resource-container,
+    .resource {
+      display: block;
+      padding: 8px 0;
+    }
+    .resource-container {
+      border-bottom: 1px solid $gray-lighter;
+      .resource-text {
+        max-height: 100px;
+        margin: 5px 0;
+        .title-content {
+          display: flex;
+          > * {
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+          }
+        }
+        .image {
+          display: inline-block;
+          margin-right: 10px;
+        }
+        i {
+          display: block;
+          height: 36px;
+          width: 28px;
+          vertical-align: top;
+          margin: 5px 0 0 0;
+          &.video_resource-icon {
+            background: url("quizzes-addon/quizzes/images/video-resource-green.svg");
+            -webkit-background-size: 31px 30px;
+            background-size: 31px 30px;
+            height: 30px;
+            width: 31px;
+          }
+          &.webpage_resource-icon {
+            background: url("quizzes-addon/quizzes/images/website-resource-green.svg");
+            -webkit-background-size: 29px 30px;
+            background-size: 29px 30px;
+            height: 30px;
+            width: 29px;
+          }
+          &.interactive_resource-icon {
+            background: url("quizzes-addon/quizzes/images/interactive-resource-green.svg");
+            -webkit-background-size: 34px 30px;
+            background-size: 34px 30px;
+            height: 30px;
+            width: 34px;
+            vertical-align: top;
+            margin: 5px 0 0 0;
+          }
+          &.image_resource-icon {
+            background: url("quizzes-addon/quizzes/images/image-resource-green.svg");
+            -webkit-background-size: 30px 30px;
+            background-size: 30px 30px;
+            height: 30px;
+            width: 30px;
+          }
+          &.text_resource-icon {
+            background: url("quizzes-addon/quizzes/images/text-resource-green.svg");
+            -webkit-background-size: 31px 30px;
+            background-size: 31px 30px;
+            height: 30px;
+            width: 31px;
+          }
+          &.audio_resource-icon {
+            background: url("quizzes-addon/quizzes/images/audio-resource-green.svg");
+            -webkit-background-size: 34px 30px;
+            background-size: 34px 30px;
+            height: 30px;
+            width: 34px;
+          }
+        }
+      }
+    }
+  }
+  .time-spent {
+    display: inline-block;
+    padding: 8px 0 8px 20%;
+    > * {
+      display: block;
+    }
+  }
+}

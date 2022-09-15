@@ -1,0 +1,98 @@
+{
+  "subjects": [{
+    "id": "GDF.K12.VPA",
+    "title": "Visual & Performing Arts",
+    "description": null,
+    "code": "GDF.K12.VPA",
+    "standard_framework_id": "GDF",
+    "frameworks": [{
+      "standard_framework_id": "TEKS",
+      "taxonomy_subject_id": "TEKS.K12.FA",
+      "taxonomy_subject_title": "Fine Arts",
+      "title": "Texas Essential Knowledge and Skills"
+    }]
+  }, {
+    "id": "GDF.K12.HE",
+    "title": "Health",
+    "description": null,
+    "code": "GDF.K12.HE",
+    "standard_framework_id": "GDF",
+    "frameworks": [{
+      "standard_framework_id": "TEKS",
+      "taxonomy_subject_id": "TEKS.K12.HE",
+      "taxonomy_subject_title": "Health Education",
+      "title": "Texas Essential Knowledge and Skills"
+    }]
+  }, {
+    "id": "GDF.K12.PE",
+    "title": "Physical Education",
+    "description": null,
+    "code": "GDF.K12.PE",
+    "standard_framework_id": "GDF",
+    "frameworks": [{
+      "standard_framework_id": "TEKS",
+      "taxonomy_subject_id": "TEKS.K12.PE",
+      "taxonomy_subject_title": "Physical Education",
+      "title": "Texas Essential Knowledge and Skills"
+    }]
+  }, {
+    "id": "GDF.K12.WL",
+    "title": "World Languages",
+    "description": null,
+    "code": "GDF.K12.WL",
+    "standard_framework_id": "GDF"
+  }, {
+    "id": "GDF.K12.CTE",
+    "title": "Career Technical Education",
+    "description": null,
+    "code": "GDF.K12.CTE",
+    "standard_framework_id": "GDF"
+  }, {
+    "id": "GDF.K12.SLA",
+    "title": "Spanish Language Arts",
+    "description": null,
+    "code": "GDF.K12.SLA",
+    "standard_framework_id": "GDF"
+  }, {
+    "id": "GDF.K12.ELD",
+    "title": "English Language Development",
+    "description": null,
+    "code": "GDF.K12.ELD",
+    "standard_framework_id": "GDF",
+    "frameworks": [{
+      "standard_framework_id": "CA",
+      "taxonomy_subject_id": "CA.K12.ELD",
+      "taxonomy_subject_title": "English Language Development",
+      "title": "California State Standards"
+    }, {
+      "standard_framework_id": "TEKS",
+      "taxonomy_subject_id": "TEKS.K12.SPESL",
+      "taxonomy_subject_title": "Spanish Language Arts and Reading and English as a Second Language",
+      "title": "Texas Essential Knowledge and Skills"
+    }]
+  }, {
+    "id": "GDF.K12.CS",
+    "title": "Computer Science",
+    "description": null,
+    "code": "GDF.K12.CS",
+    "standard_framework_id": "GDF"
+  }, {
+    "id": "GDF.K12.PF",
+    "title": "Personal Finance",
+    "description": null,
+    "code": "GDF.K12.PF",
+    "standard_framework_id": "GDF"
+  }, {
+    "id": "GDF.K12.HS",
+    "title": "Habits of Success",
+    "description": null,
+    "code": "GDF.K12.HS",
+    "standard_framework_id": "GDF"
+  }, {
+    "id": "GDF.K12.OT",
+    "title": "Other",
+    "description": null,
+    "code": "GDF.K12.OT",
+    "standard_framework_id": "GDF"
+  }]
+}

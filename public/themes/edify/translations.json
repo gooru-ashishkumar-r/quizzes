@@ -1,0 +1,16 @@
+{
+  "en-edify": {
+    "common": {
+      "search": "Buscar",
+      "logout": "Salir",
+      "myClasses": "Mis Clases",
+      "searchForTopic": "Buscar por tema"
+    },
+    "classes": {
+      "classesJoined": "Clases en las que estudio",
+      "classesTaught": "Clases en las que enseño",
+      "noClassesJoined": "Usted no tiene ninguna clase donde estudia",
+      "noClassesTaught": "Usted no tiene ninguna clase donde enseña"
+    }
+  }
+}
