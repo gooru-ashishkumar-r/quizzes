@@ -1,0 +1,31 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+.DS_Store
+
+# compiled output
+/dist
+/tmp
+
+# dependencies
+/node_modules
+/bower_components
+
+# misc
+access.log
+error.log
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log*
+testem.log
+/.idea
+.vagrant
+access.log
+error.log
+*.sublime-*
+
+#tests
+linter-xunit.xml
+report-xunit.xml
+.sass-lint.yml

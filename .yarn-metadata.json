@@ -1,0 +1,109 @@
+{
+  "manifest": {
+    "name": "quizzes-addon",
+    "version": "6.1.4",
+    "description": "Small description for quizzes goes here.",
+    "scripts": {
+      "build": "ember build",
+      "start": "ember server",
+      "test": "ember test",
+      "precommit": "lint-staged"
+    },
+    "lint-staged": {
+      "*.js": [
+        "node_modules/.bin/prettier --single-quote --write",
+        "node_modules/.bin/eslint --fix",
+        "git add"
+      ],
+      "*.scss": [
+        "node_modules/.bin/prettier --write",
+        "git add"
+      ]
+    },
+    "repository": {
+      "type": "git",
+      "url": ""
+    },
+    "engines": {
+      "node": ">= 0.12.0"
+    },
+    "author": {},
+    "license": "MIT",
+    "devDependencies": {
+      "broccoli-asset-rev": "^2.4.6",
+      "broccoli-merge-trees": "^1.1.4",
+      "ember-ajax": "^2.5.2",
+      "ember-cli": "^4.7.0",
+      "ember-cli-app-version": "^2.0.0",
+      "ember-cli-bootstrap-datepicker": "0.5.6",
+      "ember-cli-content-security-policy": "0.5.0",
+      "ember-cli-dependency-checker": "^1.3.0",
+      "ember-cli-embedded": "^0.3.1",
+      "ember-cli-file-picker": "^0.0.9",
+      "ember-cli-htmlbars-inline-precompile": "^0.4.3",
+      "ember-cli-ic-ajax": "^1.0.0",
+      "ember-cli-inject-live-reload": "^1.4.1",
+      "ember-cli-moment-shim": "3.0.1",
+      "ember-cli-pretender": "^1.0.1",
+      "ember-cli-qunit": "^3.0.2",
+      "ember-cli-release": "^0.2.9",
+      "ember-cli-sass": "6.1.1",
+      "ember-cli-sri": "^2.1.0",
+      "ember-cli-test-loader": "^1.1.0",
+      "ember-cli-uglify": "^2.0.0-beta.1",
+      "ember-composable-helpers": "^1.1.2",
+      "ember-cp-validations": "^3.2.0",
+      "ember-d3": "0.2.0",
+      "ember-data": "^2.9.0",
+      "ember-exam": "0.6.0",
+      "ember-export-application-global": "^1.0.5",
+      "ember-font-awesome": "2.2.0",
+      "ember-i18n": "^4.3.2",
+      "ember-i18n-cp-validations": "^2.7.2",
+      "ember-load-initializers": "^0.5.1",
+      "ember-papaparse": "^0.0.3",
+      "ember-resolver": "^2.0.3",
+      "ember-sinon": "^0.5.1",
+      "ember-truth-helpers": "^1.2.0",
+      "eslint": "^4.3.0",
+      "grunt": "^0.4.5",
+      "grunt-eslint": "^20.0.0",
+      "grunt-stubby": "0.2.1",
+      "grunt-svgstore": "^1.0.0",
+      "husky": "^0.14.3",
+      "lint-staged": "^4.0.1",
+      "loader.js": "^4.0.10",
+      "prettier": "^1.5.3",
+      "detect-indent": "5.0.0",
+      "sort-package-json": "1.22.1"
+    },
+    "keywords": [
+      "ember-addon"
+    ],
+    "dependencies": {
+      "broccoli-static-compiler": "^0.2.2",
+      "ember-cli-babel": "^5.1.7",
+      "ember-cli-htmlbars": "^1.0.10",
+      "ember-disable-proxy-controllers": "^1.0.1",
+      "ember-radio-button": "^1.0.7",
+      "grunt-exec": "^1.0.0",
+      "sass": "^1.54.9"
+    },
+    "ember-addon": {
+      "configPath": "tests/dummy/config"
+    },
+    "_registry": "npm",
+    "_loc": "/home/ashish/.cache/yarn/v6/npm-quizzes-addon-6.1.4-31e42184-9566-4888-9a89-7d1fe378132d-1663856877575/node_modules/quizzes-addon/package.json",
+    "readmeFilename": "README.md",
+    "readme": "Quizzes\n=======\nQuizzes is a tool for teachers to create assessments and for students to play those assessments and get a score.\n\n## Introduction\nQuizzes is not a replacement for Gooru or any other LMS, it is a tool that will provide new functionality and in other cases, will increase the capabilities of existing functionality. Quizzes is not intended to manage school, classroom or student information and it does not depend on a specific LMS context to work.\n\n\n## Prerequisites\n\nSee [Environment Setup](./docs/environment-setup.md)\n\n* [Git](http://git-scm.com/)\n* [Node.js](http://nodejs.org/) (with NPM)\n* [Bower](http://bower.io/)\n* [Ember CLI](http://www.ember-cli.com/)\n* [PhantomJS](http://phantomjs.org/)\n* [Grunt-CLI](https://github.com/gruntjs/grunt-cli)\n* [Stubby](https://github.com/mrak/stubby4node)\n\n\n## High Level Architecture\nThis project is built on top of EmberJS 2.x and Ember CLI\n![Alt text](high-level-architecture.png)\n\n#### Technology stack\n* Ember CLI\n* Ember 2.x\n* Ember Simple Auth\n* Ember i18n\n* Handlebars\n* SASS\n* Bootstrap\n* jQuery\n* Grunt\n* Stubby\n\n#### Project Structure\nThis project follows the project structure suggested by Ember CLI\n\n#### Communication Layer - Custom Adapters and Serializers\nEmberJS 2.x implements by default json:api specification for REST communication, custom EmberJS adapters and serializers are necessary to communitate and match the current Quizzes' API end points convention.\n\n#### API-SDK Layer\nThe SDK layer is defined with intention to create an abstraction layer or abstraction level to hide the implementation details.\n\n#### Internationalization\nThe library ember-i18n is used for internationalization, it is fully integrated with Ember-CLI.\n\nSee [ember-i18n](https://github.com/jamesarosen/ember-i18n/wiki)\n\n#### Application Logger\n Ember.Logger is used for logging application messages.\n\n See\n * [Ember Logger](http://emberjs.com/api/classes/Ember.Logger.html)\n * [Ember Debugging](http://guides.emberjs.com/v2.0.0/configuring-ember/debugging/)\n\n## Installation\n\n* `git clone https://github.com/Gooru/quizzes.git` this repository\n* Install dependencies `npm install` and `bower install`\n\n## Running / Development\n\n### Development Process\n* See [Development Process](./docs/development-process.md)\n\n### Environment Setup\n* See [Environment Setup](./docs/environment-setup.md)\n\n### Application configuration\nThe application configuration is stored at the following places...\n\n* environment.js : it contains the application properties reused for all environments\n* config/env/{environment}.js : it contains the default environment (test, dev, prod) properties\n* public/config/{hostname}-quizzes.json : it contains specific hostname properties, see services/configuration.js\n\nWe are providing 2 host configurations files, you could add your own file during deployment so that your environment overrides the default configuration\n\nThe application first loads the environment configuration, then it tries to load the hostname file if provided to override the default env configuration\n\n### Generating SVG sprite sheets\nIt's required to run a grunt task that builds the SVG Sprite Sheets that the application requires prior to the build process. In order to build them just run the grunt task `grunt generateSVG`\n\n### Running the app with ember\n* `grunt generateSVG && ember server --proxy http://localhost:8882` to run it using the stubby server\n* Visit your app at [http://localhost:4200](http://localhost:4200).\n\n### Running the app with grunt tasks\n\nThe only way of running quizzes by itself is as an embedded application that is not part of the exported project, to do this you can use the command `grunt run`.\n\n### Coding standards\nThis application follows [Ember CLI standards and conventions](http://www.ember-cli.com/user-guide/#naming-conventions) and it also uses ESLint (http://eslint.org/) _\"ESLint is a program that flags suspicious usage in programs written in JavaScript.\"_\n\nSee\n* [ESLint Rules](http://eslint.org/docs/rules/)\n\n### Code Documentation\nCode should be really well documented, please use [jsDoc](http://usejsdoc.org/)\n\nSee\n* @typedef for type definition\n\n### Code Generators\n\nMake use of the many generators for code, try `ember help generate` for more details\n\n### Git strategy\n`Git Flow` strategy was selected, look at [Git Flow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow/) and [Git Flow Cheatsheet](http://danielkummer.github.io/git-flow-cheatsheet/)\n\n### Running Tests\nThis project uses Ember Tests\nSee\n* [Ember Tests](http://guides.emberjs.com/v2.0.0/testing/)\n* [QUnit](https://api.qunitjs.com/)\n* [Testem](https://github.com/airportyh/testem)\n* [Ember QUnit](https://github.com/rwjblue/ember-qunit)\n\n* `ember test`\n* `ember test --server` to let the test running\n* `ember test --filter your_pattern` to execute tests matching the pattern at the description\n* `ember test --module your_module` to execute the tests at the provided module\n\nTestem is configured to proxy ajax request to the stubby server, make sure your stubby server is running\nYou can also execute the test using grunt tasks\n\n### Running Tests with grunt tasks\n * `grunt test` which starts the stubby and run the test by using `ember test`\n * `grunt test --server` which starts the stubby and run the test by using `ember test --server`\n * `grunt test --no-stubby` to do not start up stubby   \n * `grunt test:cli` which start the stubby and run the test by using `ember test --silent --reporter xunit`\n\n### Running a single test file/module\n * `ember test --m 'your module here'` to run your test file/module\n\n### Running a single test file/module with stubby\n * `grunt stubby:server &` to start up the stubby server at background, you need to stop the process manually when done\n * `ember test --m 'your module here'` to run your test file/module\n\n### Running linter\n * `grunt eslint` to run eslint in all javascript files\n * `grunt eslint --quiet` to hide warnings\n\n### Code Coverage\nMore than 80% of coverage is mandatory for this project\n\n### Mocking the api server - Stubby\n* `grunt stubby:server` To startup a mocked API Server. Then make sure to run ember with the --proxy option to point to the Stubby server.\n\n### Configuring a proxy server\nIt is possible to proxy a server so you can connect to a different environment\n\n* `ember server --proxy your_server`\n\n### Building\n\n* `grunt build` (development)\n* `grunt build:prod` (production)\n\n### Embedded application\nThe quizzes application can run as a normal ember application or it could be embedded into a 3rd party application.\n\n#### Build it as embedded\nTo build the application as a embedded app do\n\n* `QUIZZES_EMBEDDED=true ember build --environment=development` an environment variable controls when the package should be build as embedded app\n\n#### Configuring the embedded application\nWhen embedding the application you can pass several options\n\n* token, it should be a valid token, when present the application would try to authentication using that token, otherwise it will be authenticated anonymously\n* transition, it is use to tell the application to navigate to a specific page, you need to provide the parameters matching the ember route, see public/embedded.html for an example\n\n### Continuous Integration\nWe have setup Bamboo as continuous integration server\n* when publishing a feature branch a bamboo build is triggered\n* when a feature is finished and changes are merge to develop, another build is performed and the app is deployed\n\n### Generate change log\n\n*Changelog*\n1. Run the command `changelog.sh RELEASE_BRANCH`\n2. Add the output to the CHANGELOG.md file\n\n### Deploying\n\n*QA deployment*\nAt this point develop branch is deployed by Bamboo to the configured QA servers\n\n*Staging deployment*\nRelease candidates, hot fixes and master build are deployed by Bamboo to Nucleus QA\n\n*Production deployment*\nThe production package is archived at [Edify Artifactory](edify.artifactoryonline.com/edify/webapp/#/artifacts/browse/tree/General/quizzes-releases-local),\nit is also sent to Gooru Netops, they deploy it to production environment\n\n\n### Design Color Palette\n![Color Palette](color-palette.png)\n\n### RealTime Module\n\nThe RealTime is the module used by the teachers to see \"in live\" the results for any assessment taken by the students.\nThis module uses a WebSocket connection with a sub-domain of the backend application.\n\n##### Important:\nIt is required that the sub-domain that gives the support to the RealTime needs to be configured to use a SSL (HTTPS)\nconnection, otherwise the RealTime module will not be able to communicate with the backend server.\n"
+  },
+  "artifacts": [],
+  "remote": {
+    "type": "copy",
+    "registry": "npm",
+    "hash": "4a8dc381-d94b-4d4e-b728-47f4d9bac6e3-1663864742845",
+    "reference": "/usr/local/lib/node_modules/quizzes-addon"
+  },
+  "registry": "npm",
+  "hash": "4a8dc381-d94b-4d4e-b728-47f4d9bac6e3-1663864742845"
+}
